@@ -12,6 +12,7 @@
 		3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B40BA3722A7D49C00B9A507 /* Assets.xcassets */; };
 		3B40BA4622A7D49C00B9A507 /* seatsio_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA4522A7D49C00B9A507 /* seatsio_iosTests.swift */; };
 		3B40BA5122A7D49C00B9A507 /* seatsio_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA5022A7D49C00B9A507 /* seatsio_iosUITests.swift */; };
+		4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		3B40BA4C22A7D49C00B9A507 /* seatsio-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seatsio-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B40BA5022A7D49C00B9A507 /* seatsio_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seatsio_iosUITests.swift; sourceTree = "<group>"; };
 		3B40BA5222A7D49C00B9A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		3B40BA2F22A7D49C00B9A507 /* seatsio-ios */ = {
 			isa = PBXGroup;
 			children = (
+				4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */,
 				3B40BA3022A7D49C00B9A507 /* AppDelegate.swift */,
 				3B40BA3222A7D49C00B9A507 /* ViewController.swift */,
 				3B40BA3722A7D49C00B9A507 /* Assets.xcassets */,
@@ -250,6 +253,7 @@
 			files = (
 				3B40BA3322A7D49C00B9A507 /* ViewController.swift in Sources */,
 				3B40BA3122A7D49C00B9A507 /* AppDelegate.swift in Sources */,
+				4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
