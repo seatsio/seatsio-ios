@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B40BA3122A7D49C00B9A507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA3022A7D49C00B9A507 /* AppDelegate.swift */; };
 		3B40BA3322A7D49C00B9A507 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA3222A7D49C00B9A507 /* ViewController.swift */; };
-		3B40BA3622A7D49C00B9A507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B40BA3422A7D49C00B9A507 /* Main.storyboard */; };
 		3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B40BA3722A7D49C00B9A507 /* Assets.xcassets */; };
-		3B40BA3B22A7D49C00B9A507 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B40BA3922A7D49C00B9A507 /* LaunchScreen.storyboard */; };
 		3B40BA4622A7D49C00B9A507 /* seatsio_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA4522A7D49C00B9A507 /* seatsio_iosTests.swift */; };
 		3B40BA5122A7D49C00B9A507 /* seatsio_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA5022A7D49C00B9A507 /* seatsio_iosUITests.swift */; };
 /* End PBXBuildFile section */
@@ -37,9 +35,7 @@
 		3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seatsio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B40BA3022A7D49C00B9A507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B40BA3222A7D49C00B9A507 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3B40BA3522A7D49C00B9A507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B40BA3722A7D49C00B9A507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3B40BA3A22A7D49C00B9A507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B40BA3C22A7D49C00B9A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B40BA4122A7D49C00B9A507 /* seatsio-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seatsio-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B40BA4522A7D49C00B9A507 /* seatsio_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seatsio_iosTests.swift; sourceTree = "<group>"; };
@@ -99,9 +95,7 @@
 			children = (
 				3B40BA3022A7D49C00B9A507 /* AppDelegate.swift */,
 				3B40BA3222A7D49C00B9A507 /* ViewController.swift */,
-				3B40BA3422A7D49C00B9A507 /* Main.storyboard */,
 				3B40BA3722A7D49C00B9A507 /* Assets.xcassets */,
-				3B40BA3922A7D49C00B9A507 /* LaunchScreen.storyboard */,
 				3B40BA3C22A7D49C00B9A507 /* Info.plist */,
 			);
 			path = "seatsio-ios";
@@ -229,9 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B40BA3B22A7D49C00B9A507 /* LaunchScreen.storyboard in Resources */,
 				3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */,
-				3B40BA3622A7D49C00B9A507 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +283,6 @@
 			targetProxy = 3B40BA4D22A7D49C00B9A507 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3B40BA3422A7D49C00B9A507 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B40BA3522A7D49C00B9A507 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3B40BA3922A7D49C00B9A507 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B40BA3A22A7D49C00B9A507 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3B40BA5322A7D49C00B9A507 /* Debug */ = {
