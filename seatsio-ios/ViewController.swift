@@ -21,10 +21,11 @@ class HomeViewController: UIViewController,WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        seatsioWebView.load(
-            publicKey: "53b1ee0f-6611-4826-95a9-197be43a55e7",
-            event: "e1"
-        )
+        seatsioWebView.load([
+            "publicKey": "53b1ee0f-6611-4826-95a9-197be43a55e7",
+            "event": "e1",
+            "holdOnSelect": true
+        ])
     }
 }
 

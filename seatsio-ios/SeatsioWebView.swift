@@ -20,12 +20,15 @@ class SeatsioWebView : WKWebView {
         super.init(coder: aDecoder)
     }
     
-    func load(publicKey: String, event: String) {
-        self.loadHTMLString(self.generateHtml(publicKey: publicKey, event: event), baseURL: nil)
+    func load(_ config: [String : Any]) {
+        self.loadHTMLString(self.generateHtml(config: config), baseURL: nil)
     }
     
-    func generateHtml(publicKey: String, event: String) -> String {
-        return """
+    private func generateHtml(config: [String: Any]) -> String {
+        let configAsJs = (config.compactMap({ (key, value) -> String in
+            return "\(key):'\(value)'"
+        }) as Array).joined(separator: ",")
+        let result = """
         <html>
         <body>
         <div id="chart"></div>
@@ -33,12 +36,14 @@ class SeatsioWebView : WKWebView {
         <script>
         new seatsio.SeatingChart({
         divId: 'chart',
-        publicKey: '\(publicKey)',
-        event: '\(event)',
+        \(configAsJs)
         }).render();
         </script>
         </body>
         </html>
         """
+        
+        print(result)
+        return result
     }
 }
