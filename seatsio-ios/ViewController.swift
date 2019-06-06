@@ -11,39 +11,20 @@ import WebKit
 
 class HomeViewController: UIViewController,WKNavigationDelegate {
 
-    var webView: WKWebView!
+    var seatsioWebView: SeatsioWebView!
     
     override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.navigationDelegate = self
-        view = webView
+        seatsioWebView = SeatsioWebView(frame: .zero, configuration: WKWebViewConfiguration())
+        seatsioWebView.navigationDelegate = self
+        view = seatsioWebView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let html = generateHtml()
-        webView.loadHTMLString(html, baseURL: nil)
+        seatsioWebView.load(
+            publicKey: "53b1ee0f-6611-4826-95a9-197be43a55e7",
+            event: "e1"
+        )
     }
-    
-    func generateHtml() -> String {
-        return """
-        <html>
-        <body>
-        <div id="chart"></div>
-        <script src="https://cdn.seatsio.net/chart.js"></script>
-        <script>
-        new seatsio.SeatingChart({
-        divId: 'chart',
-        publicKey: '53b1ee0f-6611-4826-95a9-197be43a55e7',
-        event: 'e1'
-        }).render();
-        </script>
-        </body>
-        </html>
-        """
-    }
-
-
 }
 
