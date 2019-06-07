@@ -11,18 +11,20 @@ import WebKit
 
 
 class SeatsioWebView : WKWebView {
-    
-    override init(frame: CGRect, configuration: WKWebViewConfiguration) {
-        super.init(frame: frame, configuration: configuration)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    var events: String!
     
     func load(_ config: [String : Any]) {
         self.loadHTMLString(self.generateHtml(config: config), baseURL: nil)
     }
+    
+    func setOnObjectSelected() {
+        self.events = """
+            onObjectSelected: function(obj, selectedTicketType) {
+                webkit.messageHandlers.onObjectSelected.postMessage(JSON.stringify({object: obj,selectedTicketType: selectedTicketType}));
+            }
+        """
+    }
+    
     
     private func generateHtml(config: [String: Any]) -> String {
         let configAsJs = (config.compactMap({ (key, value) -> String in
@@ -31,12 +33,13 @@ class SeatsioWebView : WKWebView {
         let result = """
         <html>
         <body>
-        <div id="chart"></div>
+        <div id="chart" style="width: 100%; height: 100%"></div>
         <script src="https://cdn.seatsio.net/chart.js"></script>
         <script>
         new seatsio.SeatingChart({
         divId: 'chart',
-        \(configAsJs)
+        \(configAsJs),
+        \(events ?? "")
         }).render();
         </script>
         </body>

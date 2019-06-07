@@ -9,19 +9,31 @@
 import UIKit
 import WebKit
 
-class HomeViewController: UIViewController,WKNavigationDelegate {
+class HomeViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
 
-    var seatsioWebView: SeatsioWebView!
+    var seatsio: SeatsioWebView!
+
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "onObjectSelected" {
+            print(message.body)
+        }
+    }
     
     override func loadView() {
-        seatsioWebView = SeatsioWebView(frame: .zero, configuration: WKWebViewConfiguration())
-        seatsioWebView.navigationDelegate = self
-        view = seatsioWebView
+        let contentController = WKUserContentController();
+        contentController.add(self, name: "onObjectSelected")
+        let config = WKWebViewConfiguration()
+        config.userContentController = contentController
+        
+        seatsio = SeatsioWebView(frame: UIScreen.main.bounds, configuration: config)
+        seatsio.navigationDelegate = self
+        seatsio.setOnObjectSelected()
+        self.view = seatsio
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        seatsioWebView.load([
+        seatsio.load([
             "publicKey": "53b1ee0f-6611-4826-95a9-197be43a55e7",
             "event": "e1",
             "holdOnSelect": true
