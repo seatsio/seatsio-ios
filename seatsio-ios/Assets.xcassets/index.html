@@ -1,0 +1,13 @@
+<html>
+<body>
+<div id="chart" style="width: 100%; height: 100%"></div>
+<script src="https://cdn.seatsio.net/chart.js"></script>
+<script>
+    new seatsio.SeatingChart({
+        divId: 'chart',
+        %configAsJs%,
+        %events%
+    }).render();
+</script>
+</body>
+</html>

@@ -14,14 +14,14 @@ class HomeViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
     var seatsio: SeatsioWebView!
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "onObjectSelected" {
+        if message.name == "seatsioEvents" {
             print(message.body)
         }
     }
     
     override func loadView() {
         let contentController = WKUserContentController();
-        contentController.add(self, name: "onObjectSelected")
+        contentController.add(self, name: "seatsioEvents")
         let config = WKWebViewConfiguration()
         config.userContentController = contentController
         
