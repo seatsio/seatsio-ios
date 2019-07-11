@@ -11,25 +11,22 @@ import WebKit
 
 
 class SeatsioWebView : WKWebView {
-    var events: String!
+    var events: Array<String> = []
     
-    func load(_ config: [String : Any]) {
+    func loadSeatingChart(_ config: [String : Any]) {
 
         self.loadHTMLString(self.generateHtml(config: config), baseURL: nil)
     }
     
-    func setOnObjectSelected() {
-        self.events = """
-            onObjectSelected: function(obj, selectedTicketType) {
+    func setEvent(eventName: String) {
+        self.events.append("""
+            \(eventName): function(...args) {
                 webkit.messageHandlers.seatsioEvents.postMessage(JSON.stringify({
-                      method: 'onObjectSelected',
-                      payload: {
-                          object: obj,
-                          selectedTicketType: selectedTicketType
-                      }
+                      method: '\(eventName)',
+                      payload: args
                 }));
             }
-        """
+        """)
     }
     
     
@@ -42,7 +39,7 @@ class SeatsioWebView : WKWebView {
         }) as Array).joined(separator: ",")
 
         html = html?.replacingOccurrences(of: "%configAsJs%", with: configAsJs)
-        html = html?.replacingOccurrences(of: "%events%", with: events)
+        html = html?.replacingOccurrences(of: "%events%", with: events.joined(separator: ","))
 
         print(html!)
         return html!

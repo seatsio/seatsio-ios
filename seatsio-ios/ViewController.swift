@@ -27,15 +27,16 @@ class HomeViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
         
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, configuration: config)
         seatsio.navigationDelegate = self
-        seatsio.setOnObjectSelected()
+        seatsio.setEvent(eventName: "onObjectSelected")
+        seatsio.setEvent(eventName: "onObjectDeselected")
         self.view = seatsio
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        seatsio.load([
-            "publicKey": "53b1ee0f-6611-4826-95a9-197be43a55e7",
-            "event": "e1",
+        seatsio.loadSeatingChart([
+            "publicKey": "50652883-7b37-4310-9ea9-acfe954e30bf",
+            "event": "e2cbe498-b27a-4888-ac1d-6b40d29ec9ff",
             "holdOnSelect": true
         ])
     }
