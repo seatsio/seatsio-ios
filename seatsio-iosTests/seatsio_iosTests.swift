@@ -31,4 +31,18 @@ class seatsio_iosTests: XCTestCase {
         }
     }
 
+    func tooltipInfo() -> String {
+        return "hello"
+    }
+
+
+    func testSeatsioConfig() {
+        var config = SeatsioConfig(
+                publicKey: "50652883-7b37-4310-9ea9-acfe954e30bf",
+                event: "e2cbe498-b27a-4888-ac1d-6b40d29ec9ff"
+        );
+        //config.setTooltipInfo(fn: { (object: SeatsioObject) -> String in return "\(object.label!) asdasd" })
+        var json = config.convertToString!
+
+    }
 }

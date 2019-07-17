@@ -3,8 +3,11 @@
 <div id="chart" style="width: 100%; height: 100%"></div>
 <script src="https://cdn-staging.seatsio.net/chart.js"></script>
 <script>
-    new seatsio.SeatingChart({
-        divId: 'chart',
+    window.onerror = function (msg, url, line) {
+        window.webkit.messageHandlers.seatsioEvents.postMessage("JS: ERROR:" + msg + " @" + url + ":" + line);
+    };
+
+    new seatsio.SeatingChart(
         %configAsJs%,
         %events%
     }).render();

@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15859824B00D0EB49C0C6913 /* Pods_seatsio_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */; };
 		3B40BA3122A7D49C00B9A507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA3022A7D49C00B9A507 /* AppDelegate.swift */; };
 		3B40BA3322A7D49C00B9A507 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA3222A7D49C00B9A507 /* ViewController.swift */; };
 		3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B40BA3722A7D49C00B9A507 /* Assets.xcassets */; };
 		3B40BA4622A7D49C00B9A507 /* seatsio_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA4522A7D49C00B9A507 /* seatsio_iosTests.swift */; };
 		3B40BA5122A7D49C00B9A507 /* seatsio_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA5022A7D49C00B9A507 /* seatsio_iosUITests.swift */; };
 		4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
+		4F52395DA4B404E4465CF485 /* Pods_seatsio_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3E2AB53900A735E1E556A6 /* Pods_seatsio_iosTests.framework */; };
+		91C851AA660BEBA150DD5012 /* Pods_seatsio_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28D6FBE438A5BE21398984 /* Pods_seatsio_iosUITests.framework */; };
+		B5E8508BA29FC659A6324B83 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
+		B5E855DEFE444373B57A5798 /* SeatsioConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E85C8DA16AFD664E7D61DD /* SeatsioConfig.swift */; };
+		B5E85768E019EFB05491F736 /* SeatsioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E85CA156C2F71D09EDF4FB /* SeatsioObject.swift */; };
+		B5E8593F5EFC780826B62843 /* SeatsioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E85CA156C2F71D09EDF4FB /* SeatsioObject.swift */; };
+		B5E8599B3A226EA6D1D56D4E /* SeatsioConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E85C8DA16AFD664E7D61DD /* SeatsioConfig.swift */; };
+		B5E85E2419F7A1E08B835ACC /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B5E85A968E788C4A25111998 /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A28D6FBE438A5BE21398984 /* Pods_seatsio_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seatsio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B40BA3022A7D49C00B9A507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B40BA3222A7D49C00B9A507 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +55,17 @@
 		3B40BA5022A7D49C00B9A507 /* seatsio_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seatsio_iosUITests.swift; sourceTree = "<group>"; };
 		3B40BA5222A7D49C00B9A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioWebView.swift; sourceTree = "<group>"; };
+		55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		8D475DB5D73B420306BCF204 /* Pods-seatsio-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosTests.release.xcconfig"; path = "Target Support Files/Pods-seatsio-iosTests/Pods-seatsio-iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6A88E8FAE60849004A8E8E6 /* Pods-seatsio-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.release.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.release.xcconfig"; sourceTree = "<group>"; };
+		AC75141EF19240F54FD5B8EF /* Pods-seatsio-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-seatsio-iosUITests/Pods-seatsio-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5E85A968E788C4A25111998 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = Assets.xcassets/index.html; sourceTree = "<group>"; };
+		B5E85C8DA16AFD664E7D61DD /* SeatsioConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioConfig.swift; sourceTree = "<group>"; };
+		B5E85CA156C2F71D09EDF4FB /* SeatsioObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioObject.swift; sourceTree = "<group>"; };
+		C3A133DADA42AF29246959FB /* Pods-seatsio-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-iosTests/Pods-seatsio-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA3E2AB53900A735E1E556A6 /* Pods_seatsio_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED5D8A087C94EA3CD1842646 /* Pods-seatsio-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-iosUITests/Pods-seatsio-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15859824B00D0EB49C0C6913 /* Pods_seatsio_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F52395DA4B404E4465CF485 /* Pods_seatsio_iosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +89,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C851AA660BEBA150DD5012 /* Pods_seatsio_iosUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D7DE68DBC739D600807581F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */,
+				A6A88E8FAE60849004A8E8E6 /* Pods-seatsio-ios.release.xcconfig */,
+				C3A133DADA42AF29246959FB /* Pods-seatsio-iosTests.debug.xcconfig */,
+				8D475DB5D73B420306BCF204 /* Pods-seatsio-iosTests.release.xcconfig */,
+				ED5D8A087C94EA3CD1842646 /* Pods-seatsio-iosUITests.debug.xcconfig */,
+				AC75141EF19240F54FD5B8EF /* Pods-seatsio-iosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3B40BA2422A7D49C00B9A507 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +117,8 @@
 				3B40BA4422A7D49C00B9A507 /* seatsio-iosTests */,
 				3B40BA4F22A7D49C00B9A507 /* seatsio-iosUITests */,
 				3B40BA2E22A7D49C00B9A507 /* Products */,
+				2D7DE68DBC739D600807581F /* Pods */,
+				8438CC24EAD4C56087A90D9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +140,9 @@
 				3B40BA3222A7D49C00B9A507 /* ViewController.swift */,
 				3B40BA3722A7D49C00B9A507 /* Assets.xcassets */,
 				3B40BA3C22A7D49C00B9A507 /* Info.plist */,
+				B5E85A968E788C4A25111998 /* index.html */,
+				B5E85C8DA16AFD664E7D61DD /* SeatsioConfig.swift */,
+				B5E85CA156C2F71D09EDF4FB /* SeatsioObject.swift */,
 			);
 			path = "seatsio-ios";
 			sourceTree = "<group>";
@@ -122,6 +165,16 @@
 			path = "seatsio-iosUITests";
 			sourceTree = "<group>";
 		};
+		8438CC24EAD4C56087A90D9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */,
+				CA3E2AB53900A735E1E556A6 /* Pods_seatsio_iosTests.framework */,
+				1A28D6FBE438A5BE21398984 /* Pods_seatsio_iosUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B40BA5522A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-ios" */;
 			buildPhases = (
+				E29E4CF9BF68BAEED60C2553 /* [CP] Check Pods Manifest.lock */,
 				3B40BA2922A7D49C00B9A507 /* Sources */,
 				3B40BA2A22A7D49C00B9A507 /* Frameworks */,
 				3B40BA2B22A7D49C00B9A507 /* Resources */,
+				4BDD558252B4B52FAFF57D57 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,6 +201,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B40BA5822A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-iosTests" */;
 			buildPhases = (
+				6207D8BC415B200E45532CD7 /* [CP] Check Pods Manifest.lock */,
 				3B40BA3D22A7D49C00B9A507 /* Sources */,
 				3B40BA3E22A7D49C00B9A507 /* Frameworks */,
 				3B40BA3F22A7D49C00B9A507 /* Resources */,
@@ -164,6 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B40BA5B22A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-iosUITests" */;
 			buildPhases = (
+				616C8F6D597FC096A6913232 /* [CP] Check Pods Manifest.lock */,
 				3B40BA4822A7D49C00B9A507 /* Sources */,
 				3B40BA4922A7D49C00B9A507 /* Frameworks */,
 				3B40BA4A22A7D49C00B9A507 /* Resources */,
@@ -186,7 +243,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Ben Verbeken";
+				ORGANIZATIONNAME = Seats.io;
 				TargetAttributes = {
 					3B40BA2C22A7D49C00B9A507 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -227,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */,
+				B5E85E2419F7A1E08B835ACC /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +304,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4BDD558252B4B52FAFF57D57 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		616C8F6D597FC096A6913232 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-seatsio-iosUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6207D8BC415B200E45532CD7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-seatsio-iosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E29E4CF9BF68BAEED60C2553 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-seatsio-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B40BA2922A7D49C00B9A507 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -254,6 +398,8 @@
 				3B40BA3322A7D49C00B9A507 /* ViewController.swift in Sources */,
 				3B40BA3122A7D49C00B9A507 /* AppDelegate.swift in Sources */,
 				4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */,
+				B5E8599B3A226EA6D1D56D4E /* SeatsioConfig.swift in Sources */,
+				B5E8593F5EFC780826B62843 /* SeatsioObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +408,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B40BA4622A7D49C00B9A507 /* seatsio_iosTests.swift in Sources */,
+				B5E855DEFE444373B57A5798 /* SeatsioConfig.swift in Sources */,
+				B5E85768E019EFB05491F736 /* SeatsioObject.swift in Sources */,
+				B5E8508BA29FC659A6324B83 /* SeatsioWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +556,7 @@
 		};
 		3B40BA5622A7D49C00B9A507 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -424,6 +574,7 @@
 		};
 		3B40BA5722A7D49C00B9A507 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6A88E8FAE60849004A8E8E6 /* Pods-seatsio-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -441,6 +592,7 @@
 		};
 		3B40BA5922A7D49C00B9A507 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3A133DADA42AF29246959FB /* Pods-seatsio-iosTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -461,6 +613,7 @@
 		};
 		3B40BA5A22A7D49C00B9A507 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D475DB5D73B420306BCF204 /* Pods-seatsio-iosTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -481,6 +634,7 @@
 		};
 		3B40BA5C22A7D49C00B9A507 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED5D8A087C94EA3CD1842646 /* Pods-seatsio-iosUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,6 +654,7 @@
 		};
 		3B40BA5D22A7D49C00B9A507 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC75141EF19240F54FD5B8EF /* Pods-seatsio-iosUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
