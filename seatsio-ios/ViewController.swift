@@ -25,15 +25,16 @@ class HomeViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
         let config = WKWebViewConfiguration()
         config.userContentController = contentController
         config.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
-        var seatsioConfig = SeatsioConfig(
-                publicKey: "50652883-7b37-4310-9ea9-acfe954e30bf",
-                event: "e2cbe498-b27a-4888-ac1d-6b40d29ec9ff"
-        );
+        let seatsioConfig = [
+            "publicKey": "publicDemoKey",
+            "event": "smallTheatreEvent",
+            "language": "es"
+        ]
 
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, configuration: config, seatsioConfig: seatsioConfig)
         seatsio.navigationDelegate = self
-        // seatsio.setEvent(eventName: "onObjectSelected")
-        // seatsio.setEvent(eventName: "onObjectDeselected")
+        seatsio.setOnObjectSelected { dictionary in print("IT WORKS \(dictionary)") }
+        // seatsio.setOnToolipInfo { dictionary in return "TOOLTIP_INFO" }
 
         self.view = seatsio
     }

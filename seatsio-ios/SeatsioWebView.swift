@@ -13,15 +13,19 @@ import WKJavaScriptController
 // Create protocol.
 // '@objc' keyword is required. because method call is based on ObjC.
 @objc protocol JavaScriptInterface {
-    func onTooltipInfo(_ dictionary: [String: AnyObject]) -> String
+    func onTooltipInfo(_ object: [String : AnyObject]) -> String
+    func onObjectSelected(_ object: [String: AnyObject]) -> Void
     @objc optional func getErrorMessages(codes: [JSInt]) -> [String]
 }
 
 // Implement protocol.
 extension SeatsioWebView: JavaScriptInterface {
-    func onTooltipInfo(_ dictionary: [String: AnyObject]) -> String {
-        // NSLog("onSubmit \(dictionary)")
+    func onTooltipInfo(_ object: [String : AnyObject]) -> String {
         return "TEST"
+    }
+
+    func onObjectSelected(_ object: [String : AnyObject]) -> Void {
+        self.providedOnObjectSelected!(object)
     }
 
     func getErrorMessages(codes: [JSInt]) -> [String] {
@@ -30,14 +34,16 @@ extension SeatsioWebView: JavaScriptInterface {
 }
 
 class SeatsioWebView : WKWebView {
-    required init?(coder: NSCoder) {
+    var seatsioConfig: [String: Any] = [:]
+    var events: Array<String> = []
+    var providedOnObjectSelected: (([String: AnyObject]) -> Void)?
+    // var providedOnTooltipInfo: ((([String: AnyObject]) -> String) -> Void)?
+
+    required override init?(coder: NSCoder) {
         super.init(coder: coder)
     }
 
-    var seatsioConfig: SeatsioConfig!
-    var events: Array<String> = []
-
-    init(frame: CGRect, configuration: WKWebViewConfiguration, seatsioConfig: SeatsioConfig!) {
+    init(frame: CGRect, configuration: WKWebViewConfiguration, seatsioConfig: [String: Any]!) {
         super.init(frame: frame, configuration: configuration)
         self.seatsioConfig = seatsioConfig
     }
@@ -53,8 +59,16 @@ class SeatsioWebView : WKWebView {
         var htmlString = try! String(contentsOfFile: htmlPath, encoding: String.Encoding.utf8)
         self.prepareForJavaScriptController() // Call prepareForJavaScriptController before initializing WKWebView or loading page.
 
-        var configAsJs = seatsioConfig.convertToString!
-        configAsJs.removeLast(2)
+        var configAsJs = (seatsioConfig.compactMap({ (key, value) -> String in
+            return "\(key):'\(value)'"
+        }) as Array).joined(separator: ",")
+
+        self.events.append("""
+           ,onObjectSelected: function(...args) {
+               native.onObjectSelected({payload: JSON.stringify(args)});
+           }
+           ,tooltipInfo: async (object) => await native.onTooltipInfo(JSON.stringify(object))
+        """)
 
         htmlString = htmlString.replacingOccurrences(of: "%configAsJs%", with: configAsJs)
         htmlString = htmlString.replacingOccurrences(of: "%events%", with: events.joined(separator: ","))
@@ -64,14 +78,7 @@ class SeatsioWebView : WKWebView {
         self.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
     }
 
-    func setEvent(eventName: String) {
-        self.events.append("""
-            \(eventName): function(...args) {
-                webkit.messageHandlers.seatsioEvents.postMessage(JSON.stringify({
-                      method: '\(eventName)',
-                      payload: args
-                }));
-            }
-        """)
+    func setOnObjectSelected(_ fn: @escaping ([String: AnyObject]) -> Void) {
+        self.providedOnObjectSelected = fn
     }
 }

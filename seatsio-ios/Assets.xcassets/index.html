@@ -7,8 +7,9 @@
         window.webkit.messageHandlers.seatsioEvents.postMessage("JS: ERROR:" + msg + " @" + url + ":" + line);
     };
 
-    new seatsio.SeatingChart(
-        %configAsJs%,
+    new seatsio.SeatingChart({
+        divId: 'chart',
+        %configAsJs%
         %events%
     }).render();
 </script>

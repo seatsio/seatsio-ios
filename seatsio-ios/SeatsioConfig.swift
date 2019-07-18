@@ -11,7 +11,7 @@ extension Encodable {
         let jsonEncoder = JSONEncoder()
         jsonEncoder.outputFormatting = .prettyPrinted
         do {
-            var jsonData = try jsonEncoder.encode(self)
+            let jsonData = try jsonEncoder.encode(self)
             var result = String(data: jsonData, encoding: .utf8)!
             result.removeLast(2);
             result.append(",\n tooltipInfo: async (object) => await native.onTooltipInfo(JSON.stringify(object))")
@@ -23,20 +23,15 @@ extension Encodable {
     }
 }
 
-public struct SeatsioConfig : Encodable {
+public class SeatsioConfig : Encodable {
     var publicKey: String;
     var divId: String = "chart";
     var event: String;
     var holdOnSelect: Bool = false;
+    var language = "";
 
     init(publicKey: String, event: String) {
         self.publicKey = publicKey;
         self.event = event;
     }
-
-    enum CodingKeys: String, CodingKey {
-        case publicKey
-        case event
-    }
-
 }
