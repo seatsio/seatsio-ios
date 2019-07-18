@@ -28,13 +28,15 @@ class HomeViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
         let seatsioConfig = [
             "publicKey": "publicDemoKey",
             "event": "smallTheatreEvent",
-            "language": "es"
+            "language": "es",
+            "showMinimap": "false"
         ]
 
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, configuration: config, seatsioConfig: seatsioConfig)
         seatsio.navigationDelegate = self
-        seatsio.setOnObjectSelected { dictionary in print("IT WORKS \(dictionary)") }
-        // seatsio.setOnToolipInfo { dictionary in return "TOOLTIP_INFO" }
+        seatsio.setOnObjectSelected { dictionary in print("setOnObjectSelected called") }
+        seatsio.setOnChartRendered { chart in print("chart rendered") }
+        seatsio.setOnToolipInfo { dictionary in return "TOOLTIP_INFO" } // Still doesn't work
 
         self.view = seatsio
     }
