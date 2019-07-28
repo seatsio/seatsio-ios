@@ -5,8 +5,7 @@ target 'seatsio-ios' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'WKJavaScriptController'
-
+  pod 'JustBridge', '~> 4.2.0'
   # Pods for seatsio-ios
 
   target 'seatsio-iosTests' do

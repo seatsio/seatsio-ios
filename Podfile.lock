@@ -1,16 +1,16 @@
 PODS:
-  - WKJavaScriptController (2.0.1)
+  - JustBridge (4.2.0)
 
 DEPENDENCIES:
-  - WKJavaScriptController
+  - JustBridge (~> 4.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - WKJavaScriptController
+    - JustBridge
 
 SPEC CHECKSUMS:
-  WKJavaScriptController: 25cfe98fa9617dc38e1f951a3a3f6adf6c77875e
+  JustBridge: 8bfee3a0a1fbe0570931975908aedad9688db75d
 
-PODFILE CHECKSUM: 61f22d4969436c30a42618d2b940b5abb57e99fa
+PODFILE CHECKSUM: c941f6f0a7284379bda02455959f42d929d61ea7
 
 COCOAPODS: 1.7.4

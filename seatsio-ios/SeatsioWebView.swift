@@ -8,37 +8,15 @@
 
 import Foundation
 import WebKit
-import WKJavaScriptController
-
-// Create protocol.
-// '@objc' keyword is required. because method call is based on ObjC.
-@objc protocol JavaScriptInterface {
-    @objc optional func onTooltipInfo(_ object: [String : AnyObject]) -> String
-    @objc optional func onObjectSelected(_ object: [String: AnyObject]) -> Void
-    func onChartRendered(_ chart: [String: AnyObject]) -> Void
-}
-
-// Implement protocol.
-extension SeatsioWebView: JavaScriptInterface {
-    func onTooltipInfo(_ object: [String : AnyObject]) -> String {
-        return self.providedOnTooltipInfo!(object)
-    }
-
-    func onObjectSelected(_ object: [String : AnyObject]) -> Void {
-        self.providedOnObjectSelected!(object)
-    }
-
-    func onChartRendered(_ chart: [String : AnyObject]) -> Void {
-        self.providedOnChartRendered!(chart)
-    }
-}
+import JustBridge
 
 class SeatsioWebView : WKWebView {
+    var bridge: JustBridge!
     var seatsioConfig: [String: Any] = [:]
-    var events: Array<String> = []
-    var providedOnObjectSelected: (([String: AnyObject]) -> Void)?
-    var providedOnTooltipInfo: (([String: AnyObject]) -> String)?
-    var providedOnChartRendered: (([String: AnyObject]) -> Void)?
+    var eventsAsJs: Array<String> = []
+    var providedOnObjectSelected: ((String) -> Void)?
+    var providedOnTooltipInfo: ((String) -> String)?
+    var providedOnChartRendered: ((String) -> Void)?
 
     required override init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -47,67 +25,77 @@ class SeatsioWebView : WKWebView {
     init(frame: CGRect, configuration: WKWebViewConfiguration, seatsioConfig: [String: Any]!) {
         super.init(frame: frame, configuration: configuration)
         self.seatsioConfig = seatsioConfig
+        bridge = JustBridge(with: self)
     }
 
     func loadSeatingChart() {
-        // Create javaScriptController.
-        let javaScriptController = WKJavaScriptController(name: "native", target: self, bridgeProtocol: JavaScriptInterface.self)
-
-        // Assign javaScriptController.
-        self.javaScriptController = javaScriptController
 
         let htmlPath = Bundle.main.path(forResource: "index", ofType: "html")!
         var htmlString = try! String(contentsOfFile: htmlPath, encoding: String.Encoding.utf8)
-        self.prepareForJavaScriptController() // Call prepareForJavaScriptController before initializing WKWebView or loading page.
-
         var configAsJs = (seatsioConfig.compactMap({ (key, value) -> String in
             return "\(key):'\(value)'"
         }) as Array).joined(separator: ",")
 
-        self.events = self.buildCallbacks()
+        self.eventsAsJs = self.buildEventsConfig()
 
         htmlString = htmlString.replacingOccurrences(of: "%configAsJs%", with: configAsJs)
-        htmlString = htmlString.replacingOccurrences(of: "%events%", with: "," + events.joined(separator: ","))
-
-        print(htmlString)
+        htmlString = htmlString.replacingOccurrences(of: "%events%", with: "," + eventsAsJs.joined(separator: ","))
 
         self.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
     }
 
-    func buildCallbacks() -> [String] {
+    func buildEventsConfig() -> [String] {
         var callbacks = [String]()
+
+        bridge.register("tooltipInfoHandler") { (data, callback) in callback(self.providedOnTooltipInfo!(data as! String)) }
+        bridge.register("onChartRenderedHandler") { (data, callback) in self.providedOnChartRendered!(data as! String) }
+        bridge.register("onObjectSelectedHandler") { (data, callback) in self.providedOnObjectSelected!(data as! String) }
+
         if self.providedOnChartRendered != nil {
-            callbacks.append("""
-                             onChartRendered: function(chart) {
-                               native.onChartRendered(JSON.stringify(chart));
-                             }
-                             """)
+            callbacks.append(createEventAsJs(name: "onChartRendered"))
         }
         if (self.providedOnObjectSelected != nil) {
-            callbacks.append("""
-                             onObjectSelected: function(...args) {
-                                 native.onObjectSelected({payload: JSON.stringify(args)});
-                             }
-                             """)
+            callbacks.append(createEventAsJs(name: "onObjectSelected"))
         }
         if (self.providedOnTooltipInfo != nil ) {
             callbacks.append("""
-                             tooltipInfo: async (object) => await native.onTooltipInfo(JSON.stringify(object))
+                             tooltipInfo: async object => {
+                                 const result = await window.bridge.call("tooltipInfoHandler", JSON.stringify(object), responseData => {
+                                    log("response: " + responseData);
+                                    return responseData;
+                                 }, function(errorMessage) {
+                                     log("error: " + errorMessage)
+                                     console.error("error: " + errorMessage)
+                                 });
+                                 return result;
+                             }
                              """)
         }
 
         return callbacks
     }
 
-    func setOnObjectSelected(_ fn: @escaping ([String: AnyObject]) -> Void) {
+    func createEventAsJs(name: String) -> String {
+        return """
+               \(name): object => {
+                   window.bridge.call("\(name)Handler", JSON.stringify(object), responseData => {
+                      return responseData;
+                   }, function(errorMessage) {
+                       console.error("error: " + errorMessage)
+                   });
+               }
+               """
+    }
+
+    func setOnObjectSelected(_ fn: @escaping (String) -> Void) {
         self.providedOnObjectSelected = fn
     }
 
-    func setOnChartRendered(_ fn: @escaping ([String: AnyObject]) -> Void) {
+    func setOnChartRendered(_ fn: @escaping (String) -> Void) {
         self.providedOnChartRendered = fn
     }
 
-    func setOnToolipInfo(_ fn: @escaping ([String: AnyObject]) -> String) {
+    func setOnToolipInfo(_ fn: @escaping (String) -> String) {
         self.providedOnTooltipInfo = fn
     }
 }
