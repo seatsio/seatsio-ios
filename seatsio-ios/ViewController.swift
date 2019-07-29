@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, WKNavigationDelegate {
 
         seatsio.setOnObjectSelected { dictionary in print("setOnObjectSelected called") }
         seatsio.setOnChartRendered { chart in print("Chart Rendered") }
-        seatsio.setOnToolipInfo { dictionary in return "TOOLTIP_INFO" } // Still doesn't work
+        seatsio.setOnToolipInfo { dictionary in return "Custom Tooltip" }
 
         self.view = seatsio
     }

@@ -55,15 +55,19 @@ class SeatsioWebView : WKWebView {
         }
         if (self.providedOnTooltipInfo != nil ) {
             callbacks.append("""
-                             tooltipInfo: object => {
-                                 window.bridge.call("tooltipInfoHandler", JSON.stringify(object), responseData => {
-                                    log("response: " + responseData);
-                                    return responseData;
-                                 }, function(errorMessage) {
-                                     log("error: " + errorMessage)
-                                     console.error("error: " + errorMessage)
-                                 });
-                             }
+                             tooltipInfo: object =>
+                             new Promise(resolve => {
+                                 window.bridge.call("tooltipInfoHandler", JSON.stringify(object),
+                                    data => { 
+                                        response = handleResponse(data)
+                                        resolve(response)    
+                                    },
+                                    error => {
+                                        log("error: " + error)
+                                        console.error("error: " + error)
+                                    }
+                                 )
+                             })
                              """)
         }
 
