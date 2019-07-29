@@ -14,11 +14,12 @@ class SeatsioWebView : WKWebView {
     var bridge: JustBridge!
     var seatsioConfig: [String: Any] = [:]
     var eventsAsJs: Array<String> = []
+
     var providedOnObjectSelected: ((String) -> Void)?
     var providedOnTooltipInfo: ((String) -> String)?
     var providedOnChartRendered: ((String) -> Void)?
 
-    required override init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
 
@@ -32,14 +33,9 @@ class SeatsioWebView : WKWebView {
 
         let htmlPath = Bundle.main.path(forResource: "index", ofType: "html")!
         var htmlString = try! String(contentsOfFile: htmlPath, encoding: String.Encoding.utf8)
-        var configAsJs = (seatsioConfig.compactMap({ (key, value) -> String in
-            return "\(key):'\(value)'"
-        }) as Array).joined(separator: ",")
 
-        self.eventsAsJs = self.buildEventsConfig()
-
-        htmlString = htmlString.replacingOccurrences(of: "%configAsJs%", with: configAsJs)
-        htmlString = htmlString.replacingOccurrences(of: "%events%", with: "," + eventsAsJs.joined(separator: ","))
+        htmlString = htmlString.replacingOccurrences(of: "%configAsJs%", with: self.configAsJs())
+                               .replacingOccurrences(of: "%events%", with: "," + self.buildEventsConfig().joined(separator: ","))
 
         self.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
     }
@@ -59,15 +55,14 @@ class SeatsioWebView : WKWebView {
         }
         if (self.providedOnTooltipInfo != nil ) {
             callbacks.append("""
-                             tooltipInfo: async object => {
-                                 const result = await window.bridge.call("tooltipInfoHandler", JSON.stringify(object), responseData => {
+                             tooltipInfo: object => {
+                                 window.bridge.call("tooltipInfoHandler", JSON.stringify(object), responseData => {
                                     log("response: " + responseData);
                                     return responseData;
                                  }, function(errorMessage) {
                                      log("error: " + errorMessage)
                                      console.error("error: " + errorMessage)
                                  });
-                                 return result;
                              }
                              """)
         }
@@ -85,6 +80,12 @@ class SeatsioWebView : WKWebView {
                    });
                }
                """
+    }
+
+    func configAsJs() -> String {
+        return (seatsioConfig.compactMap({ (key, value) -> String in
+            return "\(key):'\(value)'"
+        }) as Array).joined(separator: ",")
     }
 
     func setOnObjectSelected(_ fn: @escaping (String) -> Void) {
