@@ -25,8 +25,12 @@ class HomeViewController: UIViewController, WKNavigationDelegate {
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, configuration: config, seatsioConfig: seatsioConfig)
         seatsio.navigationDelegate = self
 
-        seatsio.setOnObjectSelected { dictionary in print("setOnObjectSelected called") }
-        seatsio.setOnChartRendered { chart in print("Chart Rendered") }
+        seatsio.setOnObjectSelected { object in
+            print("setOnObjectSelected called")
+        }
+        seatsio.setOnChartRendered { object in
+            print("Chart Rendered")
+        }
         seatsio.setOnToolipInfo { object in
             return "[b]This[/b] object's [i]id[/i] is [pre]" + object.label! + "[/pre]"
         }
