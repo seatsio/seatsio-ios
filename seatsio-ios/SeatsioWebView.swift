@@ -16,7 +16,7 @@ class SeatsioWebView : WKWebView {
     var eventsAsJs: Array<String> = []
 
     var providedOnObjectSelected: ((String) -> Void)?
-    var providedOnTooltipInfo: ((String) -> String)?
+    var providedOnTooltipInfo: ((SeatsioObject) -> String)?
     var providedOnChartRendered: ((String) -> Void)?
 
     required init?(coder: NSCoder) {
@@ -43,7 +43,17 @@ class SeatsioWebView : WKWebView {
     func buildEventsConfig() -> [String] {
         var callbacks = [String]()
 
-        bridge.register("tooltipInfoHandler") { (data, callback) in callback(self.providedOnTooltipInfo!(data as! String)) }
+        bridge.register("tooltipInfoHandler") { (data, callback) in
+            let dataToDecode = (data as! String).data(using: .utf8)!
+
+            do {
+                let jsonArray = try JSONDecoder().decode(SeatsioObject.self, from: dataToDecode)
+                callback(self.providedOnTooltipInfo!(jsonArray))
+            } catch let error as NSError {
+                print(error)
+            }
+
+        }
         bridge.register("onChartRenderedHandler") { (data, callback) in self.providedOnChartRendered!(data as! String) }
         bridge.register("onObjectSelectedHandler") { (data, callback) in self.providedOnObjectSelected!(data as! String) }
 
@@ -100,7 +110,7 @@ class SeatsioWebView : WKWebView {
         self.providedOnChartRendered = fn
     }
 
-    func setOnToolipInfo(_ fn: @escaping (String) -> String) {
+    func setOnToolipInfo(_ fn: @escaping (SeatsioObject) -> String) {
         self.providedOnTooltipInfo = fn
     }
 }

@@ -18,6 +18,7 @@
 		91C851AA660BEBA150DD5012 /* Pods_seatsio_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28D6FBE438A5BE21398984 /* Pods_seatsio_iosUITests.framework */; };
 		B5E8508BA29FC659A6324B83 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
 		B5E85CC543CA14E005EDA43A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B5E85DB2AB9664D943E6A7B9 /* README.md */; };
+		B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */; };
 		B5E85E2419F7A1E08B835ACC /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B5E85A968E788C4A25111998 /* index.html */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A88E8FAE60849004A8E8E6 /* Pods-seatsio-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.release.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.release.xcconfig"; sourceTree = "<group>"; };
 		AC75141EF19240F54FD5B8EF /* Pods-seatsio-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-seatsio-iosUITests/Pods-seatsio-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioObject.swift; sourceTree = "<group>"; };
 		B5E85A968E788C4A25111998 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = Assets.xcassets/index.html; sourceTree = "<group>"; };
 		B5E85DB2AB9664D943E6A7B9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C3A133DADA42AF29246959FB /* Pods-seatsio-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-iosTests/Pods-seatsio-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				3B40BA3722A7D49C00B9A507 /* Assets.xcassets */,
 				3B40BA3C22A7D49C00B9A507 /* Info.plist */,
 				B5E85A968E788C4A25111998 /* index.html */,
+				B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */,
 			);
 			path = "seatsio-ios";
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				3B40BA3122A7D49C00B9A507 /* AppDelegate.swift in Sources */,
 				4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */,
 				B5E85CC543CA14E005EDA43A /* README.md in Sources */,
+				B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,7 +19,7 @@ class HomeViewController: UIViewController, WKNavigationDelegate {
 
         let seatsioConfig = [
             "publicKey": "publicDemoKey",
-            "event": "smallTheatreEvent"
+            "event": "smallTheatreEvent99"
         ]
 
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, configuration: config, seatsioConfig: seatsioConfig)
@@ -27,7 +27,9 @@ class HomeViewController: UIViewController, WKNavigationDelegate {
 
         seatsio.setOnObjectSelected { dictionary in print("setOnObjectSelected called") }
         seatsio.setOnChartRendered { chart in print("Chart Rendered") }
-        seatsio.setOnToolipInfo { dictionary in return "Custom Tooltip" }
+        seatsio.setOnToolipInfo { object in
+            return "[b]This[/b] object's [i]id[/i] is [pre]" + object.label! + "[/pre]"
+        }
 
         self.view = seatsio
     }
