@@ -1,11 +1,3 @@
-//
-//  SeatsioWebView.swift
-//  seatsio-ios
-//
-//  Created by Nahuel Chaves on 05/06/2019.
-//  Copyright © 2019 Ben Verbeken. All rights reserved.
-//
-
 import Foundation
 import WebKit
 import JustBridge

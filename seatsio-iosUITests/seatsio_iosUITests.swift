@@ -1,11 +1,3 @@
-//
-//  seatsio_iosUITests.swift
-//  seatsio-iosUITests
-//
-//  Created by Ben Verbeken on 05/06/2019.
-//  Copyright © 2019 Ben Verbeken. All rights reserved.
-//
-
 import XCTest
 
 class seatsio_iosUITests: XCTestCase {
