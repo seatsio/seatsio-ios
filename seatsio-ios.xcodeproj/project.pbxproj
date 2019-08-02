@@ -11,8 +11,6 @@
 		3B40BA3122A7D49C00B9A507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA3022A7D49C00B9A507 /* AppDelegate.swift */; };
 		3B40BA3322A7D49C00B9A507 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA3222A7D49C00B9A507 /* ViewController.swift */; };
 		3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B40BA3722A7D49C00B9A507 /* Assets.xcassets */; };
-		3B40BA4622A7D49C00B9A507 /* seatsio_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA4522A7D49C00B9A507 /* seatsio_iosTests.swift */; };
-		3B40BA5122A7D49C00B9A507 /* seatsio_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA5022A7D49C00B9A507 /* seatsio_iosUITests.swift */; };
 		4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
 		4F52395DA4B404E4465CF485 /* Pods_seatsio_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3E2AB53900A735E1E556A6 /* Pods_seatsio_iosTests.framework */; };
 		91C851AA660BEBA150DD5012 /* Pods_seatsio_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28D6FBE438A5BE21398984 /* Pods_seatsio_iosUITests.framework */; };
@@ -47,11 +45,7 @@
 		3B40BA3722A7D49C00B9A507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B40BA3C22A7D49C00B9A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B40BA4122A7D49C00B9A507 /* seatsio-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seatsio-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B40BA4522A7D49C00B9A507 /* seatsio_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seatsio_iosTests.swift; sourceTree = "<group>"; };
-		3B40BA4722A7D49C00B9A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B40BA4C22A7D49C00B9A507 /* seatsio-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seatsio-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B40BA5022A7D49C00B9A507 /* seatsio_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seatsio_iosUITests.swift; sourceTree = "<group>"; };
-		3B40BA5222A7D49C00B9A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioWebView.swift; sourceTree = "<group>"; };
 		55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		8D475DB5D73B420306BCF204 /* Pods-seatsio-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosTests.release.xcconfig"; path = "Target Support Files/Pods-seatsio-iosTests/Pods-seatsio-iosTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,8 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				3B40BA2F22A7D49C00B9A507 /* seatsio-ios */,
-				3B40BA4422A7D49C00B9A507 /* seatsio-iosTests */,
-				3B40BA4F22A7D49C00B9A507 /* seatsio-iosUITests */,
 				3B40BA2E22A7D49C00B9A507 /* Products */,
 				2D7DE68DBC739D600807581F /* Pods */,
 				8438CC24EAD4C56087A90D9B /* Frameworks */,
@@ -142,24 +134,6 @@
 				B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */,
 			);
 			path = "seatsio-ios";
-			sourceTree = "<group>";
-		};
-		3B40BA4422A7D49C00B9A507 /* seatsio-iosTests */ = {
-			isa = PBXGroup;
-			children = (
-				3B40BA4522A7D49C00B9A507 /* seatsio_iosTests.swift */,
-				3B40BA4722A7D49C00B9A507 /* Info.plist */,
-			);
-			path = "seatsio-iosTests";
-			sourceTree = "<group>";
-		};
-		3B40BA4F22A7D49C00B9A507 /* seatsio-iosUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3B40BA5022A7D49C00B9A507 /* seatsio_iosUITests.swift */,
-				3B40BA5222A7D49C00B9A507 /* Info.plist */,
-			);
-			path = "seatsio-iosUITests";
 			sourceTree = "<group>";
 		};
 		8438CC24EAD4C56087A90D9B /* Frameworks */ = {
@@ -404,7 +378,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B40BA4622A7D49C00B9A507 /* seatsio_iosTests.swift in Sources */,
 				B5E8508BA29FC659A6324B83 /* SeatsioWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,7 +386,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B40BA5122A7D49C00B9A507 /* seatsio_iosUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
