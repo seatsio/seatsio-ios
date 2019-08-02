@@ -8,14 +8,4 @@ target 'seatsio-ios' do
   pod 'JustBridge', '~> 4.2.0'
   # Pods for seatsio-ios
 
-  target 'seatsio-iosTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'seatsio-iosUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

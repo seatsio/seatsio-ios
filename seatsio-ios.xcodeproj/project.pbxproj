@@ -12,8 +12,6 @@
 		3B40BA3322A7D49C00B9A507 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BA3222A7D49C00B9A507 /* ViewController.swift */; };
 		3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B40BA3722A7D49C00B9A507 /* Assets.xcassets */; };
 		4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
-		4F52395DA4B404E4465CF485 /* Pods_seatsio_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3E2AB53900A735E1E556A6 /* Pods_seatsio_iosTests.framework */; };
-		91C851AA660BEBA150DD5012 /* Pods_seatsio_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28D6FBE438A5BE21398984 /* Pods_seatsio_iosUITests.framework */; };
 		B5E8508BA29FC659A6324B83 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
 		B5E85CC543CA14E005EDA43A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B5E85DB2AB9664D943E6A7B9 /* README.md */; };
 		B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */; };
@@ -38,26 +36,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A28D6FBE438A5BE21398984 /* Pods_seatsio_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seatsio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B40BA3022A7D49C00B9A507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B40BA3222A7D49C00B9A507 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3B40BA3722A7D49C00B9A507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B40BA3C22A7D49C00B9A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B40BA4122A7D49C00B9A507 /* seatsio-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seatsio-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B40BA4C22A7D49C00B9A507 /* seatsio-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seatsio-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioWebView.swift; sourceTree = "<group>"; };
 		55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		8D475DB5D73B420306BCF204 /* Pods-seatsio-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosTests.release.xcconfig"; path = "Target Support Files/Pods-seatsio-iosTests/Pods-seatsio-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A88E8FAE60849004A8E8E6 /* Pods-seatsio-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.release.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.release.xcconfig"; sourceTree = "<group>"; };
-		AC75141EF19240F54FD5B8EF /* Pods-seatsio-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-seatsio-iosUITests/Pods-seatsio-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioObject.swift; sourceTree = "<group>"; };
 		B5E85A968E788C4A25111998 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = Assets.xcassets/index.html; sourceTree = "<group>"; };
 		B5E85DB2AB9664D943E6A7B9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C3A133DADA42AF29246959FB /* Pods-seatsio-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-iosTests/Pods-seatsio-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CA3E2AB53900A735E1E556A6 /* Pods_seatsio_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED5D8A087C94EA3CD1842646 /* Pods-seatsio-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-iosUITests/Pods-seatsio-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F52395DA4B404E4465CF485 /* Pods_seatsio_iosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91C851AA660BEBA150DD5012 /* Pods_seatsio_iosUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,10 +81,6 @@
 			children = (
 				55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */,
 				A6A88E8FAE60849004A8E8E6 /* Pods-seatsio-ios.release.xcconfig */,
-				C3A133DADA42AF29246959FB /* Pods-seatsio-iosTests.debug.xcconfig */,
-				8D475DB5D73B420306BCF204 /* Pods-seatsio-iosTests.release.xcconfig */,
-				ED5D8A087C94EA3CD1842646 /* Pods-seatsio-iosUITests.debug.xcconfig */,
-				AC75141EF19240F54FD5B8EF /* Pods-seatsio-iosUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -116,8 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */,
-				3B40BA4122A7D49C00B9A507 /* seatsio-iosTests.xctest */,
-				3B40BA4C22A7D49C00B9A507 /* seatsio-iosUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,8 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */,
-				CA3E2AB53900A735E1E556A6 /* Pods_seatsio_iosTests.framework */,
-				1A28D6FBE438A5BE21398984 /* Pods_seatsio_iosUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,44 +147,6 @@
 			productName = "seatsio-ios";
 			productReference = 3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */;
 			productType = "com.apple.product-type.application";
-		};
-		3B40BA4022A7D49C00B9A507 /* seatsio-iosTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3B40BA5822A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-iosTests" */;
-			buildPhases = (
-				6207D8BC415B200E45532CD7 /* [CP] Check Pods Manifest.lock */,
-				3B40BA3D22A7D49C00B9A507 /* Sources */,
-				3B40BA3E22A7D49C00B9A507 /* Frameworks */,
-				3B40BA3F22A7D49C00B9A507 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3B40BA4322A7D49C00B9A507 /* PBXTargetDependency */,
-			);
-			name = "seatsio-iosTests";
-			productName = "seatsio-iosTests";
-			productReference = 3B40BA4122A7D49C00B9A507 /* seatsio-iosTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		3B40BA4B22A7D49C00B9A507 /* seatsio-iosUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3B40BA5B22A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-iosUITests" */;
-			buildPhases = (
-				616C8F6D597FC096A6913232 /* [CP] Check Pods Manifest.lock */,
-				3B40BA4822A7D49C00B9A507 /* Sources */,
-				3B40BA4922A7D49C00B9A507 /* Frameworks */,
-				3B40BA4A22A7D49C00B9A507 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3B40BA4E22A7D49C00B9A507 /* PBXTargetDependency */,
-			);
-			name = "seatsio-iosUITests";
-			productName = "seatsio-iosUITests";
-			productReference = 3B40BA4C22A7D49C00B9A507 /* seatsio-iosUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -242,9 +184,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B40BA2C22A7D49C00B9A507 /* seatsio-ios */,
-				3B40BA4022A7D49C00B9A507 /* seatsio-iosTests */,
-				3B40BA4B22A7D49C00B9A507 /* seatsio-iosUITests */,
+				3B40BA2C22A7D49C00B9A507 /* seatsio-ios */
 			);
 		};
 /* End PBXProject section */
@@ -291,50 +231,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		616C8F6D597FC096A6913232 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-seatsio-iosUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6207D8BC415B200E45532CD7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-seatsio-iosTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E29E4CF9BF68BAEED60C2553 /* [CP] Check Pods Manifest.lock */ = {
@@ -567,96 +463,6 @@
 			};
 			name = Release;
 		};
-		3B40BA5922A7D49C00B9A507 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3A133DADA42AF29246959FB /* Pods-seatsio-iosTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "seatsio-iosTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.seats.seatsio-iosTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/seatsio-ios.app/seatsio-ios";
-			};
-			name = Debug;
-		};
-		3B40BA5A22A7D49C00B9A507 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D475DB5D73B420306BCF204 /* Pods-seatsio-iosTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "seatsio-iosTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.seats.seatsio-iosTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/seatsio-ios.app/seatsio-ios";
-			};
-			name = Release;
-		};
-		3B40BA5C22A7D49C00B9A507 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED5D8A087C94EA3CD1842646 /* Pods-seatsio-iosUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = seatsio;
-				INFOPLIST_FILE = "seatsio-iosUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.seats.seatsio-iosUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "seatsio-ios";
-			};
-			name = Debug;
-		};
-		3B40BA5D22A7D49C00B9A507 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC75141EF19240F54FD5B8EF /* Pods-seatsio-iosUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = seatsio;
-				INFOPLIST_FILE = "seatsio-iosUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.seats.seatsio-iosUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "seatsio-ios";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -674,24 +480,6 @@
 			buildConfigurations = (
 				3B40BA5622A7D49C00B9A507 /* Debug */,
 				3B40BA5722A7D49C00B9A507 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3B40BA5822A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-iosTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3B40BA5922A7D49C00B9A507 /* Debug */,
-				3B40BA5A22A7D49C00B9A507 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3B40BA5B22A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-iosUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3B40BA5C22A7D49C00B9A507 /* Debug */,
-				3B40BA5D22A7D49C00B9A507 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
