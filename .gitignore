@@ -2,3 +2,4 @@
 *.pbxuser
 *.xcworkspace
 xcuserdata
+Pods/
