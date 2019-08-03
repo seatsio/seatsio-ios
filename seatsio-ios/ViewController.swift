@@ -1,38 +1,29 @@
 import UIKit
 import WebKit
 
-class HomeViewController: UIViewController, WKNavigationDelegate {
+class HomeViewController: UIViewController {
 
     var seatsio: SeatsioWebView!
 
     override func loadView() {
-        let config = WKWebViewConfiguration()
-        config.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
-
         let seatsioConfig = [
             "publicKey": "publicDemoKey",
-            "event": "smallTheatreEvent99"
-        ]
+            "event": "smallTheatreEvent99",
+            "tooltipInfo": { (object: SeatsioObject) -> String in
+                "[b]This[/b] object's [i]id[/i] is [pre]" + object.label + "[/pre]"
+            },
+            "onChartRendered": {
+                print("Chart rendered")
+            },
+            "onObjectSelected": { (object: SeatsioObject) -> Void in
+                print("Object " + object.label + " selected")
+            }
+        ] as [String: Any]
 
-        seatsio = SeatsioWebView(frame: UIScreen.main.bounds, configuration: config, seatsioConfig: seatsioConfig)
-        seatsio.navigationDelegate = self
-
-        seatsio.setOnObjectSelected { object in
-            print("setOnObjectSelected called")
-        }
-        seatsio.setOnChartRendered { object in
-            print("Chart Rendered")
-        }
-        seatsio.setOnToolipInfo { object in
-            return "[b]This[/b] object's [i]id[/i] is [pre]" + object.label! + "[/pre]"
-        }
+        seatsio = SeatsioWebView(frame: UIScreen.main.bounds, seatsioConfig: seatsioConfig)
 
         self.view = seatsio
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        seatsio.loadSeatingChart()
-    }
 }
 

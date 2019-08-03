@@ -2,23 +2,21 @@ import Foundation
 import WebKit
 import JustBridge
 
-class SeatsioWebView : WKWebView {
+class SeatsioWebView: WKWebView {
     var bridge: JustBridge!
     var seatsioConfig: [String: Any] = [:]
     var eventsAsJs: Array<String> = []
 
-    var providedOnObjectSelected: ((SeatsioObject) -> Void)?
-    var providedOnTooltipInfo: ((SeatsioObject) -> String)?
-    var providedOnChartRendered: ((SeatsioObject) -> Void)?
-
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        loadSeatingChart()
     }
 
-    init(frame: CGRect, configuration: WKWebViewConfiguration, seatsioConfig: [String: Any]!) {
-        super.init(frame: frame, configuration: configuration)
+    init(frame: CGRect, seatsioConfig: [String: Any]!) {
+        super.init(frame: frame, configuration: WKWebViewConfiguration())
         self.seatsioConfig = seatsioConfig
         bridge = JustBridge(with: self)
+        loadSeatingChart()
     }
 
     func loadSeatingChart() {
@@ -27,7 +25,7 @@ class SeatsioWebView : WKWebView {
         var htmlString = try! String(contentsOfFile: htmlPath, encoding: String.Encoding.utf8)
 
         htmlString = htmlString.replacingOccurrences(of: "%configAsJs%", with: self.buildConfiguration())
-                               .replacingOccurrences(of: "%events%", with: "," + self.buildCallbacksConfiguration().joined(separator: ","))
+                .replacingOccurrences(of: "%events%", with: "," + self.buildCallbacksConfiguration().joined(separator: ","))
 
         self.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
     }
@@ -41,23 +39,25 @@ class SeatsioWebView : WKWebView {
     func buildCallbacksConfiguration() -> [String] {
         var callbacks = [String]()
 
-        bridge.register("tooltipInfoHandler") { (data, callback) in
-            callback(self.providedOnTooltipInfo!(self.decodeSeatsioObject(data: data)!))
-        }
-        bridge.register("onChartRenderedHandler") { (data, callback) in
-            self.providedOnChartRendered!(self.decodeSeatsioObject(data: data)!)
-        }
-        bridge.register("onObjectSelectedHandler") { (data, callback) in
-            self.providedOnObjectSelected!(self.decodeSeatsioObject(data: data)!)
-        }
-
-        if self.providedOnChartRendered != nil {
+        if seatsioConfig["onChartRendered"] != nil {
+            bridge.register("onChartRenderedHandler") { (data, callback) in
+                let fn = self.seatsioConfig["onChartRendered"] as! () -> Void
+                fn()
+            }
             callbacks.append(buildCallbackConfigAsJS(name: "onChartRendered"))
         }
-        if (self.providedOnObjectSelected != nil) {
+        if (seatsioConfig["onObjectSelected"] != nil) {
+            bridge.register("onObjectSelectedHandler") { (data, callback) in
+                let fn = self.seatsioConfig["onObjectSelected"] as! (SeatsioObject) -> Void
+                fn(self.decodeSeatsioObject(data: data))
+            }
             callbacks.append(buildCallbackConfigAsJS(name: "onObjectSelected"))
         }
-        if (self.providedOnTooltipInfo != nil ) {
+        if (seatsioConfig["tooltipInfo"] != nil) {
+            bridge.register("tooltipInfoHandler") { (data, callback) in
+                let fn = self.seatsioConfig["tooltipInfo"] as! (SeatsioObject) -> String
+                callback(fn(self.decodeSeatsioObject(data: data!)))
+            }
             callbacks.append(buildCallbackConfigAsJS(name: "tooltipInfo"))
         }
 
@@ -69,7 +69,7 @@ class SeatsioWebView : WKWebView {
                \(name): object => (
                    new Promise(resolve => {
                        window.bridge.call("\(name)Handler", JSON.stringify(object),
-                           data => { resolve(handleResponse(data)) },
+                           data => { resolve(data) },
                            error => {
                                log("error: " + error)
                                console.error("error: " + error)
@@ -81,27 +81,9 @@ class SeatsioWebView : WKWebView {
     }
 
 
-    func decodeSeatsioObject(data: Optional<Any>) -> Optional<SeatsioObject> {
+    func decodeSeatsioObject(data: Any) -> SeatsioObject {
         let dataToDecode = (data as! String).data(using: .utf8)!
-
-        do {
-            let jsonArray = try JSONDecoder().decode(SeatsioObject.self, from: dataToDecode)
-            return jsonArray
-        } catch let error as NSError {
-            print(error)
-            return nil
-        }
+        return try! JSONDecoder().decode(SeatsioObject.self, from: dataToDecode)
     }
 
-    func setOnObjectSelected(_ fn: @escaping (SeatsioObject) -> Void) {
-        self.providedOnObjectSelected = fn
-    }
-
-    func setOnChartRendered(_ fn: @escaping (SeatsioObject) -> Void) {
-        self.providedOnChartRendered = fn
-    }
-
-    func setOnToolipInfo(_ fn: @escaping (SeatsioObject) -> String) {
-        self.providedOnTooltipInfo = fn
-    }
 }

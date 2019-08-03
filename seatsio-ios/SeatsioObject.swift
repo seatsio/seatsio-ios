@@ -6,7 +6,7 @@
 import Foundation
 
 struct SeatsioObject: Decodable {
-    let objectType: Optional<String>
-    let label: Optional<String>
+    let objectType: String
+    let label: String
     let numberOfSelectableObjects: Optional<Int16>
 }
