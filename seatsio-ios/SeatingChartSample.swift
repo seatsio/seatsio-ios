@@ -6,23 +6,9 @@ class HomeViewController: UIViewController {
     var seatsio: SeatsioWebView!
 
     override func loadView() {
-        let seatsioConfig = [
-            "publicKey": "publicDemoKey",
-            "event": "smallTheatreEvent99",
-            "tooltipInfo": { (object: SeatsioObject) -> String in
-                "[b]This[/b] object's [i]id[/i] is [pre]" + object.label + "[/pre]"
-            },
-            "onChartRendered": {
-                print("Chart rendered")
-            },
-            "onObjectSelected": { (object: SeatsioObject) -> Void in
-                print("Object " + object.label + " selected")
-            }
-        ] as [String: Any]
-
         let config = SeatingChartConfig(
                 publicKey: "publicDemoKey",
-                events: ["smallTheatreEvent1", "smallTheatreEvent2"],
+                event: "smallTheatreEvent1",
                 pricing: [
                     Pricing(category: "1", ticketTypes: [
                         TicketTypePricing(ticketType: "adult", price: 50, label: "For adults"),

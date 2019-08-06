@@ -1,6 +1,6 @@
 import Foundation
 
-class Pricing: Encodable {
+struct Pricing: Encodable {
 
     let category: String
     let price: Float?
