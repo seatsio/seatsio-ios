@@ -16,15 +16,19 @@
 		4EDEA2E03D2CD09EEC4CAE41 /* TicketListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA69A460C361D9C8F3A33 /* TicketListing.swift */; };
 		4EDEA4001C0896B83A8D0B0D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA8AC302F74374EED0CDF /* Point.swift */; };
 		4EDEA42398413DDE89322B68 /* TicketTypePricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */; };
+		4EDEA4A774FA6942DF195D0C /* CategoryWithQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA5174C3B57909D6F0369 /* CategoryWithQuantity.swift */; };
 		4EDEA540C9F4FDF810ABAC43 /* SelectionValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA7F354DAF869A28A377D /* SelectionValidator.swift */; };
+		4EDEA67392849D8A8644B1FF /* SeatingChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA6F7303F7AB3A435DCEB /* SeatingChart.swift */; };
 		4EDEA677E5530F12E5E04D0C /* Pricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA099F1693CFC065B3A62 /* Pricing.swift */; };
 		4EDEA7B84867A8207E7EDE3A /* Legend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA39FA63D2FBFF3849BC4 /* Legend.swift */; };
 		4EDEA8E950F463D31F67C49C /* BestAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA6E2F6E170537E3822EC /* BestAvailable.swift */; };
+		4EDEA970237725FAB2D0D30D /* TicketTypeWithQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */; };
 		4EDEA979B40A137B93B88522 /* SeatingChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA52AC21D4D9AAFDB2E46 /* SeatingChartConfig.swift */; };
 		4EDEA9892FEF157DE1A9F396 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA81DA10F59A65048DF40 /* Labels.swift */; };
 		4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */; };
 		4EDEAF040BFBA579B70AFC19 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA57B75716A2D4D86C3C6 /* Category.swift */; };
 		4EDEAF0D8D5EFDC667045A40 /* SelectionValidatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */; };
+		4EDEAFCD0B067C46CCA35CBA /* ConfigChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */; };
 		B5E8508BA29FC659A6324B83 /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
 		B5E85CC543CA14E005EDA43A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B5E85DB2AB9664D943E6A7B9 /* README.md */; };
 		B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */; };
@@ -57,16 +61,20 @@
 		4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioWebView.swift; sourceTree = "<group>"; };
 		4EDEA099F1693CFC065B3A62 /* Pricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
 		4EDEA39FA63D2FBFF3849BC4 /* Legend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legend.swift; sourceTree = "<group>"; };
+		4EDEA5174C3B57909D6F0369 /* CategoryWithQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryWithQuantity.swift; sourceTree = "<group>"; };
 		4EDEA52AC21D4D9AAFDB2E46 /* SeatingChartConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatingChartConfig.swift; sourceTree = "<group>"; };
 		4EDEA57B75716A2D4D86C3C6 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4EDEA64B09FF840D72C49C61 /* TicketType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketType.swift; sourceTree = "<group>"; };
 		4EDEA69A460C361D9C8F3A33 /* TicketListing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketListing.swift; sourceTree = "<group>"; };
 		4EDEA6E2F6E170537E3822EC /* BestAvailable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestAvailable.swift; sourceTree = "<group>"; };
+		4EDEA6F7303F7AB3A435DCEB /* SeatingChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatingChart.swift; sourceTree = "<group>"; };
 		4EDEA7F354DAF869A28A377D /* SelectionValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionValidator.swift; sourceTree = "<group>"; };
 		4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionValidatorType.swift; sourceTree = "<group>"; };
 		4EDEA81DA10F59A65048DF40 /* Labels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		4EDEA8AC302F74374EED0CDF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
+		4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypeWithQuantity.swift; sourceTree = "<group>"; };
+		4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigChange.swift; sourceTree = "<group>"; };
 		4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypePricing.swift; sourceTree = "<group>"; };
 		55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +161,10 @@
 				4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */,
 				4EDEA8AC302F74374EED0CDF /* Point.swift */,
 				4EDEA81DA10F59A65048DF40 /* Labels.swift */,
+				4EDEA6F7303F7AB3A435DCEB /* SeatingChart.swift */,
+				4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */,
+				4EDEA5174C3B57909D6F0369 /* CategoryWithQuantity.swift */,
+				4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */,
 			);
 			path = "seatsio-ios";
 			sourceTree = "<group>";
@@ -319,6 +331,10 @@
 				4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */,
 				4EDEA4001C0896B83A8D0B0D /* Point.swift in Sources */,
 				4EDEA9892FEF157DE1A9F396 /* Labels.swift in Sources */,
+				4EDEA67392849D8A8644B1FF /* SeatingChart.swift in Sources */,
+				4EDEAFCD0B067C46CCA35CBA /* ConfigChange.swift in Sources */,
+				4EDEA4A774FA6942DF195D0C /* CategoryWithQuantity.swift in Sources */,
+				4EDEA970237725FAB2D0D30D /* TicketTypeWithQuantity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

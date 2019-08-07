@@ -17,7 +17,7 @@ class SeatsioWebView: WKWebView {
         fatalError("not implemented")
     }
 
-    func loadSeatingChart() {
+    private func loadSeatingChart() {
         let htmlPath = Bundle.main.path(forResource: "index", ofType: "html")!
         let callbacks = self.buildCallbacksConfiguration().joined(separator: ",")
         let config = self.buildConfiguration()
@@ -28,13 +28,13 @@ class SeatsioWebView: WKWebView {
         self.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
     }
 
-    func buildConfiguration() -> String {
+    private func buildConfiguration() -> String {
         let jsonEncoder = JSONEncoder()
         let jsonData = try! jsonEncoder.encode(self.seatsioConfig)
         return String(decoding: jsonData, as: UTF8.self)
     }
 
-    func buildCallbacksConfiguration() -> [String] {
+    private func buildCallbacksConfiguration() -> [String] {
         var callbacks = [String]()
 
         if (self.seatsioConfig.priceFormatter != nil) {
@@ -137,7 +137,7 @@ class SeatsioWebView: WKWebView {
 
         if (self.seatsioConfig.onChartRendered != nil) {
             bridge.register("onChartRendered") { (data, callback) in
-                self.seatsioConfig.onChartRendered!()
+                self.seatsioConfig.onChartRendered!(SeatingChart(self))
             }
             callbacks.append(buildCallbackConfigAsJS("onChartRendered"))
         }
@@ -152,7 +152,7 @@ class SeatsioWebView: WKWebView {
         return callbacks
     }
 
-    func buildCallbackConfigAsJS(_ name: String) -> String {
+    private func buildCallbackConfigAsJS(_ name: String) -> String {
         return """
                \(name): (arg1, arg2) => (
                    new Promise((resolve, reject) => {
@@ -172,34 +172,45 @@ private func secondArg(_ data: Any?) -> Any {
     return (data as! [Any])[1]
 }
 
-private func decodeSeatsioObject(_ data: Any) -> SeatsioObject {
+func decodeSeatsioObject(_ data: Any) -> SeatsioObject {
     let dataToDecode = (data as! String).data(using: .utf8)!
     return try! JSONDecoder().decode(SeatsioObject.self, from: dataToDecode)
 }
 
-private func decodeSeatsioObjects(_ data: Any) -> [SeatsioObject] {
+func decodeSeatsioObjects(_ data: Any) -> [SeatsioObject] {
     let dataToDecode = (data as! String).data(using: .utf8)!
     return try! JSONDecoder().decode([SeatsioObject].self, from: dataToDecode)
 }
 
-private func decodeFloat(_ data: Any) -> Float {
+func decodeCategories(_ data: Any) -> [Category] {
+    let dataToDecode = (data as! String).data(using: .utf8)!
+    return try! JSONDecoder().decode([Category].self, from: dataToDecode)
+}
+
+func decodeFloat(_ data: Any) -> Float {
     return (data as! NSString).floatValue
 }
 
-private func decodeBool(_ data: Any) -> Bool {
+func decodeBool(_ data: Any) -> Bool {
     return (data as! NSString).boolValue
 }
 
-private func decodeTicketType(_ data: Any) -> TicketType? {
+func decodeTicketType(_ data: Any) -> TicketType? {
     if (data is NSNull) {
         return nil
     }
 
-    let dataToDecode = (data as! String).data(using: .utf8)!
+    let dataAsString = data as! String
+
+    if (dataAsString == "null") {
+        return nil
+    }
+
+    let dataToDecode = dataAsString.data(using: .utf8)!
     return try! JSONDecoder().decode(TicketType.self, from: dataToDecode)
 }
 
-private func decodeTicketTypes(_ data: Any) -> [TicketType]? {
+func decodeTicketTypes(_ data: Any) -> [TicketType]? {
     let dataToDecode = (data as! String).data(using: .utf8)!
     do {
         return try JSONDecoder().decode([TicketType].self, from: dataToDecode)
@@ -208,7 +219,7 @@ private func decodeTicketTypes(_ data: Any) -> [TicketType]? {
     }
 }
 
-private func decodeSelectionValidatorTypes(_ data: Any) -> [SelectionValidatorType] {
+func decodeSelectionValidatorTypes(_ data: Any) -> [SelectionValidatorType] {
     let data = (data as! String).data(using: .utf8)
     return try! JSONDecoder().decode([SelectionValidatorType].self, from: data!)
 }

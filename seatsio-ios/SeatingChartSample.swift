@@ -8,7 +8,7 @@ class HomeViewController: UIViewController {
     override func loadView() {
         let config = SeatingChartConfig()
                 .publicKey("publicDemoKey")
-                .event("fullExampleWithSectionsEvent")
+                .event("smallTheatreEvent1")
                 .pricing([
                     Pricing(category: 1, ticketTypes: [
                         TicketTypePricing(ticketType: "adult", price: 50, label: "For adults"),
@@ -27,8 +27,8 @@ class HomeViewController: UIViewController {
                     print(object)
                     print(ticketType)
                 })
-                .onChartRendered({ () in
-                    print("scs")
+                .onChartRendered({ (chart) in
+                    chart.changeConfig(ConfigChange().extraConfig(["foo": "bar"]))
                 })
                 .onChartRenderingFailed({ () in
                     print("fl")

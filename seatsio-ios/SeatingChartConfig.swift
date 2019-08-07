@@ -14,7 +14,7 @@ class SeatingChartConfig: Encodable {
     var language: String?
     var messages: [String: String]?
     var priceLevelsTooltipMessage: String?
-    var maxSelectedObjects: Int?
+    var maxSelectedObjects: AnyEncodable?
     var unavailableCategories: [String]?
     var selectBestAvailable: BestAvailable?
     var alwaysShowSectionContents: Bool?
@@ -53,7 +53,7 @@ class SeatingChartConfig: Encodable {
     var onReleaseHoldSucceeded: Optional<([SeatsioObject], [TicketType]?) -> ()>
     var onReleaseHoldFailed: Optional<([SeatsioObject], [TicketType]?) -> ()>
     var onSelectedObjectBooked: Optional<(SeatsioObject) -> ()>
-    var onChartRendered: Optional<() -> ()>
+    var onChartRendered: Optional<(SeatingChart) -> ()>
     var onChartRenderingFailed: Optional<() -> ()>
 
     init() {
@@ -125,7 +125,17 @@ class SeatingChartConfig: Encodable {
     }
 
     func maxSelectedObjects(_ maxSelectedObjects: Int) -> Self {
-        self.maxSelectedObjects = maxSelectedObjects
+        self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
+        return self
+    }
+
+    func maxSelectedObjects(_ maxSelectedObjects: [CategoryWithQuantity]) -> Self {
+        self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
+        return self
+    }
+
+    func maxSelectedObjects(_ maxSelectedObjects: [TicketTypeWithQuantity]) -> Self {
+        self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
         return self
     }
 
@@ -314,7 +324,7 @@ class SeatingChartConfig: Encodable {
         return self
     }
 
-    func onChartRendered(_ onChartRendered: @escaping () -> ()) -> Self {
+    func onChartRendered(_ onChartRendered: @escaping (SeatingChart) -> ()) -> Self {
         self.onChartRendered = onChartRendered
         return self
     }
