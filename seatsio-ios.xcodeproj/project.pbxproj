@@ -20,6 +20,7 @@
 		4EDEA7B84867A8207E7EDE3A /* Legend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA39FA63D2FBFF3849BC4 /* Legend.swift */; };
 		4EDEA8E950F463D31F67C49C /* BestAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA6E2F6E170537E3822EC /* BestAvailable.swift */; };
 		4EDEA979B40A137B93B88522 /* SeatingChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA52AC21D4D9AAFDB2E46 /* SeatingChartConfig.swift */; };
+		4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */; };
 		4EDEAF040BFBA579B70AFC19 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA57B75716A2D4D86C3C6 /* Category.swift */; };
 		4EDEAF0D8D5EFDC667045A40 /* SelectionValidatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */; };
 		B5E8508BA29FC659A6324B83 /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
@@ -61,6 +62,7 @@
 		4EDEA6E2F6E170537E3822EC /* BestAvailable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestAvailable.swift; sourceTree = "<group>"; };
 		4EDEA7F354DAF869A28A377D /* SelectionValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionValidator.swift; sourceTree = "<group>"; };
 		4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionValidatorType.swift; sourceTree = "<group>"; };
+		4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
 		4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypePricing.swift; sourceTree = "<group>"; };
 		55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 				4EDEA69A460C361D9C8F3A33 /* TicketListing.swift */,
 				4EDEA64B09FF840D72C49C61 /* TicketType.swift */,
 				4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */,
+				4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */,
 			);
 			path = "seatsio-ios";
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				4EDEA2E03D2CD09EEC4CAE41 /* TicketListing.swift in Sources */,
 				4EDEA2B7249C0734B9AEE860 /* TicketType.swift in Sources */,
 				4EDEAF0D8D5EFDC667045A40 /* SelectionValidatorType.swift in Sources */,
+				4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

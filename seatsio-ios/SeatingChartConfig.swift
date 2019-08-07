@@ -29,11 +29,32 @@ class SeatingChartConfig: Encodable {
     var mode: String?
     var loading: String?
     var ticketListings: [TicketListing]?
+    var holdOnSelect: Bool?
+    var holdOnSelectForGAs: Bool?
+    var holdToken: String?
+    var objectLabel: String?
+    var objectIcon: String?
+    var isObjectVisible: String?
+    var canGASelectionBeIncreased: String?
+    var objectColor: String?
+    var sectionColor: String?
+    var extraConfig: AnyEncodable?
+    var tooltipInfo: Optional<(SeatsioObject) -> String>
 
     var onSelectionValid: Optional<() -> ()>
     var onSelectionInvalid: Optional<([SelectionValidatorType]) -> ()>
     var onObjectSelected: Optional<(SeatsioObject, TicketType?) -> ()>
     var onObjectDeselected: Optional<(SeatsioObject, TicketType?) -> ()>
+    var onObjectClicked: Optional<(SeatsioObject) -> ()>
+    var onBestAvailableSelected: Optional<([SeatsioObject], Bool) -> ()>
+    var onBestAvailableSelectionFailed: Optional<() -> ()>
+    var onHoldSucceeded: Optional<([SeatsioObject], [TicketType]?) -> ()>
+    var onHoldFailed: Optional<([SeatsioObject], [TicketType]?) -> ()>
+    var onReleaseHoldSucceeded: Optional<([SeatsioObject], [TicketType]?) -> ()>
+    var onReleaseHoldFailed: Optional<([SeatsioObject], [TicketType]?) -> ()>
+    var onSelectedObjectBooked: Optional<(SeatsioObject) -> ()>
+    var onChartRendered: Optional<() -> ()>
+    var onChartRenderingFailed: Optional<() -> ()>
 
     init() {
     }
@@ -178,6 +199,56 @@ class SeatingChartConfig: Encodable {
         return self
     }
 
+    func holdOnSelect(_ holdOnSelect: Bool) -> Self {
+        self.holdOnSelect = holdOnSelect
+        return self
+    }
+
+    func holdOnSelectForGAs(_ holdOnSelectForGAs: Bool) -> Self {
+        self.holdOnSelectForGAs = holdOnSelectForGAs
+        return self
+    }
+
+    func holdToken(_ holdToken: String) -> Self {
+        self.holdToken = holdToken
+        return self
+    }
+
+    func objectLabel(_ objectLabel: String) -> Self {
+        self.objectLabel = objectLabel
+        return self
+    }
+
+    func objectIcon(_ objectIcon: String) -> Self {
+        self.objectIcon = objectIcon
+        return self
+    }
+
+    func isObjectVisible(_ isObjectVisible: String) -> Self {
+        self.isObjectVisible = isObjectVisible
+        return self
+    }
+
+    func canGASelectionBeIncreased(_ canGASelectionBeIncreased: String) -> Self {
+        self.canGASelectionBeIncreased = canGASelectionBeIncreased
+        return self
+    }
+
+    func objectColor(_ objectColor: String) -> Self {
+        self.objectColor = objectColor
+        return self
+    }
+
+    func sectionColor(_ sectionColor: String) -> Self {
+        self.sectionColor = sectionColor
+        return self
+    }
+
+    func extraConfig(_ extraConfig: Encodable) -> Self {
+        self.extraConfig = AnyEncodable(value: extraConfig)
+        return self
+    }
+
     func onSelectionValid(_ onSelectionValid: @escaping () -> ()) -> Self {
         self.onSelectionValid = onSelectionValid
         return self
@@ -195,6 +266,61 @@ class SeatingChartConfig: Encodable {
 
     func onObjectDeselected(_ onObjectDeselected: @escaping (SeatsioObject, TicketType?) -> ()) -> Self {
         self.onObjectDeselected = onObjectDeselected
+        return self
+    }
+
+    func onObjectClicked(_ onObjectClicked: @escaping (SeatsioObject) -> ()) -> Self {
+        self.onObjectClicked = onObjectClicked
+        return self
+    }
+
+    func onBestAvailableSelected(_ onBestAvailableSelected: @escaping ([SeatsioObject], Bool) -> ()) -> Self {
+        self.onBestAvailableSelected = onBestAvailableSelected
+        return self
+    }
+
+    func onBestAvailableSelectionFailed(_ onBestAvailableSelectionFailed: @escaping () -> ()) -> Self {
+        self.onBestAvailableSelectionFailed = onBestAvailableSelectionFailed
+        return self
+    }
+
+    func onHoldSucceeded(_ onHoldSucceeded: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
+        self.onHoldSucceeded = onHoldSucceeded
+        return self
+    }
+
+    func onHoldFailed(_ onHoldFailed: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
+        self.onHoldFailed = onHoldFailed
+        return self
+    }
+
+    func onReleaseHoldSucceeded(_ onReleaseHoldSucceeded: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
+        self.onReleaseHoldSucceeded = onReleaseHoldSucceeded
+        return self
+    }
+
+    func onReleaseHoldFailed(_ onReleaseHoldFailed: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
+        self.onReleaseHoldFailed = onReleaseHoldFailed
+        return self
+    }
+
+    func onSelectedObjectBooked(_ onSelectedObjectBooked: @escaping (SeatsioObject) -> ()) -> Self {
+        self.onSelectedObjectBooked = onSelectedObjectBooked
+        return self
+    }
+
+    func tooltipInfo(_ tooltipInfo: @escaping (SeatsioObject) -> String) -> Self {
+        self.tooltipInfo = tooltipInfo
+        return self
+    }
+
+    func onChartRendered(_ onChartRendered: @escaping () -> ()) -> Self {
+        self.onChartRendered = onChartRendered
+        return self
+    }
+
+    func onChartRenderingFailed(_ onChartRenderingFailed: @escaping () -> ()) -> Self {
+        self.onChartRenderingFailed = onChartRenderingFailed
         return self
     }
 
@@ -225,5 +351,15 @@ class SeatingChartConfig: Encodable {
         case mode
         case loading
         case ticketListings
+        case holdOnSelect
+        case holdOnSelectForGAs
+        case holdToken
+        case objectLabel
+        case objectIcon
+        case isObjectVisible
+        case canGASelectionBeIncreased
+        case objectColor
+        case sectionColor
+        case extraConfig
     }
 }

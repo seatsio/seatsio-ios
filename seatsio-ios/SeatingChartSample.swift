@@ -27,6 +27,12 @@ class HomeViewController: UIViewController {
                     print(object)
                     print(ticketType)
                 })
+                .onChartRendered({ () in
+                    print("scs")
+                })
+                .onChartRenderingFailed({ () in
+                    print("fl")
+                })
 
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, seatsioConfig: config)
 
