@@ -8,7 +8,7 @@ class HomeViewController: UIViewController {
     override func loadView() {
         let config = SeatingChartConfig()
                 .publicKey("publicDemoKey")
-                .events(["smallTheatreEvent1"])
+                .events(["largeTheatreEvent"])
                 .pricing([
                     Pricing(category: "1", ticketTypes: [
                         TicketTypePricing(ticketType: "adult", price: 50, label: "For adults"),
@@ -16,6 +16,11 @@ class HomeViewController: UIViewController {
                     ])
                 ])
                 .priceFormatter({ (price) in "\(price)$" })
+                .showMinimap(true)
+                .showActiveSectionTooltip(false)
+                .selectionValidators([SelectionValidator.consecutiveSeats(), SelectionValidator.noOrphanSeats(highlight: true)])
+                .onSelectionValid({ () in print("ok")})
+                .onSelectionInvalid({ () in print("not ok")})
 
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, seatsioConfig: config)
 

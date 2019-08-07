@@ -44,6 +44,20 @@ class SeatsioWebView: WKWebView {
             callbacks.append(buildCallbackConfigAsJS(name: "priceFormatter"))
         }
 
+        if (self.seatsioConfig.onSelectionValid != nil) {
+            bridge.register("onSelectionValidHandler") { (data, callback) in
+                self.seatsioConfig.onSelectionValid!()
+            }
+            callbacks.append(buildCallbackConfigAsJS(name: "onSelectionValid"))
+        }
+
+        if (self.seatsioConfig.onSelectionInvalid != nil) {
+            bridge.register("onSelectionInvalidHandler") { (data, callback) in
+                self.seatsioConfig.onSelectionInvalid!()
+            }
+            callbacks.append(buildCallbackConfigAsJS(name: "onSelectionInvalid"))
+        }
+
         /*
         if seatsioConfig["onChartRendered"] != nil {
             bridge.register("onChartRenderedHandler") { (data, callback) in

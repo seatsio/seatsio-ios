@@ -19,6 +19,13 @@ class SeatingChartConfig: Encodable {
     var alwaysShowSectionContents: Bool?
     var showLegend: Bool?
     var legend: Legend?
+    var showMinimap: Bool?
+    var showActiveSectionTooltip: Bool?
+    var showViewFromYourSeat: Bool?
+    var selectionValidators: [SelectionValidator]?
+
+    var onSelectionValid: Optional<() -> ()>
+    var onSelectionInvalid: Optional<() -> ()>
 
     init() {
     }
@@ -113,6 +120,36 @@ class SeatingChartConfig: Encodable {
         return self
     }
 
+    func showMinimap(_ showMinimap: Bool) -> Self {
+        self.showMinimap = showMinimap
+        return self
+    }
+
+    func showActiveSectionTooltip(_ showActiveSectionTooltip: Bool) -> Self {
+        self.showActiveSectionTooltip = showActiveSectionTooltip
+        return self
+    }
+
+    func showViewFromYourSeat(_ showViewFromYourSeat: Bool) -> Self {
+        self.showViewFromYourSeat = showViewFromYourSeat
+        return self
+    }
+
+    func selectionValidators(_ selectionValidators: [SelectionValidator]) -> Self {
+        self.selectionValidators = selectionValidators
+        return self
+    }
+
+    func onSelectionValid(_ onSelectionValid: @escaping () -> ()) -> Self {
+        self.onSelectionValid = onSelectionValid
+        return self
+    }
+
+    func onSelectionInvalid(_ onSelectionInvalid: @escaping () -> ()) -> Self {
+        self.onSelectionInvalid = onSelectionInvalid
+        return self
+    }
+
     private enum CodingKeys: String, CodingKey {
         case publicKey
         case events
@@ -130,5 +167,9 @@ class SeatingChartConfig: Encodable {
         case alwaysShowSectionContents
         case showLegend
         case legend
+        case showMinimap
+        case showActiveSectionTooltip = "showActiveSectionTooltipOnMobile"
+        case showViewFromYourSeat = "showViewFromYourSeatOnMobile"
+        case selectionValidators
     }
 }
