@@ -2,9 +2,9 @@ import Foundation
 
 class SelectionValidator: Encodable {
 
-    let type: String
+    let type: SelectionValidatorType
 
-    internal init(_ type: String) {
+    internal init(_ type: SelectionValidatorType) {
         self.type = type
     }
 
@@ -20,7 +20,7 @@ class SelectionValidator: Encodable {
 class ConsecutiveSeatsSelectionValidator: SelectionValidator {
 
     internal init() {
-        super.init("consecutiveSeats")
+        super.init(SelectionValidatorType.consecutiveSeats)
     }
 }
 
@@ -30,7 +30,7 @@ class NoOrphanSeatsSelectionValidator: SelectionValidator {
 
     internal init(_ highlight: Bool?) {
         self.highlight = highlight
-        super.init("noOrphanSeats")
+        super.init(SelectionValidatorType.noOrphanSeats)
     }
 
     private enum CodingKeys: CodingKey {

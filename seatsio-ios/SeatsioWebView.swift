@@ -39,7 +39,7 @@ class SeatsioWebView: WKWebView {
 
         if (self.seatsioConfig.priceFormatter != nil) {
             bridge.register("priceFormatter") { (data, callback) in
-                callback(self.seatsioConfig.priceFormatter!((data as! NSString).floatValue))
+                callback(self.seatsioConfig.priceFormatter!((firstArg(data) as! NSString).floatValue))
             }
             callbacks.append(buildCallbackConfigAsJS("priceFormatter"))
         }
@@ -53,52 +53,63 @@ class SeatsioWebView: WKWebView {
 
         if (self.seatsioConfig.onSelectionInvalid != nil) {
             bridge.register("onSelectionInvalid") { (data, callback) in
-                self.seatsioConfig.onSelectionInvalid!()
+                return self.seatsioConfig.onSelectionInvalid!(decodeSelectionValidatorTypes(firstArg(data)))
             }
             callbacks.append(buildCallbackConfigAsJS("onSelectionInvalid"))
         }
 
-        /*
-        if seatsioConfig["onChartRendered"] != nil {
-            bridge.register("onChartRenderedHandler") { (data, callback) in
-                let fn = self.seatsioConfig["onChartRendered"] as! () -> Void
-                fn()
+        if (self.seatsioConfig.onObjectSelected != nil) {
+            bridge.register("onObjectSelected") { (data, callback) in
+                self.seatsioConfig.onObjectSelected!(decodeSeatsioObject(firstArg(data)), decodeTicketType(secondArg(data)))
             }
-            callbacks.append(buildCallbackConfigAsJS(name: "onChartRendered"))
+            callbacks.append(buildCallbackConfigAsJS("onObjectSelected"))
         }
-        if (seatsioConfig["onObjectSelected"] != nil) {
-            bridge.register("onObjectSelectedHandler") { (data, callback) in
-                let fn = self.seatsioConfig["onObjectSelected"] as! (SeatsioObject) -> Void
-                fn(self.decodeSeatsioObject(data: data))
+
+        if (self.seatsioConfig.onObjectDeselected != nil) {
+            bridge.register("onObjectDeselected") { (data, callback) in
+                self.seatsioConfig.onObjectDeselected!(decodeSeatsioObject(firstArg(data)), decodeTicketType(secondArg(data)))
             }
-            callbacks.append(buildCallbackConfigAsJS(name: "onObjectSelected"))
+            callbacks.append(buildCallbackConfigAsJS("onObjectDeselected"))
         }
-        if (seatsioConfig["tooltipInfo"] != nil) {
-            bridge.register("tooltipInfoHandler") { (data, callback) in
-                let fn = self.seatsioConfig["tooltipInfo"] as! (SeatsioObject) -> String
-                callback(fn(self.decodeSeatsioObject(data: data!)))
-            }
-            callbacks.append(buildCallbackConfigAsJS(name: "tooltipInfo"))
-        }
-        */
 
         return callbacks
     }
 
     func buildCallbackConfigAsJS(_ name: String) -> String {
         return """
-               \(name): object => (
+               \(name): (arg1, arg2) => (
                    new Promise((resolve, reject) => {
-                       window.bridge.call("\(name)", JSON.stringify(object), data => resolve(data), error => reject(error))
+                       window.bridge.call("\(name)", [JSON.stringify(arg1), JSON.stringify(arg2)], data => resolve(data), error => reject(error))
                    })
                )
                """
     }
 
+}
 
-    func decodeSeatsioObject(data: Any) -> SeatsioObject {
-        let dataToDecode = (data as! String).data(using: .utf8)!
-        return try! JSONDecoder().decode(SeatsioObject.self, from: dataToDecode)
+private func firstArg(_ data: Any?) -> Any {
+    return (data as! [Any])[0]
+}
+
+private func secondArg(_ data: Any?) -> Any {
+    return (data as! [Any])[1]
+}
+
+private func decodeSeatsioObject(_ data: Any) -> SeatsioObject {
+    let dataToDecode = (data as! String).data(using: .utf8)!
+    return try! JSONDecoder().decode(SeatsioObject.self, from: dataToDecode)
+}
+
+private func decodeTicketType(_ data: Any) -> TicketType? {
+    if (data is NSNull) {
+        return nil
     }
 
+    let dataToDecode = (data as! String).data(using: .utf8)!
+    return try! JSONDecoder().decode(TicketType.self, from: dataToDecode)
+}
+
+private func decodeSelectionValidatorTypes(_ data: Any) -> [SelectionValidatorType] {
+    let data = (data as! String).data(using: .utf8)
+    return try! JSONDecoder().decode([SelectionValidatorType].self, from: data!)
 }

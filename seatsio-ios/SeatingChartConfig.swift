@@ -4,6 +4,7 @@ class SeatingChartConfig: Encodable {
 
     var publicKey: String?
     var events: Set<String>?
+    var chart: String?
     var pricing: [Pricing]?
     var priceFormatter: Optional<(Float) -> String>
     var numberOfPlacesToSelect: Int?
@@ -23,9 +24,16 @@ class SeatingChartConfig: Encodable {
     var showActiveSectionTooltip: Bool?
     var showViewFromYourSeat: Bool?
     var selectionValidators: [SelectionValidator]?
+    var categories: [Category]?
+    var objectCategories: [String: String]?
+    var mode: String?
+    var loading: String?
+    var ticketListings: [TicketListing]?
 
     var onSelectionValid: Optional<() -> ()>
-    var onSelectionInvalid: Optional<() -> ()>
+    var onSelectionInvalid: Optional<([SelectionValidatorType]) -> ()>
+    var onObjectSelected: Optional<(SeatsioObject, TicketType?) -> ()>
+    var onObjectDeselected: Optional<(SeatsioObject, TicketType?) -> ()>
 
     init() {
     }
@@ -37,6 +45,11 @@ class SeatingChartConfig: Encodable {
 
     func event(_ event: String) -> Self {
         self.events = [event]
+        return self
+    }
+
+    func chart(_ chart: String) -> Self {
+        self.chart = chart
         return self
     }
 
@@ -140,19 +153,55 @@ class SeatingChartConfig: Encodable {
         return self
     }
 
+    func categories(_ categories: [Category]) -> Self {
+        self.categories = categories
+        return self
+    }
+
+    func objectCategories(_ objectCategories: [String: String]) -> Self {
+        self.objectCategories = objectCategories
+        return self
+    }
+
+    func mode(_ mode: String) -> Self {
+        self.mode = mode
+        return self
+    }
+
+    func loading(_ loading: String) -> Self {
+        self.loading = loading
+        return self
+    }
+
+    func ticketListings(_ ticketListings: [TicketListing]) -> Self {
+        self.ticketListings = ticketListings
+        return self
+    }
+
     func onSelectionValid(_ onSelectionValid: @escaping () -> ()) -> Self {
         self.onSelectionValid = onSelectionValid
         return self
     }
 
-    func onSelectionInvalid(_ onSelectionInvalid: @escaping () -> ()) -> Self {
+    func onSelectionInvalid(_ onSelectionInvalid: @escaping ([SelectionValidatorType]) -> ()) -> Self {
         self.onSelectionInvalid = onSelectionInvalid
+        return self
+    }
+
+    func onObjectSelected(_ onObjectSelected: @escaping (SeatsioObject, TicketType?) -> ()) -> Self {
+        self.onObjectSelected = onObjectSelected
+        return self
+    }
+
+    func onObjectDeselected(_ onObjectDeselected: @escaping (SeatsioObject, TicketType?) -> ()) -> Self {
+        self.onObjectDeselected = onObjectDeselected
         return self
     }
 
     private enum CodingKeys: String, CodingKey {
         case publicKey
         case events
+        case chart
         case pricing
         case numberOfPlacesToSelect
         case objectWithoutPricingSelectable
@@ -171,5 +220,10 @@ class SeatingChartConfig: Encodable {
         case showActiveSectionTooltip = "showActiveSectionTooltipOnMobile"
         case showViewFromYourSeat = "showViewFromYourSeatOnMobile"
         case selectionValidators
+        case categories
+        case objectCategories
+        case mode
+        case loading
+        case ticketListings
     }
 }
