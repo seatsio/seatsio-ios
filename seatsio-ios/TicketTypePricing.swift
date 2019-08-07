@@ -1,6 +1,6 @@
 import Foundation
 
-struct TicketTypePricing: Encodable {
+struct TicketTypePricing: Codable {
 
     let ticketType: String
     let price: Float

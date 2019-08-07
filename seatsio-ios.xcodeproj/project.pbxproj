@@ -14,6 +14,7 @@
 		4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
 		4EDEA2B7249C0734B9AEE860 /* TicketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA64B09FF840D72C49C61 /* TicketType.swift */; };
 		4EDEA2E03D2CD09EEC4CAE41 /* TicketListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA69A460C361D9C8F3A33 /* TicketListing.swift */; };
+		4EDEA4001C0896B83A8D0B0D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA8AC302F74374EED0CDF /* Point.swift */; };
 		4EDEA42398413DDE89322B68 /* TicketTypePricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */; };
 		4EDEA540C9F4FDF810ABAC43 /* SelectionValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA7F354DAF869A28A377D /* SelectionValidator.swift */; };
 		4EDEA677E5530F12E5E04D0C /* Pricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA099F1693CFC065B3A62 /* Pricing.swift */; };
@@ -62,6 +63,7 @@
 		4EDEA6E2F6E170537E3822EC /* BestAvailable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestAvailable.swift; sourceTree = "<group>"; };
 		4EDEA7F354DAF869A28A377D /* SelectionValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionValidator.swift; sourceTree = "<group>"; };
 		4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionValidatorType.swift; sourceTree = "<group>"; };
+		4EDEA8AC302F74374EED0CDF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
 		4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypePricing.swift; sourceTree = "<group>"; };
 		55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				4EDEA64B09FF840D72C49C61 /* TicketType.swift */,
 				4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */,
 				4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */,
+				4EDEA8AC302F74374EED0CDF /* Point.swift */,
 			);
 			path = "seatsio-ios";
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				4EDEA2B7249C0734B9AEE860 /* TicketType.swift in Sources */,
 				4EDEAF0D8D5EFDC667045A40 /* SelectionValidatorType.swift in Sources */,
 				4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */,
+				4EDEA4001C0896B83A8D0B0D /* Point.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
