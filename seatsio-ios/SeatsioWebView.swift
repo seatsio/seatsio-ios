@@ -38,24 +38,24 @@ class SeatsioWebView: WKWebView {
         var callbacks = [String]()
 
         if (self.seatsioConfig.priceFormatter != nil) {
-            bridge.register("priceFormatterHandler") { (data, callback) in
+            bridge.register("priceFormatter") { (data, callback) in
                 callback(self.seatsioConfig.priceFormatter!((data as! NSString).floatValue))
             }
-            callbacks.append(buildCallbackConfigAsJS(name: "priceFormatter"))
+            callbacks.append(buildCallbackConfigAsJS("priceFormatter"))
         }
 
         if (self.seatsioConfig.onSelectionValid != nil) {
-            bridge.register("onSelectionValidHandler") { (data, callback) in
+            bridge.register("onSelectionValid") { (data, callback) in
                 self.seatsioConfig.onSelectionValid!()
             }
-            callbacks.append(buildCallbackConfigAsJS(name: "onSelectionValid"))
+            callbacks.append(buildCallbackConfigAsJS("onSelectionValid"))
         }
 
         if (self.seatsioConfig.onSelectionInvalid != nil) {
-            bridge.register("onSelectionInvalidHandler") { (data, callback) in
+            bridge.register("onSelectionInvalid") { (data, callback) in
                 self.seatsioConfig.onSelectionInvalid!()
             }
-            callbacks.append(buildCallbackConfigAsJS(name: "onSelectionInvalid"))
+            callbacks.append(buildCallbackConfigAsJS("onSelectionInvalid"))
         }
 
         /*
@@ -85,17 +85,11 @@ class SeatsioWebView: WKWebView {
         return callbacks
     }
 
-    func buildCallbackConfigAsJS(name: String) -> String {
+    func buildCallbackConfigAsJS(_ name: String) -> String {
         return """
                \(name): object => (
-                   new Promise(resolve => {
-                       window.bridge.call("\(name)Handler", JSON.stringify(object),
-                           data => { resolve(data) },
-                           error => {
-                               log("error: " + error)
-                               console.error("error: " + error)
-                           }
-                       )
+                   new Promise((resolve, reject) => {
+                       window.bridge.call("\(name)", JSON.stringify(object), data => resolve(data), error => reject(error))
                    })
                )
                """
