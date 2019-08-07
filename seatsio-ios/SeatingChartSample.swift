@@ -8,7 +8,7 @@ class HomeViewController: UIViewController {
     override func loadView() {
         let config = SeatingChartConfig()
                 .publicKey("publicDemoKey")
-                .event("smallTheatreWithGAEvent")
+                .event("fullExampleWithSectionsEvent")
                 .pricing([
                     Pricing(category: 1, ticketTypes: [
                         TicketTypePricing(ticketType: "adult", price: 50, label: "For adults"),
