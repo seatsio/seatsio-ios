@@ -67,6 +67,8 @@ public class SeatingChartConfig: Encodable {
     var onChartRendered: Optional<(SeatingChart) -> ()>
     var onChartRenderingFailed: Optional<() -> ()>
 
+    let _library: String = "ios"
+
     public init() {
     }
 
@@ -442,5 +444,6 @@ public class SeatingChartConfig: Encodable {
         case colors
         case stylePreset
         case style
+        case _library
     }
 }
