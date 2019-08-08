@@ -10,19 +10,22 @@ class SeatingChartSample: UIViewController {
                 .publicKey("publicDemoKey")
                 .event("smallTheatreWithGAEvent")
                 .pricing([
-                    Pricing(category: "2", price: 40)
+                    Pricing(category: "1", ticketTypes: [
+                        TicketTypePricing(ticketType: "child", price: 10),
+                        TicketTypePricing(ticketType: "adult", price: 15)]),
+                    Pricing(category: "2", ticketTypes: [
+                        TicketTypePricing(ticketType: "child", price: 20),
+                        TicketTypePricing(ticketType: "adult", price: 30)])
                 ])
                 .priceFormatter({ (price) in "\(price)$" })
                 .objectTooltip(ObjectTooltip().showAvailability(true))
                 .showLegend(true)
                 .onSelectionInvalid({ (errors) in print(errors) })
                 .onObjectSelected({ (object, ticketType) in
-                    print(object)
-                    print(ticketType as Any)
+                    print(object, ticketType)
                 })
                 .onObjectDeselected({ (object, ticketType) in
-                    print(object)
-                    print(ticketType as Any)
+                    print(object, ticketType)
                 })
                 .selectedObjects([SelectedObject("A-1")])
                 .onChartRendered({ (chart) in

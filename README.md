@@ -21,8 +21,8 @@ class SeatingChartSample: UIViewController {
 
     override func loadView() {
         let config: SeatingChartConfig = SeatingChartConfig()
-                .publicKey("publicDemoKey")
-                .event("smallTheatreWithGAEvent")
+                .publicKey("<your public key>")
+                .event("<your event key>")
 
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, seatsioConfig: config)
 
@@ -30,4 +30,44 @@ class SeatingChartSample: UIViewController {
     }
 
 }
+```
+
+You can find the all the configuration options at https://docs.seats.io/docs/renderer-configure-your-floor-plan
+
+### Simple pricing
+
+```swift
+SeatingChartConfig()
+    .pricing([
+        Pricing(category: "1", price: 40),
+        Pricing(category: "2", price: 50)
+    ])
+    .priceFormatter({ (price) in "\(price)$" })
+```
+
+### Multi-level pricing
+
+```swift
+SeatingChartConfig()
+    .pricing([
+        Pricing(category: "1", ticketTypes: [
+            TicketTypePricing(ticketType: "child", price: 10),
+            TicketTypePricing(ticketType: "adult", price: 15)]),
+        Pricing(category: "2", ticketTypes: [
+            TicketTypePricing(ticketType: "child", price: 20),
+            TicketTypePricing(ticketType: "adult", price: 30)])
+    ])
+    .priceFormatter({ (price) in "\(price)$" })
+```
+
+### onObjectSelected / onObjectDeselected
+
+```swift
+SeatingChartConfig()
+    .onObjectSelected({ (object, ticketType) in
+        print(object, ticketType)
+    })
+    .onObjectDeselected({ (object, ticketType) in
+        print(object, ticketType)
+    })
 ```
