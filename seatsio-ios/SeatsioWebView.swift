@@ -23,7 +23,7 @@ public class SeatsioWebView: WKWebView {
                 .dropLast()
                 + "," + callbacks + "}";
         var htmlString = HTML.replacingOccurrences(of: "%configAsJs%", with: config)
-        self.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
+        self.loadHTMLString(htmlString, baseURL: nil)
     }
 
     private func buildConfiguration() -> String {
