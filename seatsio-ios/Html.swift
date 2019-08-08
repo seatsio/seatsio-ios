@@ -4,7 +4,7 @@ let HTML = """
             <html>
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1">
-                <script src="http://localhost:24146/chart.js" type="text/javascript"></script>
+                <script src="https://cdn.seatsio.net/chart.js" type="text/javascript"></script>
             </head>
             <body style="margin: 0; padding: 0;">
                 <div id="chart" style="width: 100%; height: 100%;"></div>
