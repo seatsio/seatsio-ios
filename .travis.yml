@@ -7,3 +7,8 @@ before_install:
   - gem install cocoapods
 script:
   - pod lib lint
+deploy:
+  provider: script
+  script: deploy.sh
+  on:
+    tags: true
