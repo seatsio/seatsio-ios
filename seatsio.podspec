@@ -9,9 +9,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.source_files = 'seatsio-ios/*'
   s.exclude_files = "seatsio-ios/**/*.plist"
-  s.resource_bundles = {
-    'Assets' => ['seatsio-ios/Assets/index.html']
-  }
   s.swift_versions = ['4.0']
   s.dependency 'JustBridge', '~> 4.2.0'
   s.resource_bundles = {
