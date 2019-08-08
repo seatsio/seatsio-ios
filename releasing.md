@@ -1,0 +1,2 @@
+- Update major version in seatsio.podspec
+- Create release on github
