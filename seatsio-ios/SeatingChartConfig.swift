@@ -6,16 +6,20 @@ class SeatingChartConfig: Encodable {
     var events: Set<String>?
     var chart: String?
     var pricing: [Pricing]?
+
     var priceFormatter: Optional<(Float) -> String>
     var numberOfPlacesToSelect: Int?
     var objectWithoutPricingSelectable: Bool?
     var objectWithoutCategorySelectable: Bool?
-    var selectedObjects: [String]?
+    var selectedObjects: [SelectedObject]?
     var language: String?
     var messages: [String: String]?
     var priceLevelsTooltipMessage: String?
     var maxSelectedObjects: AnyEncodable?
+    var availableCategories: [String]?
     var unavailableCategories: [String]?
+    var filteredCategories: [String]?
+    var categoryFilter: CategoryFilter?
     var selectBestAvailable: BestAvailable?
     var alwaysShowSectionContents: Bool?
     var showLegend: Bool?
@@ -39,7 +43,13 @@ class SeatingChartConfig: Encodable {
     var objectColor: String?
     var sectionColor: String?
     var extraConfig: AnyEncodable?
+    var objectTooltip: ObjectTooltip?
     var tooltipInfo: Optional<(SeatsioObject) -> String>
+    var showZoomOutButtonOnMobile: Bool?
+    var colorScheme: String?
+    var colors: Colors?
+    var stylePreset: String?
+    var style: Style?
 
     var onSelectionValid: Optional<() -> ()>
     var onSelectionInvalid: Optional<([SelectionValidatorType]) -> ()>
@@ -104,7 +114,7 @@ class SeatingChartConfig: Encodable {
         return self
     }
 
-    func selectedObjects(_ selectedObjects: [String]) -> Self {
+    func selectedObjects(_ selectedObjects: [SelectedObject]) -> Self {
         self.selectedObjects = selectedObjects
         return self
     }
@@ -139,8 +149,18 @@ class SeatingChartConfig: Encodable {
         return self
     }
 
+    func availableCategories(_ availableCategories: [String]) -> Self {
+        self.availableCategories = availableCategories
+        return self
+    }
+
     func unavailableCategories(_ unavailableCategories: [String]) -> Self {
         self.unavailableCategories = unavailableCategories
+        return self
+    }
+
+    func filteredCategories(_ filteredCategories: [String]) -> Self {
+        self.filteredCategories = filteredCategories
         return self
     }
 
@@ -319,6 +339,11 @@ class SeatingChartConfig: Encodable {
         return self
     }
 
+    func objectTooltip(_ objectTooltip: ObjectTooltip) -> Self {
+        self.objectTooltip = objectTooltip
+        return self
+    }
+
     func tooltipInfo(_ tooltipInfo: @escaping (SeatsioObject) -> String) -> Self {
         self.tooltipInfo = tooltipInfo
         return self
@@ -331,6 +356,36 @@ class SeatingChartConfig: Encodable {
 
     func onChartRenderingFailed(_ onChartRenderingFailed: @escaping () -> ()) -> Self {
         self.onChartRenderingFailed = onChartRenderingFailed
+        return self
+    }
+
+    func categoryFilter(_ categoryFilter: CategoryFilter) -> Self {
+        self.categoryFilter = categoryFilter
+        return self
+    }
+
+    func showZoomOutButton(_ showZoomOutButton: Bool) -> Self {
+        self.showZoomOutButtonOnMobile = showZoomOutButton
+        return self
+    }
+
+    func colorScheme(_ colorScheme: String) -> Self {
+        self.colorScheme = colorScheme
+        return self
+    }
+
+    func colors(_ colors: Colors) -> Self {
+        self.colors = colors
+        return self
+    }
+
+    func stylePreset(_ stylePreset: String) -> Self {
+        self.stylePreset = stylePreset
+        return self
+    }
+
+    func style(_ style: Style) -> Self {
+        self.style = style
         return self
     }
 
@@ -347,7 +402,9 @@ class SeatingChartConfig: Encodable {
         case messages
         case priceLevelsTooltipMessage
         case maxSelectedObjects
+        case availableCategories
         case unavailableCategories
+        case filteredCategories
         case selectBestAvailable
         case alwaysShowSectionContents
         case showLegend
@@ -371,5 +428,12 @@ class SeatingChartConfig: Encodable {
         case objectColor
         case sectionColor
         case extraConfig
+        case objectTooltip
+        case categoryFilter
+        case showZoomOutButtonOnMobile
+        case colorScheme
+        case colors
+        case stylePreset
+        case style
     }
 }

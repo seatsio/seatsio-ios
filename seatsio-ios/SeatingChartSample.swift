@@ -8,15 +8,17 @@ class HomeViewController: UIViewController {
     override func loadView() {
         let config = SeatingChartConfig()
                 .publicKey("publicDemoKey")
-                .event("smallTheatreEvent1")
+                .event("smallTheatreWithGAEvent")
                 .pricing([
-                    Pricing(category: 1, ticketTypes: [
-                        TicketTypePricing(ticketType: "adult", price: 50, label: "For adults"),
-                        TicketTypePricing(ticketType: "child", price: 40.50, label: "For children")
-                    ])
+                    Pricing(category: 2, price: 40)
                 ])
+                .filteredCategories([])
+                .selectedObjects([SelectedObject("General Admission", amount:  3)])
+                .objectTooltip(ObjectTooltip().showAvailability(true))
                 .priceFormatter({ (price) in "\(price)$" })
                 .showLegend(true)
+                .categoryFilter(CategoryFilter().enabled(true).zoomOnSelect(true))
+                .style(Style().font("WorkSans").fontWeight("minMax").borderRadius("max").border("3d").padding("spacious").buttonFace("fillEnabled"))
                 .selectionValidators([SelectionValidator.noOrphanSeats(), SelectionValidator.consecutiveSeats()])
                 .onSelectionInvalid({ (errors) in print(errors) })
                 .onObjectSelected({ (object, ticketType) in
