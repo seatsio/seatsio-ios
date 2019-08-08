@@ -1,6 +1,6 @@
 import Foundation
 
-struct CategoryWithQuantity: Encodable {
+public struct CategoryWithQuantity: Encodable {
 
     let category: Int
     let quantity: Int

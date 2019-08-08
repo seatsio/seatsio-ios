@@ -1,6 +1,6 @@
 import Foundation
 
-class Style: Encodable {
+public class Style: Encodable {
 
     var font: String?
     var fontWeight: String?

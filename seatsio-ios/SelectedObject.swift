@@ -1,6 +1,6 @@
 import Foundation
 
-struct SelectedObject: Encodable {
+public struct SelectedObject: Encodable {
 
     let label: String
     let amount: Int?

@@ -1,6 +1,6 @@
 import Foundation
 
-class ConfigChange: Encodable {
+public class ConfigChange: Encodable {
 
     var objectColor: String?
     var objectLabel: String?

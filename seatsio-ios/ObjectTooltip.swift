@@ -1,6 +1,6 @@
 import Foundation
 
-class ObjectTooltip: Encodable {
+public class ObjectTooltip: Encodable {
 
     var showActionHint: Bool?
     var showAvailability: Bool?

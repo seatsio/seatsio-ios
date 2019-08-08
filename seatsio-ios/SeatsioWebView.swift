@@ -2,7 +2,7 @@ import Foundation
 import WebKit
 import JustBridge
 
-class SeatsioWebView: WKWebView {
+public class SeatsioWebView: WKWebView {
     var bridge: JustBridge!
     var seatsioConfig: SeatingChartConfig
 

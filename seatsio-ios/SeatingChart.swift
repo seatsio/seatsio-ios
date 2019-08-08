@@ -1,6 +1,6 @@
 import Foundation
 
-class SeatingChart {
+public class SeatingChart {
 
     let seatsioWebView: SeatsioWebView
 

@@ -1,6 +1,6 @@
 import Foundation
 
-class CategoryFilter: Encodable {
+public class CategoryFilter: Encodable {
 
     var enabled: Bool?
     var multiSelect: Bool?

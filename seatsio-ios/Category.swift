@@ -1,6 +1,6 @@
 import Foundation
 
-class Category: Codable {
+public class Category: Codable {
 
     let key: Int
     let color: String

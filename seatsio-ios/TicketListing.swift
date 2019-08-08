@@ -1,6 +1,6 @@
 import Foundation
 
-class TicketListing: Encodable {
+public class TicketListing: Encodable {
 
     var section: String
     var quantity: Int

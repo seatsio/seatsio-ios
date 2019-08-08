@@ -1,6 +1,6 @@
 import Foundation
 
-struct SeatsioObject: Decodable {
+public struct SeatsioObject: Decodable {
     let objectType: String
     let label: String
     let labels: Labels

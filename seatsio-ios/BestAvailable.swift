@@ -1,6 +1,6 @@
 import Foundation
 
-struct BestAvailable: Codable {
+public struct BestAvailable: Codable {
 
     let number: Int?
     let category: [String]?

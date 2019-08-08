@@ -1,6 +1,6 @@
 import Foundation
 
-class SeatingChartConfig: Encodable {
+public class SeatingChartConfig: Encodable {
 
     var publicKey: String?
     var events: Set<String>?

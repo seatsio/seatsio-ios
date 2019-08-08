@@ -1,6 +1,6 @@
 import Foundation
 
-struct Labels: Decodable {
+public struct Labels: Decodable {
 
     let own: String
     let parent: String?

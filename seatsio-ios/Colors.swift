@@ -1,6 +1,6 @@
 import Foundation
 
-class Colors: Encodable {
+public class Colors: Encodable {
 
     var colorSelected: String?
     var cursorTooltipBackgroundColor: String?

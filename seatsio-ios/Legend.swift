@@ -1,6 +1,6 @@
 import Foundation
 
-struct Legend: Encodable {
+public struct Legend: Encodable {
 
     let hideNonSelectableCategories: Bool?
     let hidePricing: Bool?

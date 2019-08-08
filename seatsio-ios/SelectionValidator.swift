@@ -1,6 +1,6 @@
 import Foundation
 
-class SelectionValidator: Encodable {
+public class SelectionValidator: Encodable {
 
     let type: SelectionValidatorType
 

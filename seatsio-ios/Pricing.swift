@@ -1,6 +1,6 @@
 import Foundation
 
-struct Pricing: Codable {
+public struct Pricing: Codable {
 
     let category: Int?
     let price: Float?
