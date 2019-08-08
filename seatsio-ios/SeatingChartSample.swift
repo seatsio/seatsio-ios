@@ -12,8 +12,8 @@ class HomeViewController: UIViewController {
                 .pricing([
                     Pricing(category: 2, price: 40)
                 ])
-                .objectTooltip(ObjectTooltip().showAvailability(true))
                 .priceFormatter({ (price) in "\(price)$" })
+                .objectTooltip(ObjectTooltip().showAvailability(true))
                 .showLegend(true)
                 .onSelectionInvalid({ (errors) in print(errors) })
                 .onObjectSelected({ (object, ticketType) in
