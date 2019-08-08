@@ -1,7 +1,7 @@
 import UIKit
 import WebKit
 
-class HomeViewController: UIViewController {
+class SeatingChartSample: UIViewController {
 
     var seatsio: SeatsioWebView!
 
