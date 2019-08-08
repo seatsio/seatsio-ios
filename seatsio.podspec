@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.swift_versions = ['4.0']
   s.dependency 'JustBridge', '~> 4.2.0'
   s.resource_bundles = {
-    'seatsio' => ['seatsio-ios/Assets.xcassets/index.html']
+    'seatsio' => ['seatsio-ios/Assets/index.html']
   }
 end
