@@ -10,7 +10,7 @@ class HomeViewController: UIViewController {
                 .publicKey("publicDemoKey")
                 .event("smallTheatreWithGAEvent")
                 .pricing([
-                    Pricing(category: 2, price: 40)
+                    Pricing(category: "2", price: 40)
                 ])
                 .priceFormatter({ (price) in "\(price)$" })
                 .objectTooltip(ObjectTooltip().showAvailability(true))
