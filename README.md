@@ -1,12 +1,29 @@
 # Seatsio iOS Component
 
-### Requirements
+## Introduction
 
-* Make sure you have [Cocoapods](https://guides.cocoapods.org/using/getting-started.html) installed
-* XCode Version: 10.1
-* Swift Version: 4.2
+seatsio-ios allows rendering seats.io seating charts inside an iOS application. It supports iOS 8.0 and newer.
 
-### Getting Started
+## Installation
 
-* Run `pod install` to install dependencies.
-* Open with XCode or AppCode
+pod 'seatsio', '~> 1.0.0'
+
+## Usage
+
+```swift
+class SeatingChartSample: UIViewController {
+
+    var seatsio: SeatsioWebView!
+
+    override func loadView() {
+        let config: SeatingChartConfig = SeatingChartConfig()
+                .publicKey("publicDemoKey")
+                .event("smallTheatreWithGAEvent")
+
+        seatsio = SeatsioWebView(frame: UIScreen.main.bounds, seatsioConfig: config)
+
+        self.view = seatsio
+    }
+
+}
+```
