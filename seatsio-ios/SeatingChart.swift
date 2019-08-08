@@ -28,6 +28,26 @@ class SeatingChart {
         seatsioWebView.bridge.call("zoomToSelectedObjects", data: nil)
     }
 
+    func rerender() {
+        seatsioWebView.bridge.call("rerender", data: nil)
+    }
+
+    func resetView() {
+        seatsioWebView.bridge.call("resetView", data: nil)
+    }
+
+    func startNewSession() {
+        seatsioWebView.bridge.call("startNewSession", data: nil)
+    }
+
+    func selectCategories(_ categories: [String]) {
+        seatsioWebView.bridge.call("selectCategories", data: categories)
+    }
+
+    func deselectCategories(_ categories: [String]) {
+        seatsioWebView.bridge.call("deselectCategories", data: categories)
+    }
+
     func selectBestAvailable(_ bestAvailable: BestAvailable) {
         try! seatsioWebView.bridge.call("selectBestAvailable", data: toJsonString(AnyEncodable(value: bestAvailable)))
     }

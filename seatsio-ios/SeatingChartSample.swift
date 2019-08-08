@@ -12,14 +12,9 @@ class HomeViewController: UIViewController {
                 .pricing([
                     Pricing(category: 2, price: 40)
                 ])
-                .filteredCategories([])
-                .selectedObjects([SelectedObject("General Admission", amount:  3)])
                 .objectTooltip(ObjectTooltip().showAvailability(true))
                 .priceFormatter({ (price) in "\(price)$" })
                 .showLegend(true)
-                .categoryFilter(CategoryFilter().enabled(true).zoomOnSelect(true))
-                .style(Style().font("WorkSans").fontWeight("minMax").borderRadius("max").border("3d").padding("spacious").buttonFace("fillEnabled"))
-                .selectionValidators([SelectionValidator.noOrphanSeats(), SelectionValidator.consecutiveSeats()])
                 .onSelectionInvalid({ (errors) in print(errors) })
                 .onObjectSelected({ (object, ticketType) in
                     print(object)
@@ -29,11 +24,9 @@ class HomeViewController: UIViewController {
                     print(object)
                     print(ticketType)
                 })
+                .selectedObjects([SelectedObject("A-1")])
                 .onChartRendered({ (chart) in
-                    chart.changeConfig(ConfigChange().extraConfig(["foo": "bar"]))
-                })
-                .onChartRenderingFailed({ () in
-                    print("fl")
+                    print("rendered")
                 })
 
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, seatsioConfig: config)

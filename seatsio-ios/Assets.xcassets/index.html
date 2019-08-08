@@ -17,12 +17,32 @@
             chart.deselectObjects(objects)
         });
 
+        window.bridge.register("selectCategories", function(categories) {
+            chart.selectCategories(categories)
+        });
+
+        window.bridge.register("deselectCategories", function(categories) {
+            chart.deselectCategories(categories)
+        });
+
         window.bridge.register("getHoldToken", function(data, callback) {
             callback(chart.holdToken)
         });
 
         window.bridge.register("zoomToSelectedObjects", function(data, callback) {
             chart.zoomToSelectedObjects()
+        });
+
+        window.bridge.register("rerender", function(data, callback) {
+            chart.rerender()
+        });
+
+        window.bridge.register("resetView", function(data, callback) {
+            chart.resetView()
+        });
+
+        window.bridge.register("startNewSession", function(data, callback) {
+            chart.startNewSession()
         });
 
         window.bridge.register("selectBestAvailable", function(data, callback) {
