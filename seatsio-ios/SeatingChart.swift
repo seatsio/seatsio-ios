@@ -49,11 +49,11 @@ class SeatingChart {
     }
 
     func selectBestAvailable(_ bestAvailable: BestAvailable) {
-        try! seatsioWebView.bridge.call("selectBestAvailable", data: toJsonString(AnyEncodable(value: bestAvailable)))
+        seatsioWebView.bridge.call("selectBestAvailable", data: toJsonString(AnyEncodable(value: bestAvailable)))
     }
 
     func changeConfig(_ configChange: ConfigChange) {
-        try! seatsioWebView.bridge.call("changeConfig", data: toJsonString(AnyEncodable(value: configChange)))
+        seatsioWebView.bridge.call("changeConfig", data: toJsonString(AnyEncodable(value: configChange)))
     }
 
     func clearSelection(_ callback: @escaping () -> ()) {

@@ -6,7 +6,7 @@ class HomeViewController: UIViewController {
     var seatsio: SeatsioWebView!
 
     override func loadView() {
-        let config = SeatingChartConfig()
+        let config: SeatingChartConfig = SeatingChartConfig()
                 .publicKey("publicDemoKey")
                 .event("smallTheatreWithGAEvent")
                 .pricing([
@@ -18,11 +18,11 @@ class HomeViewController: UIViewController {
                 .onSelectionInvalid({ (errors) in print(errors) })
                 .onObjectSelected({ (object, ticketType) in
                     print(object)
-                    print(ticketType)
+                    print(ticketType as Any)
                 })
                 .onObjectDeselected({ (object, ticketType) in
                     print(object)
-                    print(ticketType)
+                    print(ticketType as Any)
                 })
                 .selectedObjects([SelectedObject("A-1")])
                 .onChartRendered({ (chart) in

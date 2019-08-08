@@ -1,11 +1,5 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-
-target 'seatsio-ios' do
-  # Comment the next line if you don't want to use dynamic frameworks
+target 'seatsio' do
   use_frameworks!
 
   pod 'JustBridge', '~> 4.2.0'
-  # Pods for seatsio-ios
-
 end
