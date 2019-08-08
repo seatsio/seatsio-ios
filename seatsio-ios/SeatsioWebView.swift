@@ -18,13 +18,11 @@ public class SeatsioWebView: WKWebView {
     }
 
     private func loadSeatingChart() {
-        let htmlPath = Bundle.main.path(forResource: "index", ofType: "html")!
         let callbacks = self.buildCallbacksConfiguration().joined(separator: ",")
         let config = self.buildConfiguration()
                 .dropLast()
                 + "," + callbacks + "}";
-        var htmlString = try! String(contentsOfFile: htmlPath, encoding: String.Encoding.utf8)
-        htmlString = htmlString.replacingOccurrences(of: "%configAsJs%", with: config)
+        var htmlString = HTML.replacingOccurrences(of: "%configAsJs%", with: config)
         self.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
     }
 
