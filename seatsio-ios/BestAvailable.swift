@@ -7,7 +7,7 @@ public struct BestAvailable: Codable {
     let clearSelection: Bool?
     let ticketTypes: [String:Int]?
 
-    init(number: Int? = nil,
+    public init(number: Int? = nil,
          category: [String]? = nil,
          clearSelection: Bool? = nil,
          ticketTypes: [String:Int]? = nil) {

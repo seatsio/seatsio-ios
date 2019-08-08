@@ -8,11 +8,11 @@ public class SelectionValidator: Encodable {
         self.type = type
     }
 
-    class func consecutiveSeats() -> SelectionValidator {
+    class public func consecutiveSeats() -> SelectionValidator {
         return ConsecutiveSeatsSelectionValidator()
     }
 
-    class func noOrphanSeats(highlight: Bool? = nil) -> SelectionValidator {
+    class public func noOrphanSeats(highlight: Bool? = nil) -> SelectionValidator {
         return NoOrphanSeatsSelectionValidator(highlight)
     }
 }
@@ -37,7 +37,7 @@ class NoOrphanSeatsSelectionValidator: SelectionValidator {
         case highlight
     }
 
-    override func encode(to encoder: Encoder) throws {
+    override public func encode(to encoder: Encoder) throws {
         try super.encode(to: encoder)
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(self.highlight, forKey: .highlight)

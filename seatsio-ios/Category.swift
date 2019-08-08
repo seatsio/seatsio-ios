@@ -8,7 +8,7 @@ public class Category: Codable {
     let accessible: Bool?
     let seatShape: String?
 
-    init(key: Int, color: String, label: String? = nil, accessible: Bool? = nil, seatShape: String? = nil) {
+    public init(key: Int, color: String, label: String? = nil, accessible: Bool? = nil, seatShape: String? = nil) {
         self.key = key
         self.color = color
         self.label = label

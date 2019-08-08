@@ -7,32 +7,32 @@ public class ConfigChange: Encodable {
     var maxSelectedObjects: AnyEncodable?
     var extraConfig: AnyEncodable?
 
-    func objectColor(_ objectColor: String) -> Self {
+    public func objectColor(_ objectColor: String) -> Self {
         self.objectColor = objectColor
         return self
     }
 
-    func objectLabel(_ objectLabel: String) -> Self {
+    public func objectLabel(_ objectLabel: String) -> Self {
         self.objectLabel = objectLabel
         return self
     }
 
-    func maxSelectedObjects(_ maxSelectedObjects: Int) -> Self {
+    public func maxSelectedObjects(_ maxSelectedObjects: Int) -> Self {
         self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
         return self
     }
 
-    func maxSelectedObjects(_ maxSelectedObjects: [CategoryWithQuantity]) -> Self {
+    public func maxSelectedObjects(_ maxSelectedObjects: [CategoryWithQuantity]) -> Self {
         self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
         return self
     }
 
-    func maxSelectedObjects(_ maxSelectedObjects: [TicketTypeWithQuantity]) -> Self {
+    public func maxSelectedObjects(_ maxSelectedObjects: [TicketTypeWithQuantity]) -> Self {
         self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
         return self
     }
 
-    func extraConfig(_ extraConfig: Encodable) -> Self {
+    public func extraConfig(_ extraConfig: Encodable) -> Self {
         self.extraConfig = AnyEncodable(value: extraConfig)
         return self
     }

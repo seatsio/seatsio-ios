@@ -6,7 +6,7 @@ public class SeatsioWebView: WKWebView {
     var bridge: JustBridge!
     var seatsioConfig: SeatingChartConfig
 
-    init(frame: CGRect, seatsioConfig: SeatingChartConfig) {
+    public init(frame: CGRect, seatsioConfig: SeatingChartConfig) {
         self.seatsioConfig = seatsioConfig
         super.init(frame: frame, configuration: WKWebViewConfiguration())
         bridge = JustBridge(with: self)

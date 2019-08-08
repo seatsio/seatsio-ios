@@ -4,19 +4,19 @@ public class SeatingChart {
 
     let seatsioWebView: SeatsioWebView
 
-    init(_ seatsioWebView: SeatsioWebView) {
+    public init(_ seatsioWebView: SeatsioWebView) {
         self.seatsioWebView = seatsioWebView
     }
 
-    func selectObjects(_ objects: [String]) {
+    public func selectObjects(_ objects: [String]) {
         seatsioWebView.bridge.call("selectObjects", data: objects)
     }
 
-    func deselectObjects(_ objects: [String]) {
+    public func deselectObjects(_ objects: [String]) {
         seatsioWebView.bridge.call("deselectObjects", data: objects)
     }
 
-    func getHoldtoken(_ callback: @escaping (String) -> ()) {
+    public func getHoldtoken(_ callback: @escaping (String) -> ()) {
         seatsioWebView.bridge.call(
                 "getHoldToken",
                 data: nil,
@@ -24,39 +24,39 @@ public class SeatingChart {
         )
     }
 
-    func zoomToSelectedObjects() {
+    public func zoomToSelectedObjects() {
         seatsioWebView.bridge.call("zoomToSelectedObjects", data: nil)
     }
 
-    func rerender() {
+    public func rerender() {
         seatsioWebView.bridge.call("rerender", data: nil)
     }
 
-    func resetView() {
+    public func resetView() {
         seatsioWebView.bridge.call("resetView", data: nil)
     }
 
-    func startNewSession() {
+    public func startNewSession() {
         seatsioWebView.bridge.call("startNewSession", data: nil)
     }
 
-    func selectCategories(_ categories: [String]) {
+    public func selectCategories(_ categories: [String]) {
         seatsioWebView.bridge.call("selectCategories", data: categories)
     }
 
-    func deselectCategories(_ categories: [String]) {
+    public func deselectCategories(_ categories: [String]) {
         seatsioWebView.bridge.call("deselectCategories", data: categories)
     }
 
-    func selectBestAvailable(_ bestAvailable: BestAvailable) {
+    public func selectBestAvailable(_ bestAvailable: BestAvailable) {
         seatsioWebView.bridge.call("selectBestAvailable", data: toJsonString(AnyEncodable(value: bestAvailable)))
     }
 
-    func changeConfig(_ configChange: ConfigChange) {
+    public func changeConfig(_ configChange: ConfigChange) {
         seatsioWebView.bridge.call("changeConfig", data: toJsonString(AnyEncodable(value: configChange)))
     }
 
-    func clearSelection(_ callback: @escaping () -> ()) {
+    public func clearSelection(_ callback: @escaping () -> ()) {
         seatsioWebView.bridge.call(
                 "clearSelection",
                 data: nil,
@@ -64,7 +64,7 @@ public class SeatingChart {
         )
     }
 
-    func listCategories(_ callback: @escaping ([Category]) -> ()) {
+    public func listCategories(_ callback: @escaping ([Category]) -> ()) {
         seatsioWebView.bridge.call(
                 "listCategories",
                 data: nil,
@@ -72,7 +72,7 @@ public class SeatingChart {
         )
     }
 
-    func findObject(_ object: String, _ successCallback: @escaping (SeatsioObject) -> (), _ errorCallback: @escaping () -> ()) {
+    public func findObject(_ object: String, _ successCallback: @escaping (SeatsioObject) -> (), _ errorCallback: @escaping () -> ()) {
         seatsioWebView.bridge.call(
                 "findObject",
                 data: object,
@@ -86,7 +86,7 @@ public class SeatingChart {
         )
     }
 
-    func listSelectedObjects(_ callback: @escaping ([SeatsioObject]) -> ()) {
+    public func listSelectedObjects(_ callback: @escaping ([SeatsioObject]) -> ()) {
         seatsioWebView.bridge.call(
                 "listSelectedObjects",
                 data: nil,

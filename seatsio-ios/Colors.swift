@@ -6,17 +6,17 @@ public class Colors: Encodable {
     var cursorTooltipBackgroundColor: String?
     var colorTitle: String?
 
-    func colorSelected(_ colorSelected: String) -> Self {
+    public func colorSelected(_ colorSelected: String) -> Self {
         self.colorSelected = colorSelected
         return self
     }
 
-    func cursorTooltipBackgroundColor(_ cursorTooltipBackgroundColor: String) -> Self {
+    public func cursorTooltipBackgroundColor(_ cursorTooltipBackgroundColor: String) -> Self {
         self.cursorTooltipBackgroundColor = cursorTooltipBackgroundColor
         return self
     }
 
-    func colorTitle(_ colorTitle: String) -> Self {
+    public func colorTitle(_ colorTitle: String) -> Self {
         self.colorTitle = colorTitle
         return self
     }

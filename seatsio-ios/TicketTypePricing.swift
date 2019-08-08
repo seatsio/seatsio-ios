@@ -6,7 +6,7 @@ public struct TicketTypePricing: Codable {
     let price: Float
     let label: String?
 
-    init(ticketType: String, price: Float, label: String? = nil) {
+    public init(ticketType: String, price: Float, label: String? = nil) {
         self.ticketType = ticketType
         self.price = price
         self.label = label

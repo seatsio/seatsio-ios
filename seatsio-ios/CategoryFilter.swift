@@ -6,17 +6,17 @@ public class CategoryFilter: Encodable {
     var multiSelect: Bool?
     var zoomOnSelect: Bool?
 
-    func enabled(_ enabled: Bool) -> Self {
+    public func enabled(_ enabled: Bool) -> Self {
         self.enabled = enabled
         return self
     }
 
-    func multiSelect(_ multiSelect: Bool) -> Self {
+    public func multiSelect(_ multiSelect: Bool) -> Self {
         self.multiSelect = multiSelect
         return self
     }
 
-    func zoomOnSelect(_ zoomOnSelect: Bool) -> Self {
+    public func zoomOnSelect(_ zoomOnSelect: Bool) -> Self {
         self.zoomOnSelect = zoomOnSelect
         return self
     }

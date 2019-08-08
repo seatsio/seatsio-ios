@@ -66,325 +66,325 @@ public class SeatingChartConfig: Encodable {
     var onChartRendered: Optional<(SeatingChart) -> ()>
     var onChartRenderingFailed: Optional<() -> ()>
 
-    init() {
+    public init() {
     }
 
-    func publicKey(_ publicKey: String) -> Self {
+    public func publicKey(_ publicKey: String) -> Self {
         self.publicKey = publicKey
         return self
     }
 
-    func event(_ event: String) -> Self {
+    public func event(_ event: String) -> Self {
         self.events = [event]
         return self
     }
 
-    func chart(_ chart: String) -> Self {
+    public func chart(_ chart: String) -> Self {
         self.chart = chart
         return self
     }
 
-    func events(_ events: Set<String>) -> Self {
+    public func events(_ events: Set<String>) -> Self {
         self.events = events
         return self
     }
 
-    func pricing(_ pricing: [Pricing]) -> Self {
+    public func pricing(_ pricing: [Pricing]) -> Self {
         self.pricing = pricing
         return self
     }
 
-    func priceFormatter(_ priceFormatter: @escaping (Float) -> String) -> Self {
+    public func priceFormatter(_ priceFormatter: @escaping (Float) -> String) -> Self {
         self.priceFormatter = priceFormatter
         return self
     }
 
-    func numberOfPlacesToSelect(_ numberOfPlacesToSelect: Int) -> Self {
+    public func numberOfPlacesToSelect(_ numberOfPlacesToSelect: Int) -> Self {
         self.numberOfPlacesToSelect = numberOfPlacesToSelect
         return self
     }
 
-    func objectWithoutPricingSelectable(_ objectWithoutPricingSelectable: Bool) -> Self {
+    public func objectWithoutPricingSelectable(_ objectWithoutPricingSelectable: Bool) -> Self {
         self.objectWithoutPricingSelectable = objectWithoutPricingSelectable
         return self
     }
 
-    func objectWithoutCategorySelectable(_ objectWithoutCategorySelectable: Bool) -> Self {
+    public func objectWithoutCategorySelectable(_ objectWithoutCategorySelectable: Bool) -> Self {
         self.objectWithoutCategorySelectable = objectWithoutCategorySelectable
         return self
     }
 
-    func selectedObjects(_ selectedObjects: [SelectedObject]) -> Self {
+    public func selectedObjects(_ selectedObjects: [SelectedObject]) -> Self {
         self.selectedObjects = selectedObjects
         return self
     }
 
-    func language(_ language: String) -> Self {
+    public func language(_ language: String) -> Self {
         self.language = language
         return self
     }
 
-    func messages(_ messages: [String: String]) -> Self {
+    public func messages(_ messages: [String: String]) -> Self {
         self.messages = messages
         return self
     }
 
-    func priceLevelsTooltipMessage(_ priceLevelsTooltipMessage: String) -> Self {
+    public func priceLevelsTooltipMessage(_ priceLevelsTooltipMessage: String) -> Self {
         self.priceLevelsTooltipMessage = priceLevelsTooltipMessage
         return self
     }
 
-    func maxSelectedObjects(_ maxSelectedObjects: Int) -> Self {
+    public func maxSelectedObjects(_ maxSelectedObjects: Int) -> Self {
         self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
         return self
     }
 
-    func maxSelectedObjects(_ maxSelectedObjects: [CategoryWithQuantity]) -> Self {
+    public func maxSelectedObjects(_ maxSelectedObjects: [CategoryWithQuantity]) -> Self {
         self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
         return self
     }
 
-    func maxSelectedObjects(_ maxSelectedObjects: [TicketTypeWithQuantity]) -> Self {
+    public func maxSelectedObjects(_ maxSelectedObjects: [TicketTypeWithQuantity]) -> Self {
         self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
         return self
     }
 
-    func availableCategories(_ availableCategories: [String]) -> Self {
+    public func availableCategories(_ availableCategories: [String]) -> Self {
         self.availableCategories = availableCategories
         return self
     }
 
-    func unavailableCategories(_ unavailableCategories: [String]) -> Self {
+    public func unavailableCategories(_ unavailableCategories: [String]) -> Self {
         self.unavailableCategories = unavailableCategories
         return self
     }
 
-    func filteredCategories(_ filteredCategories: [String]) -> Self {
+    public func filteredCategories(_ filteredCategories: [String]) -> Self {
         self.filteredCategories = filteredCategories
         return self
     }
 
-    func selectBestAvailable(_ selectBestAvailable: BestAvailable) -> Self {
+    public func selectBestAvailable(_ selectBestAvailable: BestAvailable) -> Self {
         self.selectBestAvailable = selectBestAvailable
         return self
     }
 
-    func alwaysShowSectionContents(_ alwaysShowSectionContents: Bool) -> Self {
+    public func alwaysShowSectionContents(_ alwaysShowSectionContents: Bool) -> Self {
         self.alwaysShowSectionContents = alwaysShowSectionContents
         return self
     }
 
-    func showLegend(_ showLegend: Bool) -> Self {
+    public func showLegend(_ showLegend: Bool) -> Self {
         self.showLegend = showLegend
         return self
     }
 
-    func legend(_ legend: Legend) -> Self {
+    public func legend(_ legend: Legend) -> Self {
         self.legend = legend
         return self
     }
 
-    func showMinimap(_ showMinimap: Bool) -> Self {
+    public func showMinimap(_ showMinimap: Bool) -> Self {
         self.showMinimap = showMinimap
         return self
     }
 
-    func showActiveSectionTooltip(_ showActiveSectionTooltip: Bool) -> Self {
+    public func showActiveSectionTooltip(_ showActiveSectionTooltip: Bool) -> Self {
         self.showActiveSectionTooltip = showActiveSectionTooltip
         return self
     }
 
-    func showViewFromYourSeat(_ showViewFromYourSeat: Bool) -> Self {
+    public func showViewFromYourSeat(_ showViewFromYourSeat: Bool) -> Self {
         self.showViewFromYourSeat = showViewFromYourSeat
         return self
     }
 
-    func selectionValidators(_ selectionValidators: [SelectionValidator]) -> Self {
+    public func selectionValidators(_ selectionValidators: [SelectionValidator]) -> Self {
         self.selectionValidators = selectionValidators
         return self
     }
 
-    func categories(_ categories: [Category]) -> Self {
+    public func categories(_ categories: [Category]) -> Self {
         self.categories = categories
         return self
     }
 
-    func objectCategories(_ objectCategories: [String: String]) -> Self {
+    public func objectCategories(_ objectCategories: [String: String]) -> Self {
         self.objectCategories = objectCategories
         return self
     }
 
-    func mode(_ mode: String) -> Self {
+    public func mode(_ mode: String) -> Self {
         self.mode = mode
         return self
     }
 
-    func loading(_ loading: String) -> Self {
+    public func loading(_ loading: String) -> Self {
         self.loading = loading
         return self
     }
 
-    func ticketListings(_ ticketListings: [TicketListing]) -> Self {
+    public func ticketListings(_ ticketListings: [TicketListing]) -> Self {
         self.ticketListings = ticketListings
         return self
     }
 
-    func holdOnSelect(_ holdOnSelect: Bool) -> Self {
+    public func holdOnSelect(_ holdOnSelect: Bool) -> Self {
         self.holdOnSelect = holdOnSelect
         return self
     }
 
-    func holdOnSelectForGAs(_ holdOnSelectForGAs: Bool) -> Self {
+    public func holdOnSelectForGAs(_ holdOnSelectForGAs: Bool) -> Self {
         self.holdOnSelectForGAs = holdOnSelectForGAs
         return self
     }
 
-    func holdToken(_ holdToken: String) -> Self {
+    public func holdToken(_ holdToken: String) -> Self {
         self.holdToken = holdToken
         return self
     }
 
-    func objectLabel(_ objectLabel: String) -> Self {
+    public func objectLabel(_ objectLabel: String) -> Self {
         self.objectLabel = objectLabel
         return self
     }
 
-    func objectIcon(_ objectIcon: String) -> Self {
+    public func objectIcon(_ objectIcon: String) -> Self {
         self.objectIcon = objectIcon
         return self
     }
 
-    func isObjectVisible(_ isObjectVisible: String) -> Self {
+    public func isObjectVisible(_ isObjectVisible: String) -> Self {
         self.isObjectVisible = isObjectVisible
         return self
     }
 
-    func canGASelectionBeIncreased(_ canGASelectionBeIncreased: String) -> Self {
+    public func canGASelectionBeIncreased(_ canGASelectionBeIncreased: String) -> Self {
         self.canGASelectionBeIncreased = canGASelectionBeIncreased
         return self
     }
 
-    func objectColor(_ objectColor: String) -> Self {
+    public func objectColor(_ objectColor: String) -> Self {
         self.objectColor = objectColor
         return self
     }
 
-    func sectionColor(_ sectionColor: String) -> Self {
+    public func sectionColor(_ sectionColor: String) -> Self {
         self.sectionColor = sectionColor
         return self
     }
 
-    func extraConfig(_ extraConfig: Encodable) -> Self {
+    public func extraConfig(_ extraConfig: Encodable) -> Self {
         self.extraConfig = AnyEncodable(value: extraConfig)
         return self
     }
 
-    func onSelectionValid(_ onSelectionValid: @escaping () -> ()) -> Self {
+    public func onSelectionValid(_ onSelectionValid: @escaping () -> ()) -> Self {
         self.onSelectionValid = onSelectionValid
         return self
     }
 
-    func onSelectionInvalid(_ onSelectionInvalid: @escaping ([SelectionValidatorType]) -> ()) -> Self {
+    public func onSelectionInvalid(_ onSelectionInvalid: @escaping ([SelectionValidatorType]) -> ()) -> Self {
         self.onSelectionInvalid = onSelectionInvalid
         return self
     }
 
-    func onObjectSelected(_ onObjectSelected: @escaping (SeatsioObject, TicketType?) -> ()) -> Self {
+    public func onObjectSelected(_ onObjectSelected: @escaping (SeatsioObject, TicketType?) -> ()) -> Self {
         self.onObjectSelected = onObjectSelected
         return self
     }
 
-    func onObjectDeselected(_ onObjectDeselected: @escaping (SeatsioObject, TicketType?) -> ()) -> Self {
+    public func onObjectDeselected(_ onObjectDeselected: @escaping (SeatsioObject, TicketType?) -> ()) -> Self {
         self.onObjectDeselected = onObjectDeselected
         return self
     }
 
-    func onObjectClicked(_ onObjectClicked: @escaping (SeatsioObject) -> ()) -> Self {
+    public func onObjectClicked(_ onObjectClicked: @escaping (SeatsioObject) -> ()) -> Self {
         self.onObjectClicked = onObjectClicked
         return self
     }
 
-    func onBestAvailableSelected(_ onBestAvailableSelected: @escaping ([SeatsioObject], Bool) -> ()) -> Self {
+    public func onBestAvailableSelected(_ onBestAvailableSelected: @escaping ([SeatsioObject], Bool) -> ()) -> Self {
         self.onBestAvailableSelected = onBestAvailableSelected
         return self
     }
 
-    func onBestAvailableSelectionFailed(_ onBestAvailableSelectionFailed: @escaping () -> ()) -> Self {
+    public func onBestAvailableSelectionFailed(_ onBestAvailableSelectionFailed: @escaping () -> ()) -> Self {
         self.onBestAvailableSelectionFailed = onBestAvailableSelectionFailed
         return self
     }
 
-    func onHoldSucceeded(_ onHoldSucceeded: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
+    public func onHoldSucceeded(_ onHoldSucceeded: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
         self.onHoldSucceeded = onHoldSucceeded
         return self
     }
 
-    func onHoldFailed(_ onHoldFailed: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
+    public func onHoldFailed(_ onHoldFailed: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
         self.onHoldFailed = onHoldFailed
         return self
     }
 
-    func onReleaseHoldSucceeded(_ onReleaseHoldSucceeded: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
+    public func onReleaseHoldSucceeded(_ onReleaseHoldSucceeded: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
         self.onReleaseHoldSucceeded = onReleaseHoldSucceeded
         return self
     }
 
-    func onReleaseHoldFailed(_ onReleaseHoldFailed: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
+    public func onReleaseHoldFailed(_ onReleaseHoldFailed: @escaping ([SeatsioObject], [TicketType]?) -> ()) -> Self {
         self.onReleaseHoldFailed = onReleaseHoldFailed
         return self
     }
 
-    func onSelectedObjectBooked(_ onSelectedObjectBooked: @escaping (SeatsioObject) -> ()) -> Self {
+    public func onSelectedObjectBooked(_ onSelectedObjectBooked: @escaping (SeatsioObject) -> ()) -> Self {
         self.onSelectedObjectBooked = onSelectedObjectBooked
         return self
     }
 
-    func objectTooltip(_ objectTooltip: ObjectTooltip) -> Self {
+    public func objectTooltip(_ objectTooltip: ObjectTooltip) -> Self {
         self.objectTooltip = objectTooltip
         return self
     }
 
-    func tooltipInfo(_ tooltipInfo: @escaping (SeatsioObject) -> String) -> Self {
+    public func tooltipInfo(_ tooltipInfo: @escaping (SeatsioObject) -> String) -> Self {
         self.tooltipInfo = tooltipInfo
         return self
     }
 
-    func onChartRendered(_ onChartRendered: @escaping (SeatingChart) -> ()) -> Self {
+    public func onChartRendered(_ onChartRendered: @escaping (SeatingChart) -> ()) -> Self {
         self.onChartRendered = onChartRendered
         return self
     }
 
-    func onChartRenderingFailed(_ onChartRenderingFailed: @escaping () -> ()) -> Self {
+    public func onChartRenderingFailed(_ onChartRenderingFailed: @escaping () -> ()) -> Self {
         self.onChartRenderingFailed = onChartRenderingFailed
         return self
     }
 
-    func categoryFilter(_ categoryFilter: CategoryFilter) -> Self {
+    public func categoryFilter(_ categoryFilter: CategoryFilter) -> Self {
         self.categoryFilter = categoryFilter
         return self
     }
 
-    func showZoomOutButton(_ showZoomOutButton: Bool) -> Self {
+    public func showZoomOutButton(_ showZoomOutButton: Bool) -> Self {
         self.showZoomOutButtonOnMobile = showZoomOutButton
         return self
     }
 
-    func colorScheme(_ colorScheme: String) -> Self {
+    public func colorScheme(_ colorScheme: String) -> Self {
         self.colorScheme = colorScheme
         return self
     }
 
-    func colors(_ colors: Colors) -> Self {
+    public func colors(_ colors: Colors) -> Self {
         self.colors = colors
         return self
     }
 
-    func stylePreset(_ stylePreset: String) -> Self {
+    public func stylePreset(_ stylePreset: String) -> Self {
         self.stylePreset = stylePreset
         return self
     }
 
-    func style(_ style: Style) -> Self {
+    public func style(_ style: Style) -> Self {
         self.style = style
         return self
     }
