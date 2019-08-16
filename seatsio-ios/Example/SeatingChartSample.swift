@@ -30,6 +30,7 @@ class SeatingChartSample: UIViewController {
                 .selectedObjects([SelectedObject("A-1")])
                 .onChartRendered({ (chart) in
                     print("rendered")
+                    chart.changeConfig(ConfigChange().unavailableCategories(["Balcony"]))
                 })
 
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, seatsioConfig: config)
