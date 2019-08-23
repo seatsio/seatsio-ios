@@ -17,6 +17,9 @@ pod 'seatsio', '7.0.0'
 ## Usage
 
 ```swift
+import UIKit
+import seatsio
+
 class SeatingChartSample: UIViewController {
 
     var seatsio: SeatsioWebView!
