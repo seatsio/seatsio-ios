@@ -2,6 +2,6 @@ import Foundation
 
 public struct Point: Decodable {
 
-    let x: Float
-    let y: Float
+    public let x: Float
+    public let y: Float
 }

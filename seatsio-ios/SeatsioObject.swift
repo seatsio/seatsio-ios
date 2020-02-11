@@ -1,30 +1,30 @@
 import Foundation
 
 public struct SeatsioObject: Decodable {
-    let objectType: String
-    let label: String
-    let labels: Labels
-    let id: String
+    public let objectType: String
+    public let label: String
+    public let labels: Labels
+    public let id: String
 
-    let category: Category?
-    let center: Point?
-    let pricing: Pricing?
-    let status: String?
-    let forSale: Bool?
-    let selectable: Bool?
-    let selected: Bool?
-    let selectedTicketType: String?
-    let extraData: Data?
+    public let category: Category?
+    public let center: Point?
+    public let pricing: Pricing?
+    public let status: String?
+    public let forSale: Bool?
+    public let selectable: Bool?
+    public let selected: Bool?
+    public let selectedTicketType: String?
+    public let extraData: Data?
 
-    let capacity: Int?
-    let numBooked: Int?
-    let numFree: Int?
-    let numSelected: Int?
-    let selectionPerTicketType: [String:Int]?
+    public let capacity: Int?
+    public let numBooked: Int?
+    public let numFree: Int?
+    public let numSelected: Int?
+    public let selectionPerTicketType: [String:Int]?
 
-    let sectionCategory: Category?
-    let numberOfSelectableObjects: Int?
-    let numberOfSelectedObjects: Int?
-    let selectableCategories: [Category]?
-    let isInteractive: Bool?
+    public let sectionCategory: Category?
+    public let numberOfSelectableObjects: Int?
+    public let numberOfSelectedObjects: Int?
+    public let selectableCategories: [Category]?
+    public let isInteractive: Bool?
 }

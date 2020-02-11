@@ -2,7 +2,7 @@ import Foundation
 
 public struct TicketType: Codable {
 
-    let price: Float
-    let ticketType: String
+    public let price: Float
+    public let ticketType: String
 
 }

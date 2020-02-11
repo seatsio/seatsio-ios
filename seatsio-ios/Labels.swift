@@ -2,8 +2,8 @@ import Foundation
 
 public struct Labels: Decodable {
 
-    let own: String
-    let parent: String?
-    let section: String?
-    let displayedLabel: String
+    public let own: String
+    public let parent: String?
+    public let section: String?
+    public let displayedLabel: String
 }

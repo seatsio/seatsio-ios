@@ -2,9 +2,9 @@ import Foundation
 
 public struct Pricing: Codable {
 
-    let category: String?
-    let price: Float?
-    let ticketTypes: [TicketTypePricing]?
+    public let category: String?
+    public let price: Float?
+    public let ticketTypes: [TicketTypePricing]?
 
     public init(category: String, price: Float) {
         self.category = category
