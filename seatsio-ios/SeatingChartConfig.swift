@@ -33,10 +33,9 @@ public class SeatingChartConfig: Encodable {
     var mode: String?
     var loading: String?
     var ticketListings: [TicketListing]?
-    var holdOnSelect: Bool?
     var holdOnSelectForGAs: Bool?
     var holdToken: String?
-    var regenerateHoldToken: Bool?
+    var session: String?
     var objectLabel: String?
     var objectIcon: String?
     var isObjectVisible: String?
@@ -233,11 +232,6 @@ public class SeatingChartConfig: Encodable {
         return self
     }
 
-    public func holdOnSelect(_ holdOnSelect: Bool) -> Self {
-        self.holdOnSelect = holdOnSelect
-        return self
-    }
-
     public func holdOnSelectForGAs(_ holdOnSelectForGAs: Bool) -> Self {
         self.holdOnSelectForGAs = holdOnSelectForGAs
         return self
@@ -247,9 +241,9 @@ public class SeatingChartConfig: Encodable {
         self.holdToken = holdToken
         return self
     }
-
-    public func regenerateHoldToken(_ regenerateHoldToken: Bool) -> Self {
-        self.regenerateHoldToken = regenerateHoldToken
+    
+    public func session(_ session: String) -> Self {
+        self.session = session
         return self
     }
 
@@ -427,10 +421,9 @@ public class SeatingChartConfig: Encodable {
         case mode
         case loading
         case ticketListings
-        case holdOnSelect
         case holdOnSelectForGAs
         case holdToken
-        case regenerateHoldToken
+        case session
         case objectLabel
         case objectIcon
         case isObjectVisible
