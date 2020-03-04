@@ -16,11 +16,11 @@ public class SeatingChart {
         seatsioWebView.bridge.call("deselectObjects", data: objects)
     }
 
-    public func getHoldtoken(_ callback: @escaping (String) -> ()) {
+    public func getHoldtoken(_ callback: @escaping (String?) -> ()) {
         seatsioWebView.bridge.call(
                 "getHoldToken",
                 data: nil,
-                callback: { (response) in callback(response as! String) }
+                callback: { (response) in callback(nullToNil(value: response) as? String) }
         )
     }
 
@@ -98,4 +98,12 @@ public class SeatingChart {
 func toJsonString(_ o: AnyEncodable) -> String {
     let data = try! JSONEncoder().encode(o)
     return String(data: data, encoding: .utf8)!
+}
+
+func nullToNil(value : Any?) -> Any? {
+    if value is NSNull {
+        return nil
+    } else {
+        return value
+    }
 }
