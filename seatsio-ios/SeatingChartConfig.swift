@@ -51,6 +51,7 @@ public class SeatingChartConfig: Encodable {
     var stylePreset: String?
     var style: Style?
     var showFullScreenButton: Bool = false
+    var channels: Set<String>?
 
     var onSelectionValid: Optional<() -> ()>
     var onSelectionInvalid: Optional<([SelectionValidatorType]) -> ()>
@@ -439,6 +440,7 @@ public class SeatingChartConfig: Encodable {
         case stylePreset
         case style
         case showFullScreenButton
+        case channels
         case _library
     }
 }
