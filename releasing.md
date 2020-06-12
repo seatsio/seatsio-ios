@@ -1,3 +1,3 @@
-- Update major version in seatsio.podspec
+- Update version in seatsio.podspec
 - Update version in README.md
 - Create release on github

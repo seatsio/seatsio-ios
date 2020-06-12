@@ -11,7 +11,7 @@ seatsio-ios allows rendering seats.io seating charts inside an iOS application. 
 Add this to your podfile:
 
 ```
-pod 'seatsio', '11.0.0'
+pod 'seatsio', '11.1.0'
 ```
 
 ## Usage
