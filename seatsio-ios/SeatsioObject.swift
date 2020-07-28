@@ -12,6 +12,7 @@ public struct SeatsioObject: Decodable {
     public let status: String?
     public let forSale: Bool?
     public let selectable: Bool?
+    public let inSelectableChannel: Bool?
     public let selected: Bool?
     public let selectedTicketType: String?
     public let extraData: Data?
