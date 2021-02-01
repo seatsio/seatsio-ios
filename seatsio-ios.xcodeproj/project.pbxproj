@@ -13,6 +13,7 @@
 		4EDEA15676C3C508BB4BBE4B /* SeatingChartSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */; };
 		4EDEA17A326A236927AAB4A7 /* deploy.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4EDEA639B2ECFE51778C602D /* deploy.sh */; };
 		4EDEA2B7249C0734B9AEE860 /* TicketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA64B09FF840D72C49C61 /* TicketType.swift */; };
+		4EDEA2C773193C6632F3DD88 /* deploy.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4EDEAE3830C40C471F0937D6 /* deploy.yml */; };
 		4EDEA2E03D2CD09EEC4CAE41 /* TicketListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA69A460C361D9C8F3A33 /* TicketListing.swift */; };
 		4EDEA4001C0896B83A8D0B0D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA8AC302F74374EED0CDF /* Point.swift */; };
 		4EDEA42398413DDE89322B68 /* TicketTypePricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */; };
@@ -30,7 +31,6 @@
 		4EDEA9892FEF157DE1A9F396 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA81DA10F59A65048DF40 /* Labels.swift */; };
 		4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */; };
 		4EDEAA64A7C2984DE75016E0 /* ObjectTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA386B2AED9B7FFA78D48 /* ObjectTooltip.swift */; };
-		4EDEAAA24781E84FD1F0D94F /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4EDEAAEEA0795862464A3E55 /* .travis.yml */; };
 		4EDEAB8F473117311871E657 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA0763144FD24206F519B /* CategoryFilter.swift */; };
 		4EDEAC4BA9FFF44DB841CFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */; };
 		4EDEAE838F53B93BCE0114F4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA633D63982576C1999B1 /* Colors.swift */; };
@@ -85,10 +85,10 @@
 		4EDEA8AC302F74374EED0CDF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		4EDEA976297E0ADA1A8BE9C8 /* releasing.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = releasing.md; sourceTree = "<group>"; };
 		4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
-		4EDEAAEEA0795862464A3E55 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .travis.yml; sourceTree = "<group>"; };
 		4EDEAC0C4EF1BDA7E69EB7AB /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypeWithQuantity.swift; sourceTree = "<group>"; };
 		4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = "<group>"; };
+		4EDEAE3830C40C471F0937D6 /* deploy.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = deploy.yml; sourceTree = "<group>"; };
 		4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeatingChartSample.swift; path = Example/SeatingChartSample.swift; sourceTree = "<group>"; };
 		4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigChange.swift; sourceTree = "<group>"; };
 		4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypePricing.swift; sourceTree = "<group>"; };
@@ -140,9 +140,9 @@
 				3B40BA2E22A7D49C00B9A507 /* Products */,
 				2D7DE68DBC739D600807581F /* Pods */,
 				8438CC24EAD4C56087A90D9B /* Frameworks */,
-				4EDEAAEEA0795862464A3E55 /* .travis.yml */,
 				4EDEA639B2ECFE51778C602D /* deploy.sh */,
 				4EDEA976297E0ADA1A8BE9C8 /* releasing.md */,
+				4EDEAE3830C40C471F0937D6 /* deploy.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,8 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */,
-				4EDEAAA24781E84FD1F0D94F /* .travis.yml in Resources */,
 				4EDEA17A326A236927AAB4A7 /* deploy.sh in Resources */,
+				4EDEA2C773193C6632F3DD88 /* deploy.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

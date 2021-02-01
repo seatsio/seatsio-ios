@@ -1,0 +1,11 @@
+name: 'Release'
+
+on:
+  release:
+    types: [created]
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: pod install
+      - run: pod lib lint
+      - run: pud trunk push
