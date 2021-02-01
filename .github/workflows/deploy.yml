@@ -13,4 +13,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: pod install
       - run: pod lib lint
-      - run: pud trunk push
+      - run: pod trunk push
