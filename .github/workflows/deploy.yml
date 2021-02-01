@@ -14,3 +14,5 @@ jobs:
       - run: pod install
       - run: pod lib lint
       - run: pod trunk push
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
