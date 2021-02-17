@@ -73,3 +73,21 @@ SeatingChartConfig()
         print(object, ticketType)
     })
 ```
+
+### listSelectedObjects
+
+```swift
+var seatingChart: SeatingChart!
+
+let config: SeatingChartConfig = SeatingChartConfig()
+    .publicKey("<your public key>")
+    .event("<your event key>")
+    .onChartRendered({ (chart) in
+        seatingChart = chart
+    })
+
+// after webview has rendered
+seatingChart?.listSelectedObjects({ (objects) in
+    // do something with the objects
+})
+```
