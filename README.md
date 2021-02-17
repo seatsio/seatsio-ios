@@ -87,7 +87,7 @@ let config: SeatingChartConfig = SeatingChartConfig()
     })
 
 // after webview has rendered
-seatingChart?.listSelectedObjects({ (objects) in
+seatingChart.listSelectedObjects({ (objects) in
     // do something with the objects
 })
 ```
