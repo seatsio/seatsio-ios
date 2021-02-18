@@ -62,7 +62,7 @@ SeatingChartConfig()
     .priceFormatter({ (price) in "\(price)$" })
 ```
 
-### Holding seats
+### Creating a session to hold seats
 
 ```swift
 var seatingChart: SeatingChart!
