@@ -62,6 +62,25 @@ SeatingChartConfig()
     .priceFormatter({ (price) in "\(price)$" })
 ```
 
+### Holding seats
+
+```swift
+var seatingChart: SeatingChart!
+
+let config: SeatingChartConfig = SeatingChartConfig()
+        .publicKey("<your public key>")
+        .event("<your event key>")
+        .session("start")
+        .onChartRendered({ (chart) in
+            seatingChart = chart
+        })
+
+// after webview has rendered
+seatingChart.getHoldtoken({ (token) in
+    // do something with the token
+})
+```
+
 ### onObjectSelected / onObjectDeselected
 
 ```swift
