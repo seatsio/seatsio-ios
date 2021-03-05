@@ -22,6 +22,7 @@ public class SeatingChartConfig: Encodable {
     var categoryFilter: CategoryFilter?
     var selectBestAvailable: BestAvailable?
     var alwaysShowSectionContents: Bool?
+    var showSectionContents: String?
     var showLegend: Bool?
     var legend: Legend?
     var showMinimap: Bool?
@@ -175,6 +176,11 @@ public class SeatingChartConfig: Encodable {
 
     public func alwaysShowSectionContents(_ alwaysShowSectionContents: Bool) -> Self {
         self.alwaysShowSectionContents = alwaysShowSectionContents
+        return self
+    }
+
+    public func showSectionContents(_ showSectionContents: String) -> Self {
+        self.showSectionContents = showSectionContents
         return self
     }
 
@@ -411,6 +417,7 @@ public class SeatingChartConfig: Encodable {
         case filteredCategories
         case selectBestAvailable
         case alwaysShowSectionContents
+        case showSectionContents
         case showLegend
         case legend
         case showMinimap
