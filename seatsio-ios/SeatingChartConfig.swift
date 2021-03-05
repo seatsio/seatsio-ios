@@ -174,6 +174,7 @@ public class SeatingChartConfig: Encodable {
         return self
     }
 
+    @available(*, deprecated, message: "use showSectionContents('always') instead")
     public func alwaysShowSectionContents(_ alwaysShowSectionContents: Bool) -> Self {
         self.alwaysShowSectionContents = alwaysShowSectionContents
         return self
