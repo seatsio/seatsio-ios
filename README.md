@@ -11,7 +11,7 @@ seatsio-ios allows rendering seats.io seating charts inside an iOS application. 
 Add this to your podfile:
 
 ```
-pod 'seatsio', '11.4.0'
+pod 'seatsio', '12.0.0'
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ class SeatingChartSample: UIViewController {
                 .publicKey("<your public key>")
                 .event("<your event key>")
 
-        seatsio = SeatsioWebView(frame: UIScreen.main.bounds, seatsioConfig: config)
+        seatsio = SeatsioWebView(frame: UIScreen.main.bounds, region: "eu", seatsioConfig: config)
 
         self.view = seatsio
     }

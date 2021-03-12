@@ -6,23 +6,25 @@ public class SeatsioWebView: WKWebView {
     var bridge: JustBridge!
     var seatsioConfig: SeatingChartConfig
 
-    public init(frame: CGRect, seatsioConfig: SeatingChartConfig) {
+    public init(frame: CGRect, region: String, seatsioConfig: SeatingChartConfig) {
         self.seatsioConfig = seatsioConfig
         super.init(frame: frame, configuration: WKWebViewConfiguration())
         bridge = JustBridge(with: self)
-        loadSeatingChart()
+        loadSeatingChart(region: region)
     }
 
     required init?(coder: NSCoder) {
         fatalError("not implemented")
     }
 
-    private func loadSeatingChart() {
+    private func loadSeatingChart(region: String) {
         let callbacks = self.buildCallbacksConfiguration().joined(separator: ",")
         let config = self.buildConfiguration()
                 .dropLast()
                 + "," + callbacks + "}";
-        let htmlString = HTML.replacingOccurrences(of: "%configAsJs%", with: config)
+        let htmlString = HTML
+                .replacingOccurrences(of: "%configAsJs%", with: config)
+                .replacingOccurrences(of: "%region%", with: region)
         self.loadHTMLString(htmlString, baseURL: nil)
     }
 
