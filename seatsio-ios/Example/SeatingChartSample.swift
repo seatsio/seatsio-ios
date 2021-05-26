@@ -31,9 +31,15 @@ class SeatingChartSample: UIViewController {
                 .onChartRendered({ (chart) in
                     print("rendered")
                     chart.changeConfig(ConfigChange().unavailableCategories(["Balcony"]))
+                    chart.findObject("K-3",
+                            { (object) in
+                                object.isInChannel("NO_CHANNEL", { (res) in print(res) })
+                                object.select("child")
+                            },
+                            { () in print("NOT FOUND") })
                 })
 
-        seatsio = SeatsioWebView(frame: UIScreen.main.bounds, seatsioConfig: config)
+        seatsio = SeatsioWebView(frame: UIScreen.main.bounds, region: "eu", seatsioConfig: config)
 
         self.view = seatsio
     }

@@ -71,6 +71,26 @@ let HTML = """
                     window.bridge.register("changeConfig", function(data, callback) {
                         chart.changeConfig(JSON.parse(data))
                     });
+
+                    window.bridge.register("selectObject", function(data, callback) {
+                        chart.findObject(data.label).then(object => object.select(data.ticketType === null ? undefined : data.ticketType))
+                    });   
+
+                    window.bridge.register("deselectObject", function(data, callback) {
+                        chart.findObject(data.label).then(object => object.deselect(data.ticketType === null ? undefined : data.ticketType))
+                    });   
+
+                    window.bridge.register("pulseObject", function(data, callback) {
+                        chart.findObject(data).then(object => object.pulse())
+                    });   
+
+                    window.bridge.register("unpulseObject", function(data, callback) {
+                        chart.findObject(data).then(object => object.unpulse())
+                    });    
+
+                    window.bridge.register("isObjectInChannel", function(data, callback) {
+                        chart.findObject(data.label).then(object => callback(object.isInChannel(data.channel)))
+                    });
                 </script>
             </body>
             </html>
