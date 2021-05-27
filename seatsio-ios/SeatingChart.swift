@@ -93,6 +93,26 @@ public class SeatingChart {
                 callback: { (response) in callback(decodeSeatsioObjects(response!)) }
         )
     }
+
+    func selectObject(_ label: String, _ ticketType: String?) {
+        seatsioWebView.bridge.call("selectObject", data: ["label": label, "ticketType": ticketType])
+    }
+
+    func deselectObject(_ label: String, _ ticketType: String?) {
+        seatsioWebView.bridge.call("deselectObject", data: ["label": label, "ticketType": ticketType])
+    }
+
+    func pulseObject(_ label: String) {
+        seatsioWebView.bridge.call("pulseObject", data: label)
+    }
+
+    func unpulseObject(_ label: String) {
+        seatsioWebView.bridge.call("unpulseObject", data: label)
+    }
+
+    func isObjectInChannel(_ label: String, _ channel: String, _ callback: @escaping (Bool) -> ()) {
+        seatsioWebView.bridge.call("isObjectInChannel", data: ["label": label, "channel": channel], callback: { (response) in callback((response as? Bool)!) })
+    }
 }
 
 func toJsonString(_ o: AnyEncodable) -> String {
@@ -100,7 +120,7 @@ func toJsonString(_ o: AnyEncodable) -> String {
     return String(data: data, encoding: .utf8)!
 }
 
-func nullToNil(value : Any?) -> Any? {
+func nullToNil(value: Any?) -> Any? {
     if value is NSNull {
         return nil
     } else {
