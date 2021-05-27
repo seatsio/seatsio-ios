@@ -80,7 +80,7 @@ public class SeatingChart {
                     if response == nil {
                         errorCallback()
                     } else {
-                        successCallback(decodeSeatsioObject(response!, self))
+                        successCallback(decodeSeatsioObject(response!))
                     }
                 }
         )
@@ -90,7 +90,7 @@ public class SeatingChart {
         seatsioWebView.bridge.call(
                 "listSelectedObjects",
                 data: nil,
-                callback: { (response) in callback(decodeSeatsioObjects(response!, self)) }
+                callback: { (response) in callback(decodeSeatsioObjects(response!)) }
         )
     }
 
