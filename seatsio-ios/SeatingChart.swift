@@ -94,6 +94,14 @@ public class SeatingChart {
         )
     }
 
+    public func getReportBySelectability(_ callback: @escaping (ReportBySelectability) -> ()) {
+        seatsioWebView.bridge.call(
+                "getReportBySelectability",
+                data: nil,
+                callback: { (response) in callback(decodeReportBySelectability(response!)) }
+        )
+    }
+
     func selectObject(_ label: String, _ ticketType: String?) {
         seatsioWebView.bridge.call("selectObject", data: ["label": label, "ticketType": ticketType])
     }

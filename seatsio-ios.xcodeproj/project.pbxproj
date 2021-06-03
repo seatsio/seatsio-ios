@@ -35,6 +35,7 @@
 		4EDEAE838F53B93BCE0114F4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA633D63982576C1999B1 /* Colors.swift */; };
 		4EDEAF040BFBA579B70AFC19 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA57B75716A2D4D86C3C6 /* Category.swift */; };
 		4EDEAF0D8D5EFDC667045A40 /* SelectionValidatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */; };
+		4EDEAF7141F075ACE831949E /* ReportBySelectability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */; };
 		4EDEAFBCD7841989B4823DDC /* Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA65F4B160685223EEC59 /* Html.swift */; };
 		4EDEAFCD0B067C46CCA35CBA /* ConfigChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */; };
 		B5E8508BA29FC659A6324B83 /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
@@ -88,6 +89,7 @@
 		4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypeWithQuantity.swift; sourceTree = "<group>"; };
 		4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = "<group>"; };
 		4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeatingChartSample.swift; path = Example/SeatingChartSample.swift; sourceTree = "<group>"; };
+		4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportBySelectability.swift; sourceTree = "<group>"; };
 		4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigChange.swift; sourceTree = "<group>"; };
 		4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypePricing.swift; sourceTree = "<group>"; };
 		55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				4EDEA65F4B160685223EEC59 /* Html.swift */,
 				4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */,
 				4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */,
+				4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */,
 			);
 			path = "seatsio-ios";
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				4EDEA15676C3C508BB4BBE4B /* SeatingChartSample.swift in Sources */,
 				4EDEAC4BA9FFF44DB841CFB9 /* AppDelegate.swift in Sources */,
 				4EDEA64D4BBCBE687755DEAC /* releasing.md in Sources */,
+				4EDEAF7141F075ACE831949E /* ReportBySelectability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

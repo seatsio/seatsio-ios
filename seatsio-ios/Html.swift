@@ -54,6 +54,10 @@ let HTML = """
 
                     window.bridge.register("listSelectedObjects", function(data, callback) {
                         chart.listSelectedObjects(objects => callback(JSON.stringify(objects)))
+                    });     
+
+                    window.bridge.register("getReportBySelectability", function(data, callback) {
+                        chart.getReportBySelectability(report => callback(JSON.stringify(report)))
                     });
 
                     window.bridge.register("listCategories", function(data, callback) {

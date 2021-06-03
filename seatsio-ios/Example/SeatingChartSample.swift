@@ -30,6 +30,7 @@ class SeatingChartSample: UIViewController {
                 .selectedObjects([SelectedObject("A-1")])
                 .onChartRendered({ (chart) in
                     print("rendered")
+                    chart.getReportBySelectability({ (report) in print(report)})
                     chart.changeConfig(ConfigChange().unavailableCategories(["Balcony"]))
                     chart.isObjectInChannel("K-3", "NO_CHANNEL", { (result) in print("Is object in channel NO_CHANNEL? " + String(result)) })
                 })

@@ -182,6 +182,11 @@ func decodeSeatsioObjects(_ data: Any) -> [SeatsioObject] {
     return try! JSONDecoder().decode([SeatsioObject].self, from: dataToDecode)
 }
 
+func decodeReportBySelectability(_ data: Any) -> ReportBySelectability {
+    let dataToDecode = (data as! String).data(using: .utf8)!
+    return try! JSONDecoder().decode(ReportBySelectability.self, from: dataToDecode)
+}
+
 func decodeCategories(_ data: Any) -> [Category] {
     let dataToDecode = (data as! String).data(using: .utf8)!
     return try! JSONDecoder().decode([Category].self, from: dataToDecode)
