@@ -102,23 +102,23 @@ public class SeatingChart {
         )
     }
 
-    func selectObject(_ label: String, _ ticketType: String?) {
+    public func selectObject(_ label: String, _ ticketType: String?) {
         seatsioWebView.bridge.call("selectObject", data: ["label": label, "ticketType": ticketType])
     }
 
-    func deselectObject(_ label: String, _ ticketType: String?) {
+    public func deselectObject(_ label: String, _ ticketType: String?) {
         seatsioWebView.bridge.call("deselectObject", data: ["label": label, "ticketType": ticketType])
     }
 
-    func pulseObject(_ label: String) {
+    public func pulseObject(_ label: String) {
         seatsioWebView.bridge.call("pulseObject", data: label)
     }
 
-    func unpulseObject(_ label: String) {
+    public func unpulseObject(_ label: String) {
         seatsioWebView.bridge.call("unpulseObject", data: label)
     }
 
-    func isObjectInChannel(_ label: String, _ channel: String, _ callback: @escaping (Bool) -> ()) {
+    public func isObjectInChannel(_ label: String, _ channel: String, _ callback: @escaping (Bool) -> ()) {
         seatsioWebView.bridge.call("isObjectInChannel", data: ["label": label, "channel": channel], callback: { (response) in callback((response as? Bool)!) })
     }
 }
