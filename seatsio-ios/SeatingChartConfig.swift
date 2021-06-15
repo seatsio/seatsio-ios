@@ -249,7 +249,7 @@ public class SeatingChartConfig: Encodable {
         self.holdToken = holdToken
         return self
     }
-    
+
     public func session(_ session: String) -> Self {
         self.session = session
         return self
@@ -397,6 +397,11 @@ public class SeatingChartConfig: Encodable {
 
     public func style(_ style: Style) -> Self {
         self.style = style
+        return self
+    }
+
+    public func channels(_ channels: Set<String>) -> Self {
+        self.channels = channels
         return self
     }
 
