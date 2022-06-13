@@ -7,7 +7,7 @@ class SeatingChartSample: UIViewController {
 
     override func loadView() {
         let config: SeatingChartConfig = SeatingChartConfig()
-                .publicKey("publicDemoKey")
+                .workspaceKey("publicDemoKey")
                 .event("smallTheatreWithGAEvent")
                 .pricing([
                     Pricing(category: "1", ticketTypes: [
@@ -34,6 +34,7 @@ class SeatingChartSample: UIViewController {
                     chart.changeConfig(ConfigChange().unavailableCategories(["Balcony"]))
                     chart.isObjectInChannel("K-3", "NO_CHANNEL", { (result) in print("Is object in channel NO_CHANNEL? " + String(result)) })
                 })
+                .categoryFilter(CategoryFilter().enabled(true))
 
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, region: "eu", seatsioConfig: config)
 

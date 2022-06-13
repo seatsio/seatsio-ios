@@ -16,6 +16,10 @@ public struct SeatsioObject: Decodable {
     public let selected: Bool?
     public let selectedTicketType: String?
     public let extraData: Data?
+    public let accessible: Bool?
+    public let companionSeat: Bool?
+    public let restrictedView: Bool?
+    public let disabledBySocialDistancingRules: Bool?
 
     public let capacity: Int?
     public let numBooked: Int?

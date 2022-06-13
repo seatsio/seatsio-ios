@@ -5,7 +5,7 @@ DEPENDENCIES:
   - JustBridge (~> 4.2.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - JustBridge
 
 SPEC CHECKSUMS:
@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3af8e3da192c96e057abb4a1e9173a9b9dd4d36f
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

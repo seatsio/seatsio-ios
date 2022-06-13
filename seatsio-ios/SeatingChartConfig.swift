@@ -2,7 +2,7 @@ import Foundation
 
 public class SeatingChartConfig: Encodable {
 
-    var publicKey: String?
+    var workspaceKey: String?
     var events: Set<String>?
     var chart: String?
     var pricing: [Pricing]?
@@ -12,6 +12,7 @@ public class SeatingChartConfig: Encodable {
     var objectWithoutPricingSelectable: Bool?
     var objectWithoutCategorySelectable: Bool?
     var selectedObjects: [SelectedObject]?
+    var selectableObjects: [String]?
     var language: String?
     var messages: [String: String]?
     var priceLevelsTooltipMessage: String?
@@ -52,6 +53,7 @@ public class SeatingChartConfig: Encodable {
     var stylePreset: String?
     var style: Style?
     var showFullScreenButton: Bool = false
+    var showSectionPricingOverlay: Bool?
     var channels: Set<String>?
 
     var onSelectionValid: Optional<() -> ()>
@@ -59,6 +61,9 @@ public class SeatingChartConfig: Encodable {
     var onObjectSelected: Optional<(SeatsioObject, TicketType?) -> ()>
     var onObjectDeselected: Optional<(SeatsioObject, TicketType?) -> ()>
     var onObjectClicked: Optional<(SeatsioObject) -> ()>
+    var onObjectStatusChanged: Optional<(SeatsioObject) -> ()>
+    var onSessionInitialized: Optional<(HoldToken) -> ()>
+    var onHoldTokenExpired: Optional<() -> ()>
     var onBestAvailableSelected: Optional<([SeatsioObject], Bool) -> ()>
     var onBestAvailableSelectionFailed: Optional<() -> ()>
     var onHoldSucceeded: Optional<([SeatsioObject], [TicketType]?) -> ()>
@@ -74,8 +79,8 @@ public class SeatingChartConfig: Encodable {
     public init() {
     }
 
-    public func publicKey(_ publicKey: String) -> Self {
-        self.publicKey = publicKey
+    public func workspaceKey(_ workspaceKey: String) -> Self {
+        self.workspaceKey = workspaceKey
         return self
     }
 
@@ -121,6 +126,11 @@ public class SeatingChartConfig: Encodable {
 
     public func selectedObjects(_ selectedObjects: [SelectedObject]) -> Self {
         self.selectedObjects = selectedObjects
+        return self
+    }
+
+    public func selectableObjects(_ selectableObjects: [String]) -> Self {
+        self.selectableObjects = selectableObjects
         return self
     }
 
@@ -315,6 +325,21 @@ public class SeatingChartConfig: Encodable {
         return self
     }
 
+    public func onObjectStatusChanged(_ onObjectStatusChanged: @escaping (SeatsioObject) -> ()) -> Self {
+        self.onObjectStatusChanged = onObjectStatusChanged
+        return self
+    }
+
+    public func onSessionInitialized(_ onSessionInitialized: @escaping (HoldToken) -> ()) -> Self {
+        self.onSessionInitialized = onSessionInitialized
+        return self
+    }
+
+    public func onHoldTokenExpired(_ onHoldTokenExpired: @escaping () -> ()) -> Self {
+        self.onHoldTokenExpired = onHoldTokenExpired
+        return self
+    }
+
     public func onBestAvailableSelected(_ onBestAvailableSelected: @escaping ([SeatsioObject], Bool) -> ()) -> Self {
         self.onBestAvailableSelected = onBestAvailableSelected
         return self
@@ -380,6 +405,11 @@ public class SeatingChartConfig: Encodable {
         return self
     }
 
+    public func showSectionPricingOverlay(_ showSectionPricingOverlay: Bool) -> Self {
+        self.showSectionPricingOverlay = showSectionPricingOverlay
+        return self
+    }
+
     public func colorScheme(_ colorScheme: String) -> Self {
         self.colorScheme = colorScheme
         return self
@@ -406,7 +436,7 @@ public class SeatingChartConfig: Encodable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case publicKey
+        case workspaceKey
         case events
         case chart
         case pricing
@@ -414,6 +444,7 @@ public class SeatingChartConfig: Encodable {
         case objectWithoutPricingSelectable
         case objectWithoutCategorySelectable
         case selectedObjects
+        case selectableObjects
         case language
         case messages
         case priceLevelsTooltipMessage
@@ -448,6 +479,7 @@ public class SeatingChartConfig: Encodable {
         case objectTooltip
         case categoryFilter
         case showZoomOutButtonOnMobile
+        case showSectionPricingOverlay
         case colorScheme
         case colors
         case stylePreset

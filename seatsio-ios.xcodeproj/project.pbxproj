@@ -32,32 +32,15 @@
 		4EDEAA64A7C2984DE75016E0 /* ObjectTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA386B2AED9B7FFA78D48 /* ObjectTooltip.swift */; };
 		4EDEAB8F473117311871E657 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA0763144FD24206F519B /* CategoryFilter.swift */; };
 		4EDEAC4BA9FFF44DB841CFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */; };
+		4EDEACC0E67B41C274F30EDD /* HoldToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAA55D4DDFE1914B4116B /* HoldToken.swift */; };
 		4EDEAE838F53B93BCE0114F4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA633D63982576C1999B1 /* Colors.swift */; };
 		4EDEAF040BFBA579B70AFC19 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA57B75716A2D4D86C3C6 /* Category.swift */; };
 		4EDEAF0D8D5EFDC667045A40 /* SelectionValidatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */; };
 		4EDEAF7141F075ACE831949E /* ReportBySelectability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */; };
 		4EDEAFBCD7841989B4823DDC /* Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA65F4B160685223EEC59 /* Html.swift */; };
 		4EDEAFCD0B067C46CCA35CBA /* ConfigChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */; };
-		B5E8508BA29FC659A6324B83 /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
 		B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3B40BA4222A7D49C00B9A507 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3B40BA2522A7D49C00B9A507 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3B40BA2C22A7D49C00B9A507;
-			remoteInfo = "seatsio-ios";
-		};
-		3B40BA4D22A7D49C00B9A507 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3B40BA2522A7D49C00B9A507 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3B40BA2C22A7D49C00B9A507;
-			remoteInfo = "seatsio-ios";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seatsio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +67,7 @@
 		4EDEA83844B303A6685ACF8B /* SelectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedObject.swift; sourceTree = "<group>"; };
 		4EDEA8AC302F74374EED0CDF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		4EDEA976297E0ADA1A8BE9C8 /* releasing.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = releasing.md; sourceTree = "<group>"; };
+		4EDEAA55D4DDFE1914B4116B /* HoldToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoldToken.swift; sourceTree = "<group>"; };
 		4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
 		4EDEAC0C4EF1BDA7E69EB7AB /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypeWithQuantity.swift; sourceTree = "<group>"; };
@@ -104,20 +88,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				15859824B00D0EB49C0C6913 /* Pods_seatsio_ios.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3B40BA3E22A7D49C00B9A507 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3B40BA4922A7D49C00B9A507 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +156,7 @@
 				4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */,
 				4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */,
 				4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */,
+				4EDEAA55D4DDFE1914B4116B /* HoldToken.swift */,
 			);
 			path = "seatsio-ios";
 			sourceTree = "<group>";
@@ -233,14 +204,6 @@
 					3B40BA2C22A7D49C00B9A507 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
-					3B40BA4022A7D49C00B9A507 = {
-						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = 3B40BA2C22A7D49C00B9A507;
-					};
-					3B40BA4B22A7D49C00B9A507 = {
-						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = 3B40BA2C22A7D49C00B9A507;
-					};
 				};
 			};
 			buildConfigurationList = 3B40BA2822A7D49C00B9A507 /* Build configuration list for PBXProject "seatsio-ios" */;
@@ -268,20 +231,6 @@
 			files = (
 				3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */,
 				4EDEAA28D436F7321D5E551D /* deploy.yml in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3B40BA3F22A7D49C00B9A507 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3B40BA4A22A7D49C00B9A507 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,38 +312,11 @@
 				4EDEAC4BA9FFF44DB841CFB9 /* AppDelegate.swift in Sources */,
 				4EDEA64D4BBCBE687755DEAC /* releasing.md in Sources */,
 				4EDEAF7141F075ACE831949E /* ReportBySelectability.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3B40BA3D22A7D49C00B9A507 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5E8508BA29FC659A6324B83 /* PBXBuildFile */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3B40BA4822A7D49C00B9A507 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				4EDEACC0E67B41C274F30EDD /* HoldToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3B40BA4322A7D49C00B9A507 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3B40BA2C22A7D49C00B9A507 /* seatsio-ios */;
-			targetProxy = 3B40BA4222A7D49C00B9A507 /* PBXContainerItemProxy */;
-		};
-		3B40BA4E22A7D49C00B9A507 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3B40BA2C22A7D49C00B9A507 /* seatsio-ios */;
-			targetProxy = 3B40BA4D22A7D49C00B9A507 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3B40BA5322A7D49C00B9A507 /* Debug */ = {
@@ -523,7 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BS32LVLR6L;
+				DEVELOPMENT_TEAM = 5WGUCAYKLS;
 				INFOPLIST_FILE = "seatsio-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -544,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BS32LVLR6L;
+				DEVELOPMENT_TEAM = 5WGUCAYKLS;
 				INFOPLIST_FILE = "seatsio-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
