@@ -11,7 +11,7 @@ seatsio-ios allows rendering seats.io seating charts inside an iOS application. 
 Add this to your podfile:
 
 ```
-pod 'seatsio', '12.4.0'
+pod 'seatsio', '13.0.0'
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ class SeatingChartSample: UIViewController {
 
     override func loadView() {
         let config: SeatingChartConfig = SeatingChartConfig()
-                .publicKey("<your public key>")
+                .workspaceKey("<your public workspace key>")
                 .event("<your event key>")
 
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, region: "eu", seatsioConfig: config)
@@ -68,7 +68,7 @@ SeatingChartConfig()
 var seatingChart: SeatingChart!
 
 let config: SeatingChartConfig = SeatingChartConfig()
-        .publicKey("<your public key>")
+        .workspaceKey("<your public workspace key>")
         .event("<your event key>")
         .session("start")
         .onChartRendered({ (chart) in
@@ -99,7 +99,7 @@ SeatingChartConfig()
 var seatingChart: SeatingChart!
 
 let config: SeatingChartConfig = SeatingChartConfig()
-    .publicKey("<your public key>")
+    .workspaceKey("<your public workspace key>")
     .event("<your event key>")
     .onChartRendered({ (chart) in
         seatingChart = chart
@@ -117,7 +117,7 @@ seatingChart.listSelectedObjects({ (objects) in
 var seatingChart: SeatingChart!
 
 let config: SeatingChartConfig = SeatingChartConfig()
-    .publicKey("<your public key>")
+    .workspaceKey("<your public workspace key>")
     .event("<your event key>")
     .onChartRendered({ (chart) in
         seatingChart = chart
@@ -135,7 +135,7 @@ seatingChart.getReportBySelectability({ (report) in
 var seatingChart: SeatingChart!
 
 let config: SeatingChartConfig = SeatingChartConfig()
-    .publicKey("<your public key>")
+    .workspaceKey("<your public workspace key>")
     .event("<your event key>")
     .onChartRendered({ (chart) in
         chart.selectObject("K-3") // or chart.deselectObject("K-3")

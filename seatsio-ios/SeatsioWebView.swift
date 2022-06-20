@@ -79,6 +79,27 @@ public class SeatsioWebView: WKWebView {
             callbacks.append(buildCallbackConfigAsJS("onObjectClicked"))
         }
 
+        if (self.seatsioConfig.onObjectStatusChanged != nil) {
+            bridge.register("onObjectStatusChanged") { (data, callback) in
+                self.seatsioConfig.onObjectStatusChanged!(decodeSeatsioObject(firstArg(data)))
+            }
+            callbacks.append(buildCallbackConfigAsJS("onObjectStatusChanged"))
+        }
+
+        if (self.seatsioConfig.onSessionInitialized != nil) {
+            bridge.register("onSessionInitialized") { (data, callback) in
+                self.seatsioConfig.onSessionInitialized!(decodeHoldToken(firstArg(data)))
+            }
+            callbacks.append(buildCallbackConfigAsJS("onSessionInitialized"))
+        }
+
+        if (self.seatsioConfig.onHoldTokenExpired != nil) {
+            bridge.register("onHoldTokenExpired") { (data, callback) in
+                self.seatsioConfig.onHoldTokenExpired!()
+            }
+            callbacks.append(buildCallbackConfigAsJS("onHoldTokenExpired"))
+        }
+
         if (self.seatsioConfig.onBestAvailableSelected != nil) {
             bridge.register("onBestAvailableSelected") { (data, callback) in
                 self.seatsioConfig.onBestAvailableSelected!(decodeSeatsioObjects(firstArg(data)), decodeBool(secondArg(data)))
@@ -175,6 +196,15 @@ private func secondArg(_ data: Any?) -> Any {
 func decodeSeatsioObject(_ data: Any) -> SeatsioObject {
     let dataToDecode = (data as! String).data(using: .utf8)!
     return try! JSONDecoder().decode(SeatsioObject.self, from: dataToDecode)
+}
+
+func decodeHoldToken(_ data: Any) -> HoldToken {
+    let dataToDecode = (data as! String).data(using: .utf8)!
+    let decoder = JSONDecoder()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    decoder.dateDecodingStrategy = .formatted(formatter)
+    return try! decoder.decode(HoldToken.self, from: dataToDecode)
 }
 
 func decodeSeatsioObjects(_ data: Any) -> [SeatsioObject] {
