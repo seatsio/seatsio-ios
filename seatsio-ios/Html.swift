@@ -36,6 +36,10 @@ let HTML = """
                         chart.zoomToSelectedObjects()
                     });
 
+                    window.bridge.register("zoomToSection", function(label, callback) {
+                        chart.zoomToSection(label)
+                    });
+
                     window.bridge.register("rerender", function(data, callback) {
                         chart.rerender()
                     });
