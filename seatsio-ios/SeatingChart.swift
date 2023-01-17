@@ -28,6 +28,10 @@ public class SeatingChart {
         seatsioWebView.bridge.call("zoomToSelectedObjects", data: nil)
     }
 
+    public func zoomToSection(label: String) {
+        seatsioWebView.bridge.call("zoomToSection", data: label)
+    }
+
     public func rerender() {
         seatsioWebView.bridge.call("rerender", data: nil)
     }

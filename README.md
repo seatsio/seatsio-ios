@@ -11,7 +11,7 @@ seatsio-ios allows rendering seats.io seating charts inside an iOS application. 
 Add this to your podfile:
 
 ```
-pod 'seatsio', '13.0.0'
+pod 'seatsio', '13.1.0'
 ```
 
 ## Usage
@@ -127,6 +127,22 @@ let config: SeatingChartConfig = SeatingChartConfig()
 seatingChart.getReportBySelectability({ (report) in
     // do something with the report
 })
+```
+
+### chart.zoomToSection
+
+```swift
+var seatingChart: SeatingChart!
+
+let config: SeatingChartConfig = SeatingChartConfig()
+    .workspaceKey("<your public workspace key>")
+    .event("<your event key>")
+    .onChartRendered({ (chart) in
+        seatingChart = chart
+    })
+
+// after webview has rendered
+seatingChart.zoomToSection(label: "<sectionLabel>")
 ```
 
 ### Methods on seats (and other selectable objects)
