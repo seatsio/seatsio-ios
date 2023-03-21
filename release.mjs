@@ -35,17 +35,9 @@ function getVersionToBump() {
     return argv.v
 }
 
-function removeLeadingV(tagName) {
-    if (tagName.startsWith('v')) {
-        return tagName.substring(1)
-    }
-    return tagName
-}
-
 async function fetchLatestReleasedVersionNumber() {
     let result = await $`gh release view --json tagName`
-    let tagName = JSON.parse(result).tagName
-    return removeLeadingV(tagName)
+    return JSON.parse(result).tagName
 }
 
 async function determineNextVersionNumber(previous) {
@@ -85,8 +77,7 @@ async function commitAndPush() {
 }
 
 async function release() {
-    const newTag = 'v' + nextVersion
-    return await $`gh release create ${newTag} --generate-notes`.catch(error => {
+    return await $`gh release create ${nextVersion} --generate-notes`.catch(error => {
         console.error('something went wrong while creating the release. Please revert the version change!')
         throw error
     })

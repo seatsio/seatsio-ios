@@ -32,10 +32,6 @@ jobs:
         env:
           VERSION_TO_BUMP: ${{ inputs.versionToBump }}
           GH_TOKEN: ${{ github.token }}
-  publish:
-    runs-on: macos-latest
-    needs: [release]
-    steps:
       - run: pod install
       - run: pod lib lint
       - run: pod trunk push
