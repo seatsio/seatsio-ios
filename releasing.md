@@ -1,7 +1,3 @@
-- Update version in seatsio.podspec
-- Update version in README.md
-- Create release on github
-
 If the CocoaPods trunk access token is not valid anymore (i.e. deployment fails), you'll need to refresh it:
 1. `pod trunk register dev@seats.io`
 2. click on the link in the email
