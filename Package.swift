@@ -11,7 +11,6 @@ let package = Package(name: "seatsio-ios",
                       ],
                       targets: [
                         .target(name: "seatsio-ios",
-                                path: "seatsio-ios",
-                                resources: [.copy("Assets/bridge.js")])
+                                path: "seatsio-ios")
                       ]
 )

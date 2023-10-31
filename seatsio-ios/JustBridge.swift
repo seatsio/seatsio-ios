@@ -27,15 +27,6 @@ public class JustBridge: NSObject {
         case DataIsInvalidError
     }
 
-    /// The js that need inject to webView at dom start
-    internal static let bridge_js: String = {
-        let bundleURL = Bundle(for: JustBridge.self).resourceURL?.deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent( "seatsio-ios_seatsio-ios.bundle")
-        let bundle = Bundle(url: bundleURL!)!
-        let jsPath = bundle.path(forResource: "bridge", ofType: "js")!
-        let js = try! String(contentsOfFile: jsPath)
-        return js
-    }()
-
     public typealias ErrorCallback = (_ errorMessage: BridgeError) -> Void
     public typealias Callback = (_ responseData: BridgeData) -> Void
     public typealias Handler = (_ data: BridgeData, _ callback: Callback) -> Void
@@ -94,7 +85,7 @@ public class JustBridge: NSObject {
 extension JustBridge {
 
     fileprivate func injectBridgeJS() {
-        let script = WKUserScript(source: JustBridge.bridge_js, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+        let script = WKUserScript(source: BRIDGE_JS_STRING, injectionTime: .atDocumentStart, forMainFrameOnly: true)
         self.webview.configuration.userContentController.addUserScript(script)
     }
 
