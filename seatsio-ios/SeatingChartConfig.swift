@@ -7,7 +7,7 @@ public class SeatingChartConfig: Encodable {
     var chart: String?
     var pricing: [Pricing]?
 
-    var priceFormatter: Optional<(Float) -> String>
+    var priceFormatter: ((Float) -> String)?
     var numberOfPlacesToSelect: Int?
     var objectWithoutPricingSelectable: Bool?
     var objectWithoutCategorySelectable: Bool?
@@ -46,7 +46,7 @@ public class SeatingChartConfig: Encodable {
     var sectionColor: String?
     var extraConfig: AnyEncodable?
     var objectTooltip: ObjectTooltip?
-    var tooltipInfo: Optional<(SeatsioObject) -> String>
+    var tooltipInfo: ((SeatsioObject) -> String)?
     var showZoomOutButtonOnMobile: Bool?
     var colorScheme: String?
     var colors: Colors?
@@ -56,28 +56,27 @@ public class SeatingChartConfig: Encodable {
     var showSectionPricingOverlay: Bool?
     var channels: Set<String>?
 
-    var onSelectionValid: Optional<() -> ()>
-    var onSelectionInvalid: Optional<([SelectionValidatorType]) -> ()>
-    var onObjectSelected: Optional<(SeatsioObject, TicketType?) -> ()>
-    var onObjectDeselected: Optional<(SeatsioObject, TicketType?) -> ()>
-    var onObjectClicked: Optional<(SeatsioObject) -> ()>
-    var onObjectStatusChanged: Optional<(SeatsioObject) -> ()>
-    var onSessionInitialized: Optional<(HoldToken) -> ()>
-    var onHoldTokenExpired: Optional<() -> ()>
-    var onBestAvailableSelected: Optional<([SeatsioObject], Bool) -> ()>
-    var onBestAvailableSelectionFailed: Optional<() -> ()>
-    var onHoldSucceeded: Optional<([SeatsioObject], [TicketType]?) -> ()>
-    var onHoldFailed: Optional<([SeatsioObject], [TicketType]?) -> ()>
-    var onReleaseHoldSucceeded: Optional<([SeatsioObject], [TicketType]?) -> ()>
-    var onReleaseHoldFailed: Optional<([SeatsioObject], [TicketType]?) -> ()>
-    var onSelectedObjectBooked: Optional<(SeatsioObject) -> ()>
-    var onChartRendered: Optional<(SeatingChart) -> ()>
-    var onChartRenderingFailed: Optional<() -> ()>
+    var onSelectionValid: (() -> Void)?
+    var onSelectionInvalid: (([SelectionValidatorType]) -> Void)?
+    var onObjectSelected: ((SeatsioObject, TicketType?) -> Void)?
+    var onObjectDeselected: ((SeatsioObject, TicketType?) -> Void)?
+    var onObjectClicked: ((SeatsioObject) -> Void)?
+    var onObjectStatusChanged: ((SeatsioObject) -> Void)?
+    var onSessionInitialized: ((HoldToken) -> Void)?
+    var onHoldTokenExpired: (() -> Void)?
+    var onBestAvailableSelected: (([SeatsioObject], Bool) -> Void)?
+    var onBestAvailableSelectionFailed: (() -> Void)?
+    var onHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)?
+    var onHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)?
+    var onReleaseHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)?
+    var onReleaseHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)?
+    var onSelectedObjectBooked: ((SeatsioObject) -> Void)?
+    var onChartRendered: ((SeatingChart) -> Void)?
+    var onChartRenderingFailed: (() -> Void)?
 
     let _library: String = "ios"
 
-    public init() {
-    }
+    public init() {}
 
     public func workspaceKey(_ workspaceKey: String) -> Self {
         self.workspaceKey = workspaceKey

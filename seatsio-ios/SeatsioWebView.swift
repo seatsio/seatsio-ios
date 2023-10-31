@@ -1,6 +1,5 @@
 import Foundation
 import WebKit
-import JustBridge
 
 public class SeatsioWebView: WKWebView {
     var bridge: JustBridge!
