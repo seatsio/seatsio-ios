@@ -29,8 +29,8 @@ public class JustBridge: NSObject {
 
     /// The js that need inject to webView at dom start
     internal static let bridge_js: String = {
-        let bundlePath = Bundle(for: JustBridge.self).path(forResource: "JSBridge", ofType: "bundle")!
-        let bundle = Bundle.init(path: bundlePath)!
+        let bundleURL = Bundle(for: JustBridge.self).resourceURL?.deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent( "seatsio-ios_seatsio-ios.bundle")
+        let bundle = Bundle(url: bundleURL!)!
         let jsPath = bundle.path(forResource: "bridge", ofType: "js")!
         let js = try! String(contentsOfFile: jsPath)
         return js
