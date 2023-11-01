@@ -20,15 +20,13 @@ public struct Pricing: Codable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        if let value = try? container.decodeIfPresent(Int.self, forKey: .category) {
-            if (value == nil) {
-                category = nil
-            } else {
-                category = String(value!)
-            }
+
+        if let integer = try? container.decodeIfPresent(Int.self, forKey: .category) {
+            category = String(integer)
         } else {
             category = try container.decodeIfPresent(String.self, forKey: .category)
         }
+
         price = try container.decodeIfPresent(Float.self, forKey: .price)
         ticketTypes = try container.decodeIfPresent([TicketTypePricing].self, forKey: .ticketTypes)
     }
