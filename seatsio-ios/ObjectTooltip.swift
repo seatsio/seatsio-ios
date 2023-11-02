@@ -11,6 +11,17 @@ public class ObjectTooltip: Encodable {
     var stylizedLabel: Bool?
     var confirmSelectionOnMobile: Bool?
 
+    public init(showActionHint: Bool? = nil, showAvailability: Bool? = nil, showCategory: Bool? = nil, showLabel: Bool? = nil, showPricing: Bool? = nil, showUnavailableNotice: Bool? = nil, stylizedLabel: Bool? = nil, confirmSelectionOnMobile: Bool? = nil) {
+        self.showActionHint = showActionHint
+        self.showAvailability = showAvailability
+        self.showCategory = showCategory
+        self.showLabel = showLabel
+        self.showPricing = showPricing
+        self.showUnavailableNotice = showUnavailableNotice
+        self.stylizedLabel = stylizedLabel
+        self.confirmSelectionOnMobile = confirmSelectionOnMobile
+    }
+
     public func showActionHint(_ showActionHint: Bool) -> Self {
         self.showActionHint = showActionHint
         return self
@@ -50,5 +61,4 @@ public class ObjectTooltip: Encodable {
         self.confirmSelectionOnMobile = confirmSelection
         return self
     }
-
 }
