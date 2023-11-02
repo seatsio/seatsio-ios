@@ -11,7 +11,7 @@ public class ObjectTooltip: Encodable {
     var stylizedLabel: Bool?
     var confirmSelectionOnMobile: Bool?
 
-    public init(showActionHint: Bool? = nil, showAvailability: Bool? = nil, showCategory: Bool? = nil, showLabel: Bool? = nil, showPricing: Bool? = nil, showUnavailableNotice: Bool? = nil, stylizedLabel: Bool? = nil, confirmSelectionOnMobile: Bool? = nil) {
+    public init(showActionHint: Bool? = false, showAvailability: Bool? = false, showCategory: Bool? = false, showLabel: Bool? = false, showPricing: Bool? = false, showUnavailableNotice: Bool? = false, stylizedLabel: Bool? = false, confirmSelectionOnMobile: Bool? = false) {
         self.showActionHint = showActionHint
         self.showAvailability = showAvailability
         self.showCategory = showCategory
