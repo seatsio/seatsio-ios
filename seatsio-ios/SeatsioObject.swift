@@ -74,3 +74,10 @@ public struct SeatsioObject: Decodable {
         isInteractive = try? container.decode(Bool.self, forKey: CodingKeys.isInteractive)
     }
 }
+
+extension SeatsioObject: Equatable {
+
+    public static func == (lhs: SeatsioObject, rhs: SeatsioObject) -> Bool {
+        lhs.id == rhs.id
+    }
+}
