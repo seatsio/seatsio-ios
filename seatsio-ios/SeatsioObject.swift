@@ -73,6 +73,40 @@ public struct SeatsioObject: Decodable {
         selectableCategories = try? container.decode([Category].self, forKey: CodingKeys.selectableCategories)
         isInteractive = try? container.decode(Bool.self, forKey: CodingKeys.isInteractive)
     }
+
+    public init(objectType: String, label: String, labels: Labels, id: String, category: Category? = nil, center: Point? = nil, pricing: Pricing? = nil, status: String? = nil, forSale: Bool? = nil, selectable: Bool? = nil, inSelectableChannel: Bool? = nil, selected: Bool? = nil, selectedTicketType: String? = nil, extraData: Data? = nil, accessible: Bool? = nil, companionSeat: Bool? = nil, restrictedView: Bool? = nil, disabledBySocialDistancingRules: Bool? = nil, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String:Int]? = nil, sectionCategory: Category? = nil, numberOfSelectableObjects: Int? = nil, numberOfSelectedObjects: Int? = nil, selectableCategories: [Category]? = nil, isInteractive: Bool? = nil) {
+        self.objectType = objectType
+        self.label = label
+        self.labels = labels
+        self.id = id
+
+        self.category = category
+        self.center = center
+        self.pricing = pricing
+        self.status = status
+        self.forSale = forSale
+        self.selectable = selectable
+        self.inSelectableChannel = inSelectableChannel
+        self.selected = selected
+        self.selectedTicketType = selectedTicketType
+        self.extraData = extraData
+        self.accessible = accessible
+        self.companionSeat = companionSeat
+        self.restrictedView = restrictedView
+        self.disabledBySocialDistancingRules = disabledBySocialDistancingRules
+
+        self.capacity = capacity
+        self.numBooked = numBooked
+        self.numFree = numFree
+        self.numSelected = numSelected
+        self.selectionPerTicketType = selectionPerTicketType
+
+        self.sectionCategory = sectionCategory
+        self.numberOfSelectableObjects = numberOfSelectableObjects
+        self.numberOfSelectedObjects = numberOfSelectedObjects
+        self.selectableCategories = selectableCategories
+        self.isInteractive = isInteractive
+    }
 }
 
 extension SeatsioObject: Equatable {
