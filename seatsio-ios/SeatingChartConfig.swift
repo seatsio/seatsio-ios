@@ -435,10 +435,11 @@ public class SeatingChartConfig: Encodable {
         return self
     }
 
-    public func objectColor(selected: UIColor, available: UIColor, unavailable: UIColor) -> Self {
+    public func objectColor(selected: UIColor, available: UIColor, unavailable: UIColor, notForSale: UIColor) -> Self {
         let rgbAvailable = uiColorToJavascriptRGB(available)
         let rgbSelected = uiColorToJavascriptRGB(selected)
         let rgbNotAvailable = uiColorToJavascriptRGB(unavailable)
+        let rbgNotForSale = uiColorToJavascriptRGB(notForSale)
 
         let jsFunction = """
             (object, dflt, extraConfig) => {
@@ -453,6 +454,10 @@ public class SeatingChartConfig: Encodable {
 
                 if (!object.category.hasSelectableObjects()) {
                   return '\(rgbNotAvailable)'
+                }
+
+                if (object.forSale === false) {
+                  return '\(rbgNotForSale)'
                 }
 
                 return object.status === 'free' ? '\(rgbAvailable)' : '\(rgbNotAvailable)'
