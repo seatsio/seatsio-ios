@@ -98,8 +98,11 @@ extension JustBridge {
         message[MessageKey.error] = error
 
         // handle error when data is not array, dictinary, string, number, null
-        if !JSONSerialization.isValidJSONObject(message) && (swiftCallbackId != nil) {
-            errorCallbacks[swiftCallbackId!]?(BridgeError.DataIsInvalidError)
+        // need to ruturn every time JSONObject is not valid, otherwise it will trigger fatalError
+        if !JSONSerialization.isValidJSONObject(message) {
+            if let swiftCallbackId {
+                errorCallbacks[swiftCallbackId]?(BridgeError.DataIsInvalidError)
+            }
             return
         }
 
