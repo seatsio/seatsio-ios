@@ -64,7 +64,7 @@ public class SeatingChart {
         seatsioWebView.bridge.call(
                 "clearSelection",
                 data: nil,
-                callback: { (response) in callback() }
+                callback: { response in callback() }
         )
     }
 
@@ -72,7 +72,14 @@ public class SeatingChart {
         seatsioWebView.bridge.call(
                 "listCategories",
                 data: nil,
-                callback: { (response) in callback(decodeCategories(response!)) }
+                callback: { response in
+                    guard let response,
+                          let categories = decodeCategories(response) else {
+                        return
+                    }
+
+                    callback(categories)
+                }
         )
     }
 
@@ -80,11 +87,12 @@ public class SeatingChart {
         seatsioWebView.bridge.call(
                 "findObject",
                 data: object,
-                callback: { (response) in
-                    if response == nil {
-                        errorCallback()
+                callback: { response in
+                    if let response,
+                       let seatsioObject = decodeSeatsioObject(response) {
+                        successCallback(seatsioObject)
                     } else {
-                        successCallback(decodeSeatsioObject(response!))
+                        errorCallback()
                     }
                 }
         )
@@ -94,7 +102,14 @@ public class SeatingChart {
         seatsioWebView.bridge.call(
                 "listSelectedObjects",
                 data: nil,
-                callback: { (response) in callback(decodeSeatsioObjects(response!)) }
+                callback: { response in
+                    guard let response,
+                          let seatsioObjects = decodeSeatsioObjects(response) else {
+                        return
+                    }
+
+                    callback(seatsioObjects)
+                }
         )
     }
 
@@ -102,7 +117,14 @@ public class SeatingChart {
         seatsioWebView.bridge.call(
                 "getReportBySelectability",
                 data: nil,
-                callback: { (response) in callback(decodeReportBySelectability(response!)) }
+                callback: { response in
+                    guard let response,
+                          let decodedReport = decodeReportBySelectability(response) else {
+                        return
+                    }
+
+                    callback(decodedReport)
+                }
         )
     }
 
@@ -123,13 +145,21 @@ public class SeatingChart {
     }
 
     public func isObjectInChannel(_ label: String, _ channel: String, _ callback: @escaping (Bool) -> ()) {
-        seatsioWebView.bridge.call("isObjectInChannel", data: ["label": label, "channel": channel], callback: { (response) in callback((response as? Bool)!) })
+        seatsioWebView.bridge.call("isObjectInChannel", data: ["label": label, "channel": channel], callback: { response in
+            guard let bool = response as? Bool else {
+                return
+            }
+            callback(bool)
+        })
     }
 }
 
-func toJsonString(_ o: AnyEncodable) -> String {
-    let data = try! JSONEncoder().encode(o)
-    return String(data: data, encoding: .utf8)!
+func toJsonString(_ o: AnyEncodable) -> String? {
+    guard let data = try? JSONEncoder().encode(o) else {
+        return nil
+    }
+
+    return String(data: data, encoding: .utf8)
 }
 
 func nullToNil(value: Any?) -> Any? {

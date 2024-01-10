@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 public class SeatingChartConfig: Encodable {
 
@@ -434,6 +435,43 @@ public class SeatingChartConfig: Encodable {
         return self
     }
 
+    public func objectColor(selected: UIColor, available: UIColor, unavailable: UIColor, notForSale: UIColor) -> Self {
+        let rgbAvailable = uiColorToJavascriptRGB(available)
+        let rgbSelected = uiColorToJavascriptRGB(selected)
+        let rgbNotAvailable = uiColorToJavascriptRGB(unavailable)
+        let rbgNotForSale = uiColorToJavascriptRGB(notForSale)
+
+        let jsFunction = """
+            (object, dflt, extraConfig) => {
+                object.category.color = '\(rgbAvailable)'
+                if (object.category.safeColor) {
+                  object.category.safeColor.cachedCss = '\(rgbAvailable)'
+                }
+
+                if (object.selected) {
+                  return '\(rgbSelected)'
+                }
+
+                if (!object.category.hasSelectableObjects()) {
+                  return '\(rgbNotAvailable)'
+                }
+
+                if (object.forSale === false) {
+                  return '\(rbgNotForSale)'
+                }
+
+                return object.status === 'free' ? '\(rgbAvailable)' : '\(rgbNotAvailable)'
+            }
+        """
+        
+        return objectColor(jsFunction)
+    }
+
+    public func objectIcon(selected: String? = nil) -> Self {
+        let jsFunction = "(obj, defaultIcon) => obj.selected ? '\(selected ?? "no_icon")' : defaultIcon"
+        return objectIcon(jsFunction)
+    }
+
     private enum CodingKeys: String, CodingKey {
         case workspaceKey
         case events
@@ -486,5 +524,10 @@ public class SeatingChartConfig: Encodable {
         case showFullScreenButton
         case channels
         case _library
+    }
+
+    private func uiColorToJavascriptRGB(_ color: UIColor) -> String {
+        let ciColor = CIColor(color: color)
+        return "rgb(\(Int(ciColor.red * 255)),\(Int(ciColor.green * 255)),\(Int(ciColor.blue * 255)))"
     }
 }
