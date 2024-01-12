@@ -1,4 +1,4 @@
-# Seatsio iOS Component
+# Seatsio iOS SDK
 
 [![Build Status](https://travis-ci.org/seatsio/seatsio-ios.svg?branch=master)](https://travis-ci.org/seatsio/seatsio-ios)
 
