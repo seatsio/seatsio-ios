@@ -15,7 +15,6 @@ public struct SeatsioObject: Decodable {
     public let inSelectableChannel: Bool?
     public let selected: Bool?
     public let selectedTicketType: String?
-    public let extraData: Data?
     public let accessible: Bool?
     public let companionSeat: Bool?
     public let restrictedView: Bool?
