@@ -443,6 +443,9 @@ public class SeatingChartConfig: Encodable {
 
         let jsFunction = """
             (object, dflt, extraConfig) => {
+                if (object == null || object.category == null) {
+                    return "grey";
+                }
                 object.category.color = '\(rgbAvailable)'
                 if (object.category.safeColor) {
                   object.category.safeColor.cachedCss = '\(rgbAvailable)'
