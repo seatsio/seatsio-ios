@@ -38,134 +38,252 @@ public class SeatsioWebView: WKWebView {
         var callbacks = [String]()
 
         if (self.seatsioConfig.priceFormatter != nil) {
-            bridge.register("priceFormatter") { (data, callback) in
-                callback(self.seatsioConfig.priceFormatter!(decodeFloat(firstArg(data))))
+            bridge.register("priceFormatter") { [weak self] data, callback in
+                guard let priceFormatter = self?.seatsioConfig.priceFormatter,
+                      let argument = firstArg(data),
+                      let decodedFloat = decodeFloat(argument) else {
+                    return
+                }
+
+                callback(priceFormatter(decodedFloat))
             }
             callbacks.append(buildCallbackConfigAsJS("priceFormatter"))
         }
 
         if (self.seatsioConfig.onSelectionValid != nil) {
-            bridge.register("onSelectionValid") { (data, callback) in
-                self.seatsioConfig.onSelectionValid!()
+            bridge.register("onSelectionValid") { [weak self] data, callback in
+                guard let onSelectionValid = self?.seatsioConfig.onSelectionValid else {
+                    return
+                }
+
+                onSelectionValid()
             }
             callbacks.append(buildCallbackConfigAsJS("onSelectionValid"))
         }
 
         if (self.seatsioConfig.onSelectionInvalid != nil) {
-            bridge.register("onSelectionInvalid") { (data, callback) in
-                return self.seatsioConfig.onSelectionInvalid!(decodeSelectionValidatorTypes(firstArg(data)))
+            bridge.register("onSelectionInvalid") { [weak self] data, callback in
+                guard let onSelectionInvalid = self?.seatsioConfig.onSelectionInvalid,
+                      let argument = firstArg(data),
+                      let validatorTypes = decodeSelectionValidatorTypes(argument) else {
+                    return
+                }
+
+                onSelectionInvalid(validatorTypes)
             }
             callbacks.append(buildCallbackConfigAsJS("onSelectionInvalid"))
         }
 
         if (self.seatsioConfig.onObjectSelected != nil) {
-            bridge.register("onObjectSelected") { (data, callback) in
-                self.seatsioConfig.onObjectSelected!(decodeSeatsioObject(firstArg(data)), decodeTicketType(secondArg(data)))
+            bridge.register("onObjectSelected") { [weak self] data, callback in
+                guard let onObjectSelected = self?.seatsioConfig.onObjectSelected,
+                      let firstArgument = firstArg(data),
+                      let secondArgument = secondArg(data),
+                      let seatsioObject = decodeSeatsioObject(firstArgument) else {
+                    return
+                }
+
+                let ticketType = decodeTicketType(secondArgument)
+                onObjectSelected(seatsioObject, ticketType)
             }
             callbacks.append(buildCallbackConfigAsJS("onObjectSelected"))
         }
 
-        if (self.seatsioConfig.onObjectDeselected != nil) {
-            bridge.register("onObjectDeselected") { (data, callback) in
-                self.seatsioConfig.onObjectDeselected!(decodeSeatsioObject(firstArg(data)), decodeTicketType(secondArg(data)))
-            }
-            callbacks.append(buildCallbackConfigAsJS("onObjectDeselected"))
-        }
+         if (self.seatsioConfig.onObjectDeselected != nil) {
+             bridge.register("onObjectDeselected") { [weak self] data, callback in
+                 guard let onObjectDeselected = self?.seatsioConfig.onObjectDeselected,
+                       let firstArgument = firstArg(data),
+                       let secondArgument = secondArg(data),
+                       let seatsioObject = decodeSeatsioObject(firstArgument) else {
+                     return
+                 }
+
+                 let ticketType = decodeTicketType(secondArgument)
+                 onObjectDeselected(seatsioObject, ticketType)
+             }
+             callbacks.append(buildCallbackConfigAsJS("onObjectDeselected"))
+         }
 
         if (self.seatsioConfig.onObjectClicked != nil) {
-            bridge.register("onObjectClicked") { (data, callback) in
-                self.seatsioConfig.onObjectClicked!(decodeSeatsioObject(firstArg(data)))
+            bridge.register("onObjectClicked") { [weak self] data, callback in
+                guard let onObjectClicked = self?.seatsioConfig.onObjectClicked,
+                      let firstArgument = firstArg(data),
+                      let seatsioObject = decodeSeatsioObject(firstArgument) else {
+                    return
+                }
+
+                onObjectClicked(seatsioObject)
             }
             callbacks.append(buildCallbackConfigAsJS("onObjectClicked"))
         }
 
         if (self.seatsioConfig.onObjectStatusChanged != nil) {
-            bridge.register("onObjectStatusChanged") { (data, callback) in
-                self.seatsioConfig.onObjectStatusChanged!(decodeSeatsioObject(firstArg(data)))
+            bridge.register("onObjectStatusChanged") { [weak self] data, callback in
+                guard let onObjectStatusChanged = self?.seatsioConfig.onObjectStatusChanged,
+                      let firstArgument = firstArg(data),
+                      let seatsioObject = decodeSeatsioObject(firstArgument) else {
+                    return
+                }
+
+                onObjectStatusChanged(seatsioObject)
             }
             callbacks.append(buildCallbackConfigAsJS("onObjectStatusChanged"))
         }
 
         if (self.seatsioConfig.onSessionInitialized != nil) {
-            bridge.register("onSessionInitialized") { (data, callback) in
-                self.seatsioConfig.onSessionInitialized!(decodeHoldToken(firstArg(data)))
+            bridge.register("onSessionInitialized") { [weak self] data, callback in
+                guard let onSessionInitialized = self?.seatsioConfig.onSessionInitialized,
+                      let firstArgument = firstArg(data),
+                      let decodedHoldToken = decodeHoldToken(firstArgument) else {
+                    return
+                }
+
+                onSessionInitialized(decodedHoldToken)
             }
             callbacks.append(buildCallbackConfigAsJS("onSessionInitialized"))
         }
 
         if (self.seatsioConfig.onHoldTokenExpired != nil) {
-            bridge.register("onHoldTokenExpired") { (data, callback) in
-                self.seatsioConfig.onHoldTokenExpired!()
+            bridge.register("onHoldTokenExpired") { [weak self] data, callback in
+                guard let onHoldTokenExpired = self?.seatsioConfig.onHoldTokenExpired else {
+                    return
+                }
+
+                onHoldTokenExpired()
             }
             callbacks.append(buildCallbackConfigAsJS("onHoldTokenExpired"))
         }
 
         if (self.seatsioConfig.onBestAvailableSelected != nil) {
-            bridge.register("onBestAvailableSelected") { (data, callback) in
-                self.seatsioConfig.onBestAvailableSelected!(decodeSeatsioObjects(firstArg(data)), decodeBool(secondArg(data)))
+            bridge.register("onBestAvailableSelected") { [weak self] data, callback in
+                guard let onBestAvailableSelected = self?.seatsioConfig.onBestAvailableSelected,
+                      let firstArgument = firstArg(data),
+                      let secondArgument = secondArg(data),
+                      let seatsioObjects = decodeSeatsioObjects(firstArgument),
+                      let decodedBool = decodeBool(secondArgument) else {
+                    return
+                }
+
+                onBestAvailableSelected(seatsioObjects, decodedBool)
             }
             callbacks.append(buildCallbackConfigAsJS("onBestAvailableSelected"))
         }
 
         if (self.seatsioConfig.onBestAvailableSelectionFailed != nil) {
-            bridge.register("onBestAvailableSelectionFailed") { (data, callback) in
-                self.seatsioConfig.onBestAvailableSelectionFailed!()
+            bridge.register("onBestAvailableSelectionFailed") { [weak self] data, callback in
+                guard let onBestAvailableSelectionFailed = self?.seatsioConfig.onBestAvailableSelectionFailed else {
+                    return
+                }
+
+                onBestAvailableSelectionFailed()
             }
             callbacks.append(buildCallbackConfigAsJS("onBestAvailableSelectionFailed"))
         }
 
         if (self.seatsioConfig.onHoldSucceeded != nil) {
-            bridge.register("onHoldSucceeded") { (data, callback) in
-                self.seatsioConfig.onHoldSucceeded!(decodeSeatsioObjects(firstArg(data)), decodeTicketTypes(secondArg(data)))
+            bridge.register("onHoldSucceeded") { [weak self] data, callback in
+                guard let onHoldSucceeded = self?.seatsioConfig.onHoldSucceeded,
+                      let firstArgument = firstArg(data),
+                      let secondArgument = secondArg(data),
+                      let seatsioObjects = decodeSeatsioObjects(firstArgument) else {
+                    return
+                }
+
+                let ticketTypes = decodeTicketTypes(secondArgument)
+                onHoldSucceeded(seatsioObjects, ticketTypes)
             }
             callbacks.append(buildCallbackConfigAsJS("onHoldSucceeded"))
         }
 
         if (self.seatsioConfig.onHoldFailed != nil) {
-            bridge.register("onHoldFailed") { (data, callback) in
-                self.seatsioConfig.onHoldFailed!(decodeSeatsioObjects(firstArg(data)), decodeTicketTypes(secondArg(data)))
+            bridge.register("onHoldFailed") { [weak self] data, callback in
+                guard let onHoldFailed = self?.seatsioConfig.onHoldFailed,
+                      let firstArgument = firstArg(data),
+                      let secondArgument = secondArg(data),
+                      let seatsioObjects = decodeSeatsioObjects(firstArgument) else {
+                    return
+                }
+
+                let ticketTypes = decodeTicketTypes(secondArgument)
+                onHoldFailed(seatsioObjects, ticketTypes)
             }
             callbacks.append(buildCallbackConfigAsJS("onHoldFailed"))
         }
 
         if (self.seatsioConfig.onReleaseHoldSucceeded != nil) {
-            bridge.register("onReleaseHoldSucceeded") { (data, callback) in
-                self.seatsioConfig.onReleaseHoldSucceeded!(decodeSeatsioObjects(firstArg(data)), decodeTicketTypes(secondArg(data)))
+            bridge.register("onReleaseHoldSucceeded") { [weak self] data, callback in
+                guard let onReleaseHoldSucceeded = self?.seatsioConfig.onReleaseHoldSucceeded,
+                      let firstArgument = firstArg(data),
+                      let secondArgument = secondArg(data),
+                      let seatsioObjects = decodeSeatsioObjects(firstArgument) else {
+                    return
+                }
+
+                let ticketTypes = decodeTicketTypes(secondArgument)
+                callback(onReleaseHoldSucceeded(seatsioObjects, ticketTypes))
             }
             callbacks.append(buildCallbackConfigAsJS("onReleaseHoldSucceeded"))
         }
 
         if (self.seatsioConfig.onReleaseHoldFailed != nil) {
-            bridge.register("onReleaseHoldFailed") { (data, callback) in
-                self.seatsioConfig.onReleaseHoldFailed!(decodeSeatsioObjects(firstArg(data)), decodeTicketTypes(secondArg(data)))
+            bridge.register("onReleaseHoldFailed") { [weak self] data, callback in
+                guard let onReleaseHoldFailed = self?.seatsioConfig.onReleaseHoldFailed,
+                      let firstArgument = firstArg(data),
+                      let secondArgument = secondArg(data),
+                      let seatsioObjects = decodeSeatsioObjects(firstArgument) else {
+                    return
+                }
+
+                let ticketTypes = decodeTicketTypes(secondArgument)
+                callback(onReleaseHoldFailed(seatsioObjects, ticketTypes))
             }
             callbacks.append(buildCallbackConfigAsJS("onReleaseHoldFailed"))
         }
 
         if (self.seatsioConfig.onSelectedObjectBooked != nil) {
-            bridge.register("onSelectedObjectBooked") { (data, callback) in
-                self.seatsioConfig.onSelectedObjectBooked!(decodeSeatsioObject(firstArg(data)))
+            bridge.register("onSelectedObjectBooked") { [weak self] data, callback in
+                guard let onSelectedObjectBooked = self?.seatsioConfig.onSelectedObjectBooked,
+                      let firstArgument = firstArg(data),
+                      let seatsioObject = decodeSeatsioObject(firstArgument) else {
+                    return
+                }
+
+                onSelectedObjectBooked(seatsioObject)
             }
             callbacks.append(buildCallbackConfigAsJS("onSelectedObjectBooked"))
         }
 
         if (self.seatsioConfig.tooltipInfo != nil) {
-            bridge.register("tooltipInfo") { (data, callback) in
-                callback(self.seatsioConfig.tooltipInfo!(decodeSeatsioObject(firstArg(data))))
+            bridge.register("tooltipInfo") { [weak self] data, callback in
+                guard let tooltipInfo = self?.seatsioConfig.tooltipInfo,
+                      let firstArgument = firstArg(data),
+                      let seatsioObject = decodeSeatsioObject(firstArgument) else {
+                    return
+                }
+
+                callback(tooltipInfo(seatsioObject))
             }
             callbacks.append(buildCallbackConfigAsJS("tooltipInfo"))
         }
 
         if (self.seatsioConfig.onChartRendered != nil) {
-            bridge.register("onChartRendered") { (data, callback) in
-                self.seatsioConfig.onChartRendered!(SeatingChart(self))
+            bridge.register("onChartRendered") { [weak self] data, callback in
+                guard let self, let onChartRendered = self.seatsioConfig.onChartRendered else {
+                    return
+                }
+
+                onChartRendered(SeatingChart(self))
             }
             callbacks.append(buildCallbackConfigAsJS("onChartRendered"))
         }
 
         if (self.seatsioConfig.onChartRenderingFailed != nil) {
-            bridge.register("onChartRenderingFailed") { (data, callback) in
-                self.seatsioConfig.onChartRenderingFailed!()
+            bridge.register("onChartRenderingFailed") { [weak self] data, callback in
+                guard let onChartRenderingFailed = self?.seatsioConfig.onChartRenderingFailed else {
+                    return
+                }
+
+                onChartRenderingFailed()
             }
             callbacks.append(buildCallbackConfigAsJS("onChartRenderingFailed"))
         }
@@ -185,49 +303,68 @@ public class SeatsioWebView: WKWebView {
 
 }
 
-private func firstArg(_ data: Any?) -> Any {
-    return (data as! [Any])[0]
+private func firstArg(_ data: Any?) -> Any? {
+    return (data as? [Any])?.first
 }
 
-private func secondArg(_ data: Any?) -> Any {
-    return (data as! [Any])[1]
+private func secondArg(_ data: Any?) -> Any? {
+    guard let args = (data as? [Any]), args.count >= 2 else {
+        return nil
+    }
+
+    return args[1]
 }
 
-func decodeSeatsioObject(_ data: Any) -> SeatsioObject {
-    let dataToDecode = (data as! String).data(using: .utf8)!
-    return try! JSONDecoder().decode(SeatsioObject.self, from: dataToDecode)
+func decodeSeatsioObject(_ data: Any) -> SeatsioObject? {
+    guard let dataToDecode = (data as? String)?.data(using: .utf8) else {
+        return nil
+    }
+
+    return try? JSONDecoder().decode(SeatsioObject.self, from: dataToDecode)
 }
 
-func decodeHoldToken(_ data: Any) -> HoldToken {
-    let dataToDecode = (data as! String).data(using: .utf8)!
+func decodeHoldToken(_ data: Any) -> HoldToken? {
+    guard let dataToDecode = (data as? String)?.data(using: .utf8) else {
+        return nil
+    }
+
     let decoder = JSONDecoder()
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     decoder.dateDecodingStrategy = .formatted(formatter)
-    return try! decoder.decode(HoldToken.self, from: dataToDecode)
+    return try? decoder.decode(HoldToken.self, from: dataToDecode)
 }
 
-func decodeSeatsioObjects(_ data: Any) -> [SeatsioObject] {
-    let dataToDecode = (data as! String).data(using: .utf8)!
-    return try! JSONDecoder().decode([SeatsioObject].self, from: dataToDecode)
+func decodeSeatsioObjects(_ data: Any) -> [SeatsioObject]? {
+    guard let dataToDecode = (data as? String)?.data(using: .utf8) else {
+        return nil
+    }
+
+    return try? JSONDecoder().decode([SeatsioObject].self, from: dataToDecode)
 }
 
-func decodeReportBySelectability(_ data: Any) -> ReportBySelectability {
-    let dataToDecode = (data as! String).data(using: .utf8)!
-    return try! JSONDecoder().decode(ReportBySelectability.self, from: dataToDecode)
+func decodeReportBySelectability(_ data: Any) -> ReportBySelectability? {
+    guard let dataToDecode = (data as? String)?.data(using: .utf8) else {
+        return nil
+    }
+
+    return try? JSONDecoder().decode(ReportBySelectability.self, from: dataToDecode)
 }
 
-func decodeCategories(_ data: Any) -> [Category] {
-    let dataToDecode = (data as! String).data(using: .utf8)!
-    return try! JSONDecoder().decode([Category].self, from: dataToDecode)
+func decodeCategories(_ data: Any) -> [Category]? {
+    guard let dataToDecode = (data as? String)?.data(using: .utf8) else {
+        return nil
+    }
+
+    return try? JSONDecoder().decode([Category].self, from: dataToDecode)
 }
 
-func decodeFloat(_ data: Any) -> Float {
-    return (data as! NSString).floatValue
+func decodeFloat(_ data: Any) -> Float? {
+    return (data as? NSString)?.floatValue
 }
 
-func decodeBool(_ data: Any) -> Bool {
-    return (data as! NSString).boolValue
+func decodeBool(_ data: Any) -> Bool? {
+    return (data as? NSString)?.boolValue
 }
 
 func decodeTicketType(_ data: Any) -> TicketType? {
@@ -235,26 +372,28 @@ func decodeTicketType(_ data: Any) -> TicketType? {
         return nil
     }
 
-    let dataAsString = data as! String
-
-    if (dataAsString == "null") {
+    guard let dataAsString = data as? String,
+          dataAsString != "null",
+          let dataToDecode = dataAsString.data(using: .utf8) else {
         return nil
     }
 
-    let dataToDecode = dataAsString.data(using: .utf8)!
-    return try! JSONDecoder().decode(TicketType.self, from: dataToDecode)
+    return try? JSONDecoder().decode(TicketType.self, from: dataToDecode)
 }
+
 
 func decodeTicketTypes(_ data: Any) -> [TicketType]? {
-    let dataToDecode = (data as! String).data(using: .utf8)!
-    do {
-        return try JSONDecoder().decode([TicketType].self, from: dataToDecode)
-    } catch {
+    guard let dataToDecode = (data as? String)?.data(using: .utf8) else {
         return nil
     }
+
+    return try? JSONDecoder().decode([TicketType].self, from: dataToDecode)
 }
 
-func decodeSelectionValidatorTypes(_ data: Any) -> [SelectionValidatorType] {
-    let data = (data as! String).data(using: .utf8)
-    return try! JSONDecoder().decode([SelectionValidatorType].self, from: data!)
+func decodeSelectionValidatorTypes(_ data: Any) -> [SelectionValidatorType]? {
+    guard let dataToDecode = (data as? String)?.data(using: .utf8) else {
+        return nil
+    }
+
+    return try? JSONDecoder().decode([SelectionValidatorType].self, from: dataToDecode)
 }
