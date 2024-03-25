@@ -1,17 +1,17 @@
-# Seatsio iOS Component
+# Seatsio iOS SDK
 
 [![Build Status](https://travis-ci.org/seatsio/seatsio-ios.svg?branch=master)](https://travis-ci.org/seatsio/seatsio-ios)
 
 ## Introduction
 
-seatsio-ios allows rendering seats.io seating charts inside an iOS application. It supports iOS 8.0 and newer.
+seatsio-ios allows rendering seats.io seating charts inside an iOS application. It supports iOS 9.0 and newer.
 
 ## Installation
 
 Add this to your podfile:
 
 ```
-pod 'seatsio', '13.5.0'
+pod 'seatsio', '14.3.0'
 ```
 
 ## Usage

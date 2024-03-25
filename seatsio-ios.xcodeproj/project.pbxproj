@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,7 +27,6 @@
 		4EDEA970237725FAB2D0D30D /* TicketTypeWithQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */; };
 		4EDEA979B40A137B93B88522 /* SeatingChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA52AC21D4D9AAFDB2E46 /* SeatingChartConfig.swift */; };
 		4EDEA9892FEF157DE1A9F396 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA81DA10F59A65048DF40 /* Labels.swift */; };
-		4EDEAA28D436F7321D5E551D /* deploy.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4EDEA47EEA26E2DAF0522133 /* deploy.yml */; };
 		4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */; };
 		4EDEAA64A7C2984DE75016E0 /* ObjectTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA386B2AED9B7FFA78D48 /* ObjectTooltip.swift */; };
 		4EDEAB8F473117311871E657 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA0763144FD24206F519B /* CategoryFilter.swift */; };
@@ -39,6 +38,7 @@
 		4EDEAF7141F075ACE831949E /* ReportBySelectability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */; };
 		4EDEAFBCD7841989B4823DDC /* Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA65F4B160685223EEC59 /* Html.swift */; };
 		4EDEAFCD0B067C46CCA35CBA /* ConfigChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */; };
+		9EDB593A2BB19BFA00C6A0D1 /* SeatParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB59392BB19BFA00C6A0D1 /* SeatParent.swift */; };
 		B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,6 @@
 		4EDEA099F1693CFC065B3A62 /* Pricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
 		4EDEA386B2AED9B7FFA78D48 /* ObjectTooltip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTooltip.swift; sourceTree = "<group>"; };
 		4EDEA39FA63D2FBFF3849BC4 /* Legend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legend.swift; sourceTree = "<group>"; };
-		4EDEA47EEA26E2DAF0522133 /* deploy.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = deploy.yml; path = .github/workflows/deploy.yml; sourceTree = "<group>"; };
 		4EDEA5174C3B57909D6F0369 /* CategoryWithQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryWithQuantity.swift; sourceTree = "<group>"; };
 		4EDEA52AC21D4D9AAFDB2E46 /* SeatingChartConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatingChartConfig.swift; sourceTree = "<group>"; };
 		4EDEA57B75716A2D4D86C3C6 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypePricing.swift; sourceTree = "<group>"; };
 		55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EDB59392BB19BFA00C6A0D1 /* SeatParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatParent.swift; sourceTree = "<group>"; };
 		A6A88E8FAE60849004A8E8E6 /* Pods-seatsio-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.release.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.release.xcconfig"; sourceTree = "<group>"; };
 		B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,7 +111,6 @@
 				2D7DE68DBC739D600807581F /* Pods */,
 				8438CC24EAD4C56087A90D9B /* Frameworks */,
 				4EDEA976297E0ADA1A8BE9C8 /* releasing.md */,
-				4EDEA47EEA26E2DAF0522133 /* deploy.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +156,7 @@
 				4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */,
 				4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */,
 				4EDEAA55D4DDFE1914B4116B /* HoldToken.swift */,
+				9EDB59392BB19BFA00C6A0D1 /* SeatParent.swift */,
 			);
 			path = "seatsio-ios";
 			sourceTree = "<group>";
@@ -230,7 +230,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */,
-				4EDEAA28D436F7321D5E551D /* deploy.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +297,7 @@
 				4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */,
 				4EDEA4001C0896B83A8D0B0D /* Point.swift in Sources */,
 				4EDEA9892FEF157DE1A9F396 /* Labels.swift in Sources */,
+				9EDB593A2BB19BFA00C6A0D1 /* SeatParent.swift in Sources */,
 				4EDEA67392849D8A8644B1FF /* SeatingChart.swift in Sources */,
 				4EDEAFCD0B067C46CCA35CBA /* ConfigChange.swift in Sources */,
 				4EDEA4A774FA6942DF195D0C /* CategoryWithQuantity.swift in Sources */,
@@ -371,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -428,7 +428,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -447,7 +447,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WGUCAYKLS;
 				INFOPLIST_FILE = "seatsio-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,7 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WGUCAYKLS;
 				INFOPLIST_FILE = "seatsio-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

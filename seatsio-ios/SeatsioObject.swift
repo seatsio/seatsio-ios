@@ -3,7 +3,7 @@ import Foundation
 public struct SeatsioObject: Decodable {
 
     enum CodingKeys: String, CodingKey {
-        case objectType, label, labels, id, category, center, pricing, status, forSale, selectable, inSelectableChannel, selected, selectedTicketType, extraData, accessible, companionSeat, restrictedView, disabledBySocialDistancingRules, capacity, numBooked, numFree, numSelected, selectionPerTicketType, sectionCategory, numberOfSelectableObjects, numberOfSelectedObjects, selectableCategories, isInteractive
+        case objectType, label, labels, id, category, center, pricing, status, forSale, selectable, inSelectableChannel, selected, selectedTicketType, extraData, accessible, companionSeat, restrictedView, disabledBySocialDistancingRules, capacity, numBooked, numFree, numSelected, selectionPerTicketType, sectionCategory, numberOfSelectableObjects, numberOfSelectedObjects, selectableCategories, isInteractive, parent
     }
 
     public let objectType: String
@@ -25,12 +25,13 @@ public struct SeatsioObject: Decodable {
     public let companionSeat: Bool?
     public let restrictedView: Bool?
     public let disabledBySocialDistancingRules: Bool?
+    public let parent: SeatParent?
 
     public let capacity: Int?
     public let numBooked: Int?
     public let numFree: Int?
     public let numSelected: Int?
-    public let selectionPerTicketType: [String:Int]?
+    public let selectionPerTicketType: [String: Int]?
 
     public let sectionCategory: Category?
     public let numberOfSelectableObjects: Int?
@@ -60,6 +61,7 @@ public struct SeatsioObject: Decodable {
         companionSeat = try? container.decode(Bool.self, forKey: CodingKeys.companionSeat)
         restrictedView = try? container.decode(Bool.self, forKey: CodingKeys.restrictedView)
         disabledBySocialDistancingRules = try? container.decode(Bool.self, forKey: CodingKeys.disabledBySocialDistancingRules)
+        parent = try? container.decode(SeatParent.self, forKey: .parent)
 
         capacity = try? container.decode(Int.self, forKey: CodingKeys.capacity)
         numBooked = try? container.decode(Int.self, forKey: CodingKeys.numBooked)
@@ -74,7 +76,10 @@ public struct SeatsioObject: Decodable {
         isInteractive = try? container.decode(Bool.self, forKey: CodingKeys.isInteractive)
     }
 
-    public init(objectType: String, label: String, labels: Labels, id: String, category: Category? = nil, center: Point? = nil, pricing: Pricing? = nil, status: String? = nil, forSale: Bool? = nil, selectable: Bool? = nil, inSelectableChannel: Bool? = nil, selected: Bool? = nil, selectedTicketType: String? = nil, extraData: Data? = nil, accessible: Bool? = nil, companionSeat: Bool? = nil, restrictedView: Bool? = nil, disabledBySocialDistancingRules: Bool? = nil, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String:Int]? = nil, sectionCategory: Category? = nil, numberOfSelectableObjects: Int? = nil, numberOfSelectedObjects: Int? = nil, selectableCategories: [Category]? = nil, isInteractive: Bool? = nil) {
+    public init(objectType: String, label: String, labels: Labels, id: String, category: Category? = nil, center: Point? = nil, pricing: Pricing? = nil, status: String? = nil, forSale: Bool? = nil,
+                selectable: Bool? = nil, inSelectableChannel: Bool? = nil, selected: Bool? = nil, selectedTicketType: String? = nil, extraData: Data? = nil, accessible: Bool? = nil, companionSeat: Bool? = nil, restrictedView: Bool? = nil,
+                disabledBySocialDistancingRules: Bool? = nil, parent: SeatParent?, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String: Int]? = nil,
+                sectionCategory: Category? = nil, numberOfSelectableObjects: Int? = nil, numberOfSelectedObjects: Int? = nil, selectableCategories: [Category]? = nil, isInteractive: Bool? = nil) {
         self.objectType = objectType
         self.label = label
         self.labels = labels
@@ -94,6 +99,7 @@ public struct SeatsioObject: Decodable {
         self.companionSeat = companionSeat
         self.restrictedView = restrictedView
         self.disabledBySocialDistancingRules = disabledBySocialDistancingRules
+        self.parent = parent
 
         self.capacity = capacity
         self.numBooked = numBooked
