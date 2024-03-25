@@ -19,12 +19,13 @@ public struct SeatsioObject: Decodable {
     public let companionSeat: Bool?
     public let restrictedView: Bool?
     public let disabledBySocialDistancingRules: Bool?
+    public let parent: SeatParent?
 
     public let capacity: Int?
     public let numBooked: Int?
     public let numFree: Int?
     public let numSelected: Int?
-    public let selectionPerTicketType: [String:Int]?
+    public let selectionPerTicketType: [String: Int]?
 
     public let sectionCategory: Category?
     public let numberOfSelectableObjects: Int?
@@ -32,7 +33,10 @@ public struct SeatsioObject: Decodable {
     public let selectableCategories: [Category]?
     public let isInteractive: Bool?
 
-    public init(objectType: String, label: String, labels: Labels, id: String, category: Category? = nil, center: Point? = nil, pricing: Pricing? = nil, status: String? = nil, forSale: Bool? = nil, selectable: Bool? = nil, inSelectableChannel: Bool? = nil, selected: Bool? = nil, selectedTicketType: String? = nil, accessible: Bool? = nil, companionSeat: Bool? = nil, restrictedView: Bool? = nil, disabledBySocialDistancingRules: Bool? = nil, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String:Int]? = nil, sectionCategory: Category? = nil, numberOfSelectableObjects: Int? = nil, numberOfSelectedObjects: Int? = nil, selectableCategories: [Category]? = nil, isInteractive: Bool? = nil) {
+    public init(objectType: String, label: String, labels: Labels, id: String, category: Category? = nil, center: Point? = nil, pricing: Pricing? = nil, status: String? = nil, forSale: Bool? = nil,
+                selectable: Bool? = nil, inSelectableChannel: Bool? = nil, selected: Bool? = nil, selectedTicketType: String? = nil, accessible: Bool? = nil, companionSeat: Bool? = nil, restrictedView: Bool? = nil,
+                disabledBySocialDistancingRules: Bool? = nil, parent: SeatParent?, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String: Int]? = nil,
+                sectionCategory: Category? = nil, numberOfSelectableObjects: Int? = nil, numberOfSelectedObjects: Int? = nil, selectableCategories: [Category]? = nil, isInteractive: Bool? = nil) {
         self.objectType = objectType
         self.label = label
         self.labels = labels
@@ -51,6 +55,7 @@ public struct SeatsioObject: Decodable {
         self.companionSeat = companionSeat
         self.restrictedView = restrictedView
         self.disabledBySocialDistancingRules = disabledBySocialDistancingRules
+        self.parent = parent
 
         self.capacity = capacity
         self.numBooked = numBooked
@@ -68,7 +73,7 @@ public struct SeatsioObject: Decodable {
 
 extension SeatsioObject: Equatable {
 
-    public static func == (lhs: SeatsioObject, rhs: SeatsioObject) -> Bool {
+    public static func ==(lhs: SeatsioObject, rhs: SeatsioObject) -> Bool {
         lhs.id == rhs.id
     }
 }
