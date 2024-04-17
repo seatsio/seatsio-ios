@@ -25,6 +25,7 @@ public class SeatingChartConfig: Encodable {
     var alwaysShowSectionContents: Bool?
     var showSectionContents: String?
     var showLegend: Bool?
+    var showSeatLabels: Bool?
     var legend: Legend?
     var showMinimap: Bool?
     var showActiveSectionTooltip: Bool?
@@ -197,6 +198,11 @@ public class SeatingChartConfig: Encodable {
 
     public func showLegend(_ showLegend: Bool) -> Self {
         self.showLegend = showLegend
+        return self
+    }
+
+    public func showSeatLabels(_ showSeatLabels: Bool) -> Self {
+        self.showSeatLabels = showSeatLabels
         return self
     }
 
@@ -456,6 +462,7 @@ public class SeatingChartConfig: Encodable {
         case alwaysShowSectionContents
         case showSectionContents
         case showLegend
+        case showSeatLabels
         case legend
         case showMinimap
         case showActiveSectionTooltip = "showActiveSectionTooltipOnMobile"
