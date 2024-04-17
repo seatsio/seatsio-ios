@@ -20,6 +20,7 @@ class SeatingChartSample: UIViewController {
                 .priceFormatter({ (price) in "\(price)$" })
                 .objectTooltip(ObjectTooltip().showAvailability(true))
                 .showLegend(true)
+                .showSeatLabels(true)
                 .onSelectionInvalid({ (errors) in print(errors) })
                 .onObjectSelected({ (object, ticketType) in
                     print(object, ticketType)
