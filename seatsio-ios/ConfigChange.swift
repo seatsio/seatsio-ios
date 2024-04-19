@@ -7,9 +7,10 @@ public class ConfigChange: Encodable {
     var numberOfPlacesToSelect: Int?
     var maxSelectedObjects: AnyEncodable?
     var extraConfig: AnyEncodable?
-    var unavailableCategories: [String]?
     var availableCategories: [String]?
+    var unavailableCategories: [String]?
     var filteredCategories: [String]?
+    var channels: [String]?
 
     public func objectColor(_ objectColor: String) -> Self {
         self.objectColor = objectColor
@@ -58,6 +59,11 @@ public class ConfigChange: Encodable {
 
     public func filteredCategories(_ filteredCategories: [String]) -> Self {
         self.filteredCategories = filteredCategories
+        return self
+    }
+
+    public func channels(_ channels: [String]) -> Self {
+        self.channels = channels
         return self
     }
 }
