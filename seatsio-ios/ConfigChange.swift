@@ -10,6 +10,7 @@ public class ConfigChange: Encodable {
     var availableCategories: [String]?
     var unavailableCategories: [String]?
     var filteredCategories: [String]?
+    var pricing: [Pricing]?
     var channels: [String]?
 
     public func objectColor(_ objectColor: String) -> Self {
@@ -59,6 +60,11 @@ public class ConfigChange: Encodable {
 
     public func filteredCategories(_ filteredCategories: [String]) -> Self {
         self.filteredCategories = filteredCategories
+        return self
+    }
+
+    public func pricing(_ pricing: [Pricing]) -> Self {
+        self.pricing = pricing
         return self
     }
 
