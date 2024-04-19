@@ -4,6 +4,7 @@ public class ConfigChange: Encodable {
 
     var objectColor: String?
     var objectLabel: String?
+    var numberOfPlacesToSelect: Int?
     var maxSelectedObjects: AnyEncodable?
     var extraConfig: AnyEncodable?
     var unavailableCategories: [String]?
@@ -17,6 +18,11 @@ public class ConfigChange: Encodable {
 
     public func objectLabel(_ objectLabel: String) -> Self {
         self.objectLabel = objectLabel
+        return self
+    }
+
+    public func numberOfPlacesToSelect(_ numberOfPlacesToSelect: Int) -> Self {
+        self.numberOfPlacesToSelect = numberOfPlacesToSelect
         return self
     }
 
