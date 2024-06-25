@@ -180,7 +180,6 @@
 				3B40BA2922A7D49C00B9A507 /* Sources */,
 				3B40BA2A22A7D49C00B9A507 /* Frameworks */,
 				3B40BA2B22A7D49C00B9A507 /* Resources */,
-				4BDD558252B4B52FAFF57D57 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,23 +235,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4BDD558252B4B52FAFF57D57 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E29E4CF9BF68BAEED60C2553 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
