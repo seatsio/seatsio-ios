@@ -10,7 +10,6 @@ public class SeatingChartConfig: Encodable {
     var priceFormatter: Optional<(Float) -> String>
     var numberOfPlacesToSelect: Int?
     var objectWithoutPricingSelectable: Bool?
-    var objectWithoutCategorySelectable: Bool?
     var selectedObjects: [SelectedObject]?
     var selectableObjects: [String]?
     var language: String?
@@ -117,11 +116,6 @@ public class SeatingChartConfig: Encodable {
 
     public func objectWithoutPricingSelectable(_ objectWithoutPricingSelectable: Bool) -> Self {
         self.objectWithoutPricingSelectable = objectWithoutPricingSelectable
-        return self
-    }
-
-    public func objectWithoutCategorySelectable(_ objectWithoutCategorySelectable: Bool) -> Self {
-        self.objectWithoutCategorySelectable = objectWithoutCategorySelectable
         return self
     }
 
@@ -448,7 +442,6 @@ public class SeatingChartConfig: Encodable {
         case pricing
         case numberOfPlacesToSelect
         case objectWithoutPricingSelectable
-        case objectWithoutCategorySelectable
         case selectedObjects
         case selectableObjects
         case language
