@@ -6,9 +6,8 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.source           = { :git => 'https://github.com/seatsio/seatsio-ios.git', :tag => s.version.to_s }
   s.authors          = { 'The Seats.io team' => 'dev@seats.io' }
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '12.0'
   s.source_files = 'seatsio-ios/*'
   s.exclude_files = "seatsio-ios/**/*.plist"
   s.swift_versions = ['4.0']
-  s.dependency 'JustBridge', '~> 4.2.0'
 end
