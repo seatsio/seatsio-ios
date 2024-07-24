@@ -10,7 +10,6 @@
 		15859824B00D0EB49C0C6913 /* Pods_seatsio_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */; };
 		3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B40BA3722A7D49C00B9A507 /* Assets.xcassets */; };
 		3BB8A4D82C2B1BFE009D913A /* JustBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB8A4D72C2B1BFE009D913A /* JustBridge.swift */; };
-		3BB8A4DF2C2B2046009D913A /* JSBridge.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BB8A4DE2C2B2046009D913A /* JSBridge.bundle */; };
 		4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
 		4EDEA15676C3C508BB4BBE4B /* SeatingChartSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */; };
 		4EDEA2B7249C0734B9AEE860 /* TicketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA64B09FF840D72C49C61 /* TicketType.swift */; };
@@ -49,7 +48,6 @@
 		3B40BA3722A7D49C00B9A507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B40BA3C22A7D49C00B9A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BB8A4D72C2B1BFE009D913A /* JustBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustBridge.swift; sourceTree = "<group>"; };
-		3BB8A4DE2C2B2046009D913A /* JSBridge.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JSBridge.bundle; sourceTree = "<group>"; };
 		4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioWebView.swift; sourceTree = "<group>"; };
 		4EDEA0763144FD24206F519B /* CategoryFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryFilter.swift; sourceTree = "<group>"; };
 		4EDEA099F1693CFC065B3A62 /* Pricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 		3B40BA2F22A7D49C00B9A507 /* seatsio-ios */ = {
 			isa = PBXGroup;
 			children = (
-				3BB8A4DE2C2B2046009D913A /* JSBridge.bundle */,
 				4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */,
 				3B40BA3722A7D49C00B9A507 /* Assets.xcassets */,
 				3B40BA3C22A7D49C00B9A507 /* Info.plist */,
@@ -235,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */,
-				3BB8A4DF2C2B2046009D913A /* JSBridge.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
