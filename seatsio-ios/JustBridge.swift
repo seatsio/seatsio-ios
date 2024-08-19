@@ -122,13 +122,13 @@ public class JustBridge: NSObject {
     /// unique id for callback
     fileprivate var callbackId = 0
 
-    fileprivate var webview: WKWebView
+    weak var webview: WKWebView?
 
     public init(with webView: WKWebView) {
         self.webview = webView
         super.init()
 
-        self.webview.configuration.userContentController.add(self, name: "bridge")
+        self.webview!.configuration.userContentController.add(self, name: "bridge")
         self.injectBridgeJS()
     }
 
@@ -170,7 +170,7 @@ extension JustBridge {
 
     fileprivate func injectBridgeJS() {
         let script = WKUserScript(source: JustBridge.bridge_js, injectionTime: .atDocumentStart, forMainFrameOnly: true)
-        self.webview.configuration.userContentController.addUserScript(script)
+        self.webview!.configuration.userContentController.addUserScript(script)
     }
 
     fileprivate func postMessage(_ name: String, data: BridgeData, swiftCallbackId: String? = nil, jsCallbackId: String? = nil, error: String? = nil) {
@@ -189,7 +189,7 @@ extension JustBridge {
 
         if let messageJSONData = try? JSONSerialization.data(withJSONObject: message, options: []),
             let messageJSON = String(data: messageJSONData, encoding: .utf8) {
-            self.webview.evaluateJavaScript("window.bridge.receiveMessage(\(messageJSON));", completionHandler: nil)
+            self.webview!.evaluateJavaScript("window.bridge.receiveMessage(\(messageJSON));", completionHandler: nil)
         }
     }
 
