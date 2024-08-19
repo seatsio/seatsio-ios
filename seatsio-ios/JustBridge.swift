@@ -122,7 +122,7 @@ public class JustBridge: NSObject {
     /// unique id for callback
     fileprivate var callbackId = 0
 
-    weak var webview: WKWebView?
+    private weak var webview: WKWebView?
 
     public init(with webView: WKWebView) {
         self.webview = webView
