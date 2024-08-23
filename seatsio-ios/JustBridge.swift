@@ -132,6 +132,9 @@ public class JustBridge: NSObject {
         self.injectBridgeJS()
     }
 
+    public func cleanUp() {
+        self.webview!.configuration.userContentController.removeScriptMessageHandler(forName: "bridge")
+    }
 
     /// Register a handler
     /// Handler will be invoked when js call this handler
@@ -149,7 +152,6 @@ public class JustBridge: NSObject {
     public func remove(_ name: String) {
         self.handlers.removeValue(forKey: name)
     }
-
 
     /// Call a js handler
     ///
@@ -229,6 +231,3 @@ extension JustBridge: WKScriptMessageHandler {
     }
 
 }
-
-
-
