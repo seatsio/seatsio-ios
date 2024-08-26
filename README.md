@@ -31,6 +31,9 @@ class SeatingChartSample: UIViewController {
         self.view = seatsio
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        seatsio.cleanup()
+    }
 }
 ```
 

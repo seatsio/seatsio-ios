@@ -182,6 +182,9 @@ public class SeatsioWebView: WKWebView {
                """
     }
 
+    public func cleanup() {
+        bridge.cleanUp()
+    }
 }
 
 private func firstArg(_ data: Any?) -> Any {
