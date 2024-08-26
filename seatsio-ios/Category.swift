@@ -1,6 +1,6 @@
 import Foundation
 
-public class Category: Codable {
+public struct Category: Codable {
 
     public let key: String
     public let color: String
@@ -16,7 +16,7 @@ public class Category: Codable {
         self.seatShape = seatShape
     }
 
-    required public init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         if let value = try? container.decode(Int.self, forKey: .key) {
             key = String(value)

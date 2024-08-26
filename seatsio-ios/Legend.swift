@@ -2,8 +2,8 @@ import Foundation
 
 public struct Legend: Encodable {
 
-    let hideNonSelectableCategories: Bool?
-    let hidePricing: Bool?
+    public let hideNonSelectableCategories: Bool?
+    public let hidePricing: Bool?
 
     public init(hideNonSelectableCategories: Bool?, hidePricing: Bool?) {
         self.hideNonSelectableCategories = hideNonSelectableCategories

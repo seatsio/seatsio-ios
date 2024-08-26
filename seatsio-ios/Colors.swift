@@ -1,23 +1,14 @@
 import Foundation
 
-public class Colors: Encodable {
+public struct Colors: Encodable {
 
-    var colorSelected: String?
-    var cursorTooltipBackgroundColor: String?
-    var colorTitle: String?
+    public let colorSelected: String?
+    public let cursorTooltipBackgroundColor: String?
+    public let colorTitle: String?
 
-    public func colorSelected(_ colorSelected: String) -> Self {
+    public init(colorSelected: String? = nil, cursorTooltipBackgroundColor: String? = nil, colorTitle: String? = nil) {
         self.colorSelected = colorSelected
-        return self
-    }
-
-    public func cursorTooltipBackgroundColor(_ cursorTooltipBackgroundColor: String) -> Self {
         self.cursorTooltipBackgroundColor = cursorTooltipBackgroundColor
-        return self
-    }
-
-    public func colorTitle(_ colorTitle: String) -> Self {
         self.colorTitle = colorTitle
-        return self
     }
 }

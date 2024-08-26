@@ -1,10 +1,10 @@
 import Foundation
 
-public class TicketListing: Encodable {
+public struct TicketListing: Encodable {
 
-    var section: String
-    var quantity: Int
-    var price: Float
+    public let section: String
+    public let quantity: Int
+    public let price: Float
 
     public init(section: String, quantity: Int, price: Float) {
         self.section = section

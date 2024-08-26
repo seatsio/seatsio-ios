@@ -2,10 +2,10 @@ import Foundation
 
 public struct BestAvailable: Codable {
 
-    let number: Int?
-    let category: [String]?
-    let clearSelection: Bool?
-    let ticketTypes: [String:Int]?
+    public let number: Int?
+    public let category: [String]?
+    public let clearSelection: Bool?
+    public let ticketTypes: [String:Int]?
 
     public init(number: Int? = nil,
          category: [String]? = nil,

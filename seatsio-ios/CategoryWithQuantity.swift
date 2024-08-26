@@ -2,6 +2,11 @@ import Foundation
 
 public struct CategoryWithQuantity: Encodable {
 
-    let category: String
-    let quantity: Int
+    public let category: String
+    public let quantity: Int
+    
+    public init(category: String, quantity: Int) {
+        self.category = category
+        self.quantity = quantity
+    }
 }
