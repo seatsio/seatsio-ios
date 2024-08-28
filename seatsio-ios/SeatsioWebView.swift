@@ -184,6 +184,7 @@ public class SeatsioWebView: WKWebView {
 
     public func cleanup() {
         bridge.cleanUp()
+        bridge = nil
     }
 }
 
