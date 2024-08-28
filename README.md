@@ -33,6 +33,7 @@ class SeatingChartSample: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         seatsio.cleanup()
+        seatsio = nil
     }
 }
 ```
