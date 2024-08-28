@@ -1,75 +1,28 @@
 import Foundation
 
-public class ConfigChange: Encodable {
+public struct ConfigChange: Encodable {
 
-    var objectColor: String?
-    var objectLabel: String?
-    var numberOfPlacesToSelect: Int?
-    var maxSelectedObjects: AnyEncodable?
-    var extraConfig: AnyEncodable?
-    var availableCategories: [String]?
-    var unavailableCategories: [String]?
-    var filteredCategories: [String]?
-    var pricing: [Pricing]?
-    var channels: [String]?
+    public let objectColor: String?
+    public let objectLabel: String?
+    public let numberOfPlacesToSelect: Int?
+    public let maxSelectedObjects: AnyEncodable?
+    public let extraConfig: AnyEncodable?
+    public let availableCategories: [String]?
+    public let unavailableCategories: [String]?
+    public let filteredCategories: [String]?
+    public let pricing: [Pricing]?
+    public let channels: [String]?
 
-    public func objectColor(_ objectColor: String) -> Self {
+    public init(objectColor: String? = nil, objectLabel: String? = nil, numberOfPlacesToSelect: Int? = nil, maxSelectedObjects: AnyEncodable? = nil, extraConfig: AnyEncodable? = nil, availableCategories: [String]? = nil, unavailableCategories: [String]? = nil, filteredCategories: [String]? = nil, pricing: [Pricing]? = nil, channels: [String]? = nil) {
         self.objectColor = objectColor
-        return self
-    }
-
-    public func objectLabel(_ objectLabel: String) -> Self {
         self.objectLabel = objectLabel
-        return self
-    }
-
-    public func numberOfPlacesToSelect(_ numberOfPlacesToSelect: Int) -> Self {
         self.numberOfPlacesToSelect = numberOfPlacesToSelect
-        return self
-    }
-
-    public func maxSelectedObjects(_ maxSelectedObjects: Int) -> Self {
-        self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
-        return self
-    }
-
-    public func maxSelectedObjects(_ maxSelectedObjects: [CategoryWithQuantity]) -> Self {
-        self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
-        return self
-    }
-
-    public func maxSelectedObjects(_ maxSelectedObjects: [TicketTypeWithQuantity]) -> Self {
-        self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
-        return self
-    }
-
-    public func extraConfig(_ extraConfig: Encodable) -> Self {
-        self.extraConfig = AnyEncodable(value: extraConfig)
-        return self
-    }
-
-    public func unavailableCategories(_ unavailableCategories: [String]) -> Self {
-        self.unavailableCategories = unavailableCategories
-        return self
-    }
-
-    public func availableCategories(_ availableCategories: [String]) -> Self {
+        self.maxSelectedObjects = maxSelectedObjects
+        self.extraConfig = extraConfig
         self.availableCategories = availableCategories
-        return self
-    }
-
-    public func filteredCategories(_ filteredCategories: [String]) -> Self {
+        self.unavailableCategories = unavailableCategories
         self.filteredCategories = filteredCategories
-        return self
-    }
-
-    public func pricing(_ pricing: [Pricing]) -> Self {
         self.pricing = pricing
-        return self
-    }
-
-    public func channels(_ channels: [String]) -> Self {
         self.channels = channels
-        return self
     }
 }

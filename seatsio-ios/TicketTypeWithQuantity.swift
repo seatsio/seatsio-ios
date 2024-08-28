@@ -2,6 +2,11 @@ import Foundation
 
 public struct TicketTypeWithQuantity: Encodable {
 
-    let ticketType: String
-    let quantity: Int
+    public let ticketType: String
+    public let quantity: Int
+    
+    public init(ticketType: String, quantity: Int) {
+        self.ticketType = ticketType
+        self.quantity = quantity
+    }
 }

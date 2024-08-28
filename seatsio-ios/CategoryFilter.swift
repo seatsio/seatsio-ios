@@ -1,23 +1,14 @@
 import Foundation
 
-public class CategoryFilter: Encodable {
+public struct CategoryFilter: Encodable {
 
-    var enabled: Bool?
-    var multiSelect: Bool?
-    var zoomOnSelect: Bool?
+    public let enabled: Bool?
+    public let multiSelect: Bool?
+    public let zoomOnSelect: Bool?
 
-    public func enabled(_ enabled: Bool) -> Self {
+    public init(enabled: Bool? = nil, multiSelect: Bool? = nil, zoomOnSelect: Bool? = nil) {
         self.enabled = enabled
-        return self
-    }
-
-    public func multiSelect(_ multiSelect: Bool) -> Self {
         self.multiSelect = multiSelect
-        return self
-    }
-
-    public func zoomOnSelect(_ zoomOnSelect: Bool) -> Self {
         self.zoomOnSelect = zoomOnSelect
-        return self
     }
 }
