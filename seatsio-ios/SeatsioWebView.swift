@@ -3,9 +3,9 @@ import WebKit
 
 public class SeatsioWebView: WKWebView {
     var bridge: JustBridge!
-    var seatsioConfig: SeatingChartConfig
+    var seatsioConfig: SeatsioConfig
 
-    public init(frame: CGRect, region: String, seatsioConfig: SeatingChartConfig) {
+    public init(frame: CGRect, region: String, seatsioConfig: SeatsioConfig) {
         self.seatsioConfig = seatsioConfig
         super.init(frame: frame, configuration: WKWebViewConfiguration())
         bridge = JustBridge(with: self)
@@ -18,19 +18,25 @@ public class SeatsioWebView: WKWebView {
 
     private func loadSeatingChart(region: String) {
         let callbacks = self.buildCallbacksConfiguration().joined(separator: ",")
-        let config = self.buildConfiguration()
-                .dropLast()
-                + "," + callbacks + "}";
+        var config = self.buildConfiguration()
+        
+        if !callbacks.isEmpty {
+            config = config.dropLast() // Removes the } from config json
+            + ","
+            + callbacks
+            + "}"
+        }
+        
         let htmlString = HTML
-                .replacingOccurrences(of: "%configAsJs%", with: config)
-                .replacingOccurrences(of: "%region%", with: region)
+            .replacingOccurrences(of: "%configAsJs%", with: config)
+            .replacingOccurrences(of: "%region%", with: region)
+            .replacingOccurrences(of: "%toolName%", with: seatsioConfig.toolName)
+        
         self.loadHTMLString(htmlString, baseURL: nil)
     }
 
     private func buildConfiguration() -> String {
-        let jsonEncoder = JSONEncoder()
-        let jsonData = try! jsonEncoder.encode(self.seatsioConfig)
-        return String(decoding: jsonData, as: UTF8.self)
+        seatsioConfig.jsonStringRepresentation
     }
 
     private func buildCallbacksConfiguration() -> [String] {

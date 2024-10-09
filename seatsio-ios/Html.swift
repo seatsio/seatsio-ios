@@ -10,7 +10,7 @@ let HTML = """
                 <div id="chart" style="width: 100%; height: 100%;"></div>
 
                 <script>
-                    let chart = new seatsio.SeatingChart(%configAsJs%).render();
+                    let chart = new seatsio.%toolName%(%configAsJs%).render();
 
                     window.bridge.register("selectObjects", function(objects) {
                         chart.selectObjects(objects)
