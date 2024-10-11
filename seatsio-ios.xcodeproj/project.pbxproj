@@ -43,7 +43,6 @@
 		B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */; };
 		FE12BD1D2CB6B23F002A845A /* SeatsioConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12BD1C2CB6B23F002A845A /* SeatsioConfig.swift */; };
 		FE12BD1F2CB6B25D002A845A /* EventManagerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12BD1E2CB6B25D002A845A /* EventManagerConfig.swift */; };
-		FE12BD212CB6B2DE002A845A /* EventMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12BD202CB6B2DE002A845A /* EventMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +86,6 @@
 		B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioObject.swift; sourceTree = "<group>"; };
 		FE12BD1C2CB6B23F002A845A /* SeatsioConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsioConfig.swift; sourceTree = "<group>"; };
 		FE12BD1E2CB6B25D002A845A /* EventManagerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManagerConfig.swift; sourceTree = "<group>"; };
-		FE12BD202CB6B2DE002A845A /* EventMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +154,6 @@
 				FE12BD1C2CB6B23F002A845A /* SeatsioConfig.swift */,
 				4EDEA52AC21D4D9AAFDB2E46 /* SeatingChartConfig.swift */,
 				FE12BD1E2CB6B25D002A845A /* EventManagerConfig.swift */,
-				FE12BD202CB6B2DE002A845A /* EventMode.swift */,
 				4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */,
 				9EDB59392BB19BFA00C6A0D1 /* SeatParent.swift */,
 				B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */,
@@ -282,7 +279,6 @@
 				B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */,
 				4EDEA979B40A137B93B88522 /* SeatingChartConfig.swift in Sources */,
 				4EDEA677E5530F12E5E04D0C /* Pricing.swift in Sources */,
-				FE12BD212CB6B2DE002A845A /* EventMode.swift in Sources */,
 				4EDEA42398413DDE89322B68 /* TicketTypePricing.swift in Sources */,
 				4EDEA8E950F463D31F67C49C /* BestAvailable.swift in Sources */,
 				4EDEA7B84867A8207E7EDE3A /* Legend.swift in Sources */,

@@ -9,6 +9,7 @@ class SeatingChartSample: UIViewController {
         let config: SeatingChartConfig = SeatingChartConfig()
                 .workspaceKey("publicDemoKey")
                 .event("smallTheatreWithGAEvent")
+                .mode(.normal)
                 .pricing([
                     Pricing(category: "1", ticketTypes: [
                         TicketTypePricing(ticketType: "child", price: 10),

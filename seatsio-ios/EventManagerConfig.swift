@@ -1,11 +1,22 @@
 import Foundation
 
+public enum EventManagerMode: String, Encodable {
+    case manageObjectStatuses
+    case manageForSaleConfig
+    case manageTableBooking
+    case manageChannels
+    case manageCategories
+    case select
+    case filterSections
+    case `static`
+}
+
 struct EventManagerConfigParams: Encodable {
     var secretKey: String?
     var event: String?
     var events: [String]?
     var messages: [String: String]?
-    var mode: EventMode?
+    var mode: EventManagerMode?
     var language: String?
     var colors: Colors?
     var colorScheme: String?
@@ -67,7 +78,7 @@ public final class EventManagerConfig: SeatsioConfig {
         return self
     }
 
-    public func mode(_ mode: EventMode) -> Self {
+    public func mode(_ mode: EventManagerMode) -> Self {
         params.mode = mode
         return self
     }

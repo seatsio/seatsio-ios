@@ -1,5 +1,12 @@
 import Foundation
 
+public enum SeatingChartMode: String, Encodable {
+    case normal
+    case `static`
+    case print
+    case spotlight
+}
+
 public class SeatingChartConfig: SeatsioConfig, Encodable {
 
     public private(set) var workspaceKey: String?
@@ -32,7 +39,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var selectionValidators: [SelectionValidator]?
     public private(set) var categories: [Category]?
     public private(set) var objectCategories: [String: String]?
-    public private(set) var mode: EventMode?
+    public private(set) var mode: SeatingChartMode?
     public private(set) var loading: String?
     public private(set) var ticketListings: [TicketListing]?
     public private(set) var holdOnSelectForGAs: Bool?
@@ -236,7 +243,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         return self
     }
 
-    public func mode(_ mode: EventMode) -> Self {
+    public func mode(_ mode: SeatingChartMode) -> Self {
         self.mode = mode
         return self
     }
