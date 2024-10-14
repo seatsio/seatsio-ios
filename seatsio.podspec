@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
   s.source_files = 'Sources/seatsio-ios/*'
   s.exclude_files = "Sources/seatsio-ios/**/*.plist"
-  s.swift_versions = ['4.0']
+  s.swift_versions = ['5.0']
 end
