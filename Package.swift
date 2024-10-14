@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "Seatsio",
+    name: "seatsio-ios",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Seatsio",
+            name: "seatsio-ios",
             targets: ["seatsio-ios"]),
     ],
     targets: [
