@@ -1,5 +1,6 @@
 platform :ios, '12.0'
 
-target 'seatsio-ios' do
+target 'Seatsio' do
   use_frameworks!
+  pod 'seatsio', :path => 'seatsio.podspec'
 end

@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 7e3d3d38e3c6c64c581bdfbe83e25e0034c3de26
+PODS:
+  - seatsio (17.0.0)
+
+DEPENDENCIES:
+  - seatsio (from `seatsio.podspec`)
+
+EXTERNAL SOURCES:
+  seatsio:
+    :path: seatsio.podspec
+
+SPEC CHECKSUMS:
+  seatsio: 7d058764f6e902acf9ac2cff57adc01d258d04cd
+
+PODFILE CHECKSUM: 8788e1d003b00db38f11e4fb362978f48684c865
 
 COCOAPODS: 1.15.2
