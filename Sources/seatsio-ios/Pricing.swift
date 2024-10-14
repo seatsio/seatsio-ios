@@ -21,7 +21,11 @@ public struct Pricing: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         if let value = try? container.decodeIfPresent(Int.self, forKey: .category) {
-            category = String(value)
+            if let value {
+                category = String(value)
+            } else {
+                category = nil
+            }
         } else {
             category = try container.decodeIfPresent(String.self, forKey: .category)
         }

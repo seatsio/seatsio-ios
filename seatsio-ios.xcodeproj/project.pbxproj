@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		15859824B00D0EB49C0C6913 /* Pods_seatsio_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */; };
-		3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B40BA3722A7D49C00B9A507 /* Assets.xcassets */; };
 		3BB8A4D82C2B1BFE009D913A /* JustBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB8A4D72C2B1BFE009D913A /* JustBridge.swift */; };
 		4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
-		4EDEA15676C3C508BB4BBE4B /* SeatingChartSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */; };
 		4EDEA2B7249C0734B9AEE860 /* TicketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA64B09FF840D72C49C61 /* TicketType.swift */; };
 		4EDEA2E03D2CD09EEC4CAE41 /* TicketListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA69A460C361D9C8F3A33 /* TicketListing.swift */; };
 		4EDEA4001C0896B83A8D0B0D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA8AC302F74374EED0CDF /* Point.swift */; };
@@ -31,7 +29,6 @@
 		4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */; };
 		4EDEAA64A7C2984DE75016E0 /* ObjectTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA386B2AED9B7FFA78D48 /* ObjectTooltip.swift */; };
 		4EDEAB8F473117311871E657 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA0763144FD24206F519B /* CategoryFilter.swift */; };
-		4EDEAC4BA9FFF44DB841CFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */; };
 		4EDEACC0E67B41C274F30EDD /* HoldToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAA55D4DDFE1914B4116B /* HoldToken.swift */; };
 		4EDEAE838F53B93BCE0114F4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA633D63982576C1999B1 /* Colors.swift */; };
 		4EDEAF040BFBA579B70AFC19 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA57B75716A2D4D86C3C6 /* Category.swift */; };
@@ -43,12 +40,14 @@
 		B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */; };
 		FE12BD1D2CB6B23F002A845A /* SeatsioConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12BD1C2CB6B23F002A845A /* SeatsioConfig.swift */; };
 		FE12BD1F2CB6B25D002A845A /* EventManagerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12BD1E2CB6B25D002A845A /* EventManagerConfig.swift */; };
+		FE5F65EB2CBD636D005E9013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5F65E42CBD636D005E9013 /* AppDelegate.swift */; };
+		FE5F65EC2CBD636D005E9013 /* SeatingChartSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5F65E92CBD636D005E9013 /* SeatingChartSample.swift */; };
+		FE5F65ED2CBD636D005E9013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5F65E52CBD636D005E9013 /* Assets.xcassets */; };
+		FE5F65EE2CBD636D005E9013 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5F65E82CBD636D005E9013 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seatsio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B40BA3722A7D49C00B9A507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3B40BA3C22A7D49C00B9A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BB8A4D72C2B1BFE009D913A /* JustBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustBridge.swift; sourceTree = "<group>"; };
 		4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioWebView.swift; sourceTree = "<group>"; };
 		4EDEA0763144FD24206F519B /* CategoryFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryFilter.swift; sourceTree = "<group>"; };
@@ -74,8 +73,6 @@
 		4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
 		4EDEAC0C4EF1BDA7E69EB7AB /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypeWithQuantity.swift; sourceTree = "<group>"; };
-		4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = "<group>"; };
-		4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeatingChartSample.swift; path = Example/SeatingChartSample.swift; sourceTree = "<group>"; };
 		4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportBySelectability.swift; sourceTree = "<group>"; };
 		4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigChange.swift; sourceTree = "<group>"; };
 		4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypePricing.swift; sourceTree = "<group>"; };
@@ -87,6 +84,11 @@
 		FE12BD1C2CB6B23F002A845A /* SeatsioConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsioConfig.swift; sourceTree = "<group>"; };
 		FE12BD1E2CB6B25D002A845A /* EventManagerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManagerConfig.swift; sourceTree = "<group>"; };
 		FE12BD272CBD5DDC002A845A /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		FE5F65E42CBD636D005E9013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE5F65E52CBD636D005E9013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE5F65E62CBD636D005E9013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = SOURCE_ROOT; };
+		FE5F65E72CBD636D005E9013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE5F65E92CBD636D005E9013 /* SeatingChartSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatingChartSample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +115,8 @@
 		3B40BA2422A7D49C00B9A507 = {
 			isa = PBXGroup;
 			children = (
+				FE5F65EA2CBD636D005E9013 /* Example */,
 				FE12BD252CBD5D5E002A845A /* Sources */,
-				3B40BA2F22A7D49C00B9A507 /* seatsio-ios */,
 				3B40BA2E22A7D49C00B9A507 /* Products */,
 				2D7DE68DBC739D600807581F /* Pods */,
 				8438CC24EAD4C56087A90D9B /* Frameworks */,
@@ -129,17 +131,6 @@
 				3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		3B40BA2F22A7D49C00B9A507 /* seatsio-ios */ = {
-			isa = PBXGroup;
-			children = (
-				4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */,
-				3B40BA3722A7D49C00B9A507 /* Assets.xcassets */,
-				3B40BA3C22A7D49C00B9A507 /* Info.plist */,
-				4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */,
-			);
-			path = "seatsio-ios";
 			sourceTree = "<group>";
 		};
 		8438CC24EAD4C56087A90D9B /* Frameworks */ = {
@@ -194,6 +185,18 @@
 				FE12BD242CBD5D5E002A845A /* seatsio-ios */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		FE5F65EA2CBD636D005E9013 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F65E42CBD636D005E9013 /* AppDelegate.swift */,
+				FE5F65E92CBD636D005E9013 /* SeatingChartSample.swift */,
+				FE5F65E52CBD636D005E9013 /* Assets.xcassets */,
+				FE5F65E62CBD636D005E9013 /* Info.plist */,
+				FE5F65E82CBD636D005E9013 /* Main.storyboard */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +258,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */,
+				FE5F65ED2CBD636D005E9013 /* Assets.xcassets in Resources */,
+				FE5F65EE2CBD636D005E9013 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,16 +323,27 @@
 				4EDEAE838F53B93BCE0114F4 /* Colors.swift in Sources */,
 				4EDEA5061182FCBDD7373A90 /* Style.swift in Sources */,
 				4EDEAFBCD7841989B4823DDC /* Html.swift in Sources */,
-				4EDEA15676C3C508BB4BBE4B /* SeatingChartSample.swift in Sources */,
-				4EDEAC4BA9FFF44DB841CFB9 /* AppDelegate.swift in Sources */,
 				4EDEA64D4BBCBE687755DEAC /* releasing.md in Sources */,
 				4EDEAF7141F075ACE831949E /* ReportBySelectability.swift in Sources */,
 				3BB8A4D82C2B1BFE009D913A /* JustBridge.swift in Sources */,
 				4EDEACC0E67B41C274F30EDD /* HoldToken.swift in Sources */,
+				FE5F65EB2CBD636D005E9013 /* AppDelegate.swift in Sources */,
+				FE5F65EC2CBD636D005E9013 /* SeatingChartSample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE5F65E82CBD636D005E9013 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE5F65E72CBD636D005E9013 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3B40BA5322A7D49C00B9A507 /* Debug */ = {
@@ -458,7 +473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WGUCAYKLS;
-				INFOPLIST_FILE = "seatsio-ios/Info.plist";
+				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -479,7 +494,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WGUCAYKLS;
-				INFOPLIST_FILE = "seatsio-ios/Info.plist";
+				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
