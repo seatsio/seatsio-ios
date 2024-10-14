@@ -141,7 +141,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FE12BD242CBD5D5E002A845A /* seatsio-ios */ = {
+		FE12BD242CBD5D5E002A845A /* Seatsio */ = {
 			isa = PBXGroup;
 			children = (
 				4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */,
@@ -176,13 +176,13 @@
 				4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */,
 				4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */,
 			);
-			path = "seatsio-ios";
+			path = Seatsio;
 			sourceTree = "<group>";
 		};
 		FE12BD252CBD5D5E002A845A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FE12BD242CBD5D5E002A845A /* seatsio-ios */,
+				FE12BD242CBD5D5E002A845A /* Seatsio */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
