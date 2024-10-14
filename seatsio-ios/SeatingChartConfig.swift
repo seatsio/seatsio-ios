@@ -1,83 +1,91 @@
 import Foundation
 
-public class SeatingChartConfig: Encodable {
+public enum SeatingChartMode: String, Encodable {
+    case normal
+    case `static`
+    case print
+    case spotlight
+}
 
-    var workspaceKey: String?
-    var events: Set<String>?
-    var chart: String?
-    var pricing: [Pricing]?
+public class SeatingChartConfig: SeatsioConfig, Encodable {
 
-    var priceFormatter: Optional<(Float) -> String>
-    var numberOfPlacesToSelect: Int?
-    var objectWithoutPricingSelectable: Bool?
-    var selectedObjects: [SelectedObject]?
-    var selectableObjects: [String]?
-    var language: String?
-    var messages: [String: String]?
-    var priceLevelsTooltipMessage: String?
-    var maxSelectedObjects: AnyEncodable?
-    var availableCategories: [String]?
-    var unavailableCategories: [String]?
-    var filteredCategories: [String]?
-    var categoryFilter: CategoryFilter?
-    var selectBestAvailable: BestAvailable?
-    var alwaysShowSectionContents: Bool?
-    var showSectionContents: String?
-    var showLegend: Bool?
-    var showSeatLabels: Bool?
-    var legend: Legend?
-    var showMinimap: Bool?
-    var showActiveSectionTooltip: Bool?
-    var showViewFromYourSeat: Bool?
-    var selectionValidators: [SelectionValidator]?
-    var categories: [Category]?
-    var objectCategories: [String: String]?
-    var mode: String?
-    var loading: String?
-    var ticketListings: [TicketListing]?
-    var holdOnSelectForGAs: Bool?
-    var holdToken: String?
-    var session: String?
-    var objectLabel: String?
-    var objectIcon: String?
-    var isObjectVisible: String?
-    var canGASelectionBeIncreased: String?
-    var objectColor: String?
-    var sectionColor: String?
-    var extraConfig: AnyEncodable?
-    var objectTooltip: ObjectTooltip?
-    var tooltipInfo: Optional<(SeatsioObject) -> String>
-    var showZoomOutButtonOnMobile: Bool?
-    var colorScheme: String?
-    var colors: Colors?
-    var stylePreset: String?
-    var style: Style?
-    var showFullScreenButton: Bool = false
-    var showSectionPricingOverlay: Bool?
-    var channels: Set<String>?
+    public private(set) var workspaceKey: String?
+    public private(set) var events: Set<String>?
+    public private(set) var chart: String?
+    public private(set) var pricing: [Pricing]?
 
-    var onSelectionValid: Optional<() -> ()>
-    var onSelectionInvalid: Optional<([SelectionValidatorType]) -> ()>
-    var onObjectSelected: Optional<(SeatsioObject, TicketType?) -> ()>
-    var onObjectDeselected: Optional<(SeatsioObject, TicketType?) -> ()>
-    var onObjectClicked: Optional<(SeatsioObject) -> ()>
-    var onObjectStatusChanged: Optional<(SeatsioObject) -> ()>
-    var onSessionInitialized: Optional<(HoldToken) -> ()>
-    var onHoldTokenExpired: Optional<() -> ()>
-    var onBestAvailableSelected: Optional<([SeatsioObject], Bool) -> ()>
-    var onBestAvailableSelectionFailed: Optional<() -> ()>
-    var onHoldSucceeded: Optional<([SeatsioObject], [TicketType]?) -> ()>
-    var onHoldFailed: Optional<([SeatsioObject], [TicketType]?) -> ()>
-    var onReleaseHoldSucceeded: Optional<([SeatsioObject], [TicketType]?) -> ()>
-    var onReleaseHoldFailed: Optional<([SeatsioObject], [TicketType]?) -> ()>
-    var onSelectedObjectBooked: Optional<(SeatsioObject) -> ()>
-    var onChartRendered: Optional<(SeatingChart) -> ()>
-    var onChartRenderingFailed: Optional<() -> ()>
+    public private(set) var priceFormatter: ((Float) -> String)?
+    public private(set) var numberOfPlacesToSelect: Int?
+    public private(set) var objectWithoutPricingSelectable: Bool?
+    public private(set) var selectedObjects: [SelectedObject]?
+    public private(set) var selectableObjects: [String]?
+    public private(set) var language: String?
+    public private(set) var messages: [String: String]?
+    public private(set) var priceLevelsTooltipMessage: String?
+    public private(set) var maxSelectedObjects: AnyEncodable?
+    public private(set) var availableCategories: [String]?
+    public private(set) var unavailableCategories: [String]?
+    public private(set) var filteredCategories: [String]?
+    public private(set) var categoryFilter: CategoryFilter?
+    public private(set) var selectBestAvailable: BestAvailable?
+    public private(set) var alwaysShowSectionContents: Bool?
+    public private(set) var showSectionContents: String?
+    public private(set) var showLegend: Bool?
+    public private(set) var showSeatLabels: Bool?
+    public private(set) var legend: Legend?
+    public private(set) var showMinimap: Bool?
+    public private(set) var showActiveSectionTooltip: Bool?
+    public private(set) var showViewFromYourSeat: Bool?
+    public private(set) var selectionValidators: [SelectionValidator]?
+    public private(set) var categories: [Category]?
+    public private(set) var objectCategories: [String: String]?
+    public private(set) var mode: SeatingChartMode?
+    public private(set) var loading: String?
+    public private(set) var ticketListings: [TicketListing]?
+    public private(set) var holdOnSelectForGAs: Bool?
+    public private(set) var holdToken: String?
+    public private(set) var session: String?
+    public private(set) var objectLabel: String?
+    public private(set) var objectIcon: String?
+    public private(set) var isObjectVisible: String?
+    public private(set) var canGASelectionBeIncreased: String?
+    public private(set) var objectColor: String?
+    public private(set) var sectionColor: String?
+    public private(set) var extraConfig: AnyEncodable?
+    public private(set) var objectTooltip: ObjectTooltip?
+    public private(set) var tooltipInfo: ((SeatsioObject) -> String)?
+    public private(set) var showZoomOutButtonOnMobile: Bool?
+    public private(set) var colorScheme: String?
+    public private(set) var colors: Colors?
+    public private(set) var stylePreset: String?
+    public private(set) var style: Style?
+    public private(set) var showFullScreenButton: Bool = false
+    public private(set) var showSectionPricingOverlay: Bool?
+    public private(set) var channels: Set<String>?
+
+    public private(set) var onSelectionValid: (() -> Void)?
+    public private(set) var onSelectionInvalid: (([SelectionValidatorType]) -> Void)?
+    public private(set) var onObjectSelected: ((SeatsioObject, TicketType?) -> Void)?
+    public private(set) var onObjectDeselected: ((SeatsioObject, TicketType?) -> Void)?
+    public private(set) var onObjectClicked: ((SeatsioObject) -> Void)?
+    public private(set) var onObjectStatusChanged: ((SeatsioObject) -> Void)?
+    public private(set) var onSessionInitialized: ((HoldToken) -> Void)?
+    public private(set) var onHoldTokenExpired: (() -> Void)?
+    public private(set) var onBestAvailableSelected: (([SeatsioObject], Bool) -> Void)?
+    public private(set) var onBestAvailableSelectionFailed: (() -> Void)?
+    public private(set) var onHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)?
+    public private(set) var onHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)?
+    public private(set) var onReleaseHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)?
+    public private(set) var onReleaseHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)?
+    public private(set) var onSelectedObjectBooked: ((SeatsioObject) -> Void)?
+    public private(set) var onChartRendered: ((SeatingChart) -> Void)?
+    public private(set) var onChartRenderingFailed: (() -> Void)?
 
     let _library: String = "ios"
+    
+    public var toolName: String { "SeatingChart" }
 
-    public init() {
-    }
+    public init() {}
 
     public func workspaceKey(_ workspaceKey: String) -> Self {
         self.workspaceKey = workspaceKey
@@ -235,7 +243,7 @@ public class SeatingChartConfig: Encodable {
         return self
     }
 
-    public func mode(_ mode: String) -> Self {
+    public func mode(_ mode: SeatingChartMode) -> Self {
         self.mode = mode
         return self
     }
@@ -433,6 +441,12 @@ public class SeatingChartConfig: Encodable {
     public func channels(_ channels: Set<String>) -> Self {
         self.channels = channels
         return self
+    }
+    
+    public var jsonStringRepresentation: String {
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try! jsonEncoder.encode(self)
+        return String(decoding: jsonData, as: UTF8.self)
     }
 
     private enum CodingKeys: String, CodingKey {

@@ -9,6 +9,7 @@ class SeatingChartSample: UIViewController {
         let config: SeatingChartConfig = SeatingChartConfig()
                 .workspaceKey("publicDemoKey")
                 .event("smallTheatreWithGAEvent")
+                .mode(.normal)
                 .pricing([
                     Pricing(category: "1", ticketTypes: [
                         TicketTypePricing(ticketType: "child", price: 10),
@@ -18,27 +19,27 @@ class SeatingChartSample: UIViewController {
                         TicketTypePricing(ticketType: "adult", price: 30)])
                 ])
                 .priceFormatter({ (price) in "\(price)$" })
-                .objectTooltip(ObjectTooltip().showAvailability(true))
+                .objectTooltip(ObjectTooltip(showAvailability: true))
                 .showLegend(true)
                 .showSeatLabels(true)
                 .onSelectionInvalid({ (errors) in print(errors) })
                 .onObjectSelected({ (object, ticketType) in
-                    print(object, ticketType)
+                    print(object, ticketType ?? "nil")
                 })
                 .onObjectDeselected({ (object, ticketType) in
-                    print(object, ticketType)
+                    print(object, ticketType ?? "nil")
                 })
                 .selectedObjects([SelectedObject("A-1")])
                 .onChartRendered({ (chart) in
                     print("rendered")
                     chart.getReportBySelectability({ (report) in print(report)})
-                    chart.changeConfig(ConfigChange().unavailableCategories(["Balcony"]))
+                    chart.changeConfig(ConfigChange(unavailableCategories: ["Balcony"]))
                     chart.isObjectInChannel("K-3", "NO_CHANNEL", { (result) in print("Is object in channel NO_CHANNEL? " + String(result)) })
                 })
-                .categoryFilter(CategoryFilter().enabled(true))
-
+                .categoryFilter(CategoryFilter(enabled: true))
+        
         seatsio = SeatsioWebView(frame: UIScreen.main.bounds, region: "eu", seatsioConfig: config)
-
+        
         self.view = seatsio
     }
 
