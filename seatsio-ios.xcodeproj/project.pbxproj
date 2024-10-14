@@ -47,7 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seatsio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B40BA2D22A7D49C00B9A507 /* Seatsio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatsio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BB8A4D72C2B1BFE009D913A /* JustBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustBridge.swift; sourceTree = "<group>"; };
 		4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioWebView.swift; sourceTree = "<group>"; };
 		4EDEA0763144FD24206F519B /* CategoryFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryFilter.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		3B40BA2E22A7D49C00B9A507 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */,
+				3B40BA2D22A7D49C00B9A507 /* Seatsio.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,9 +202,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3B40BA2C22A7D49C00B9A507 /* seatsio-ios */ = {
+		3B40BA2C22A7D49C00B9A507 /* Seatsio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B40BA5522A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-ios" */;
+			buildConfigurationList = 3B40BA5522A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "Seatsio" */;
 			buildPhases = (
 				E29E4CF9BF68BAEED60C2553 /* [CP] Check Pods Manifest.lock */,
 				3B40BA2922A7D49C00B9A507 /* Sources */,
@@ -215,9 +215,9 @@
 			);
 			dependencies = (
 			);
-			name = "seatsio-ios";
+			name = Seatsio;
 			productName = "seatsio-ios";
-			productReference = 3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */;
+			productReference = 3B40BA2D22A7D49C00B9A507 /* Seatsio.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +248,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B40BA2C22A7D49C00B9A507 /* seatsio-ios */,
+				3B40BA2C22A7D49C00B9A507 /* Seatsio */,
 			);
 		};
 /* End PBXProject section */
@@ -520,7 +520,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B40BA5522A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-ios" */ = {
+		3B40BA5522A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "Seatsio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B40BA5622A7D49C00B9A507 /* Debug */,
