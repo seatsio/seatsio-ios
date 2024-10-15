@@ -53,6 +53,8 @@ public final class EventManagerConfig: SeatsioConfig {
 
     public var toolName: String { "EventManager" }
     
+    public init() {}
+    
     public func secretKey(_ secretKey: String) -> Self {
         params.secretKey = secretKey
         return self

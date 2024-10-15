@@ -29,7 +29,6 @@ jobs:
         env:
           VERSION_TO_BUMP: ${{ inputs.versionToBump }}
           GH_TOKEN: ${{ github.token }}
-      - run: pod install
       - run: pod lib lint
       - run: pod trunk push
         env:

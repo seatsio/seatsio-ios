@@ -3,201 +3,177 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15859824B00D0EB49C0C6913 /* Pods_seatsio_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */; };
-		3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B40BA3722A7D49C00B9A507 /* Assets.xcassets */; };
-		3BB8A4D82C2B1BFE009D913A /* JustBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB8A4D72C2B1BFE009D913A /* JustBridge.swift */; };
-		4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */; };
-		4EDEA15676C3C508BB4BBE4B /* SeatingChartSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */; };
-		4EDEA2B7249C0734B9AEE860 /* TicketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA64B09FF840D72C49C61 /* TicketType.swift */; };
-		4EDEA2E03D2CD09EEC4CAE41 /* TicketListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA69A460C361D9C8F3A33 /* TicketListing.swift */; };
-		4EDEA4001C0896B83A8D0B0D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA8AC302F74374EED0CDF /* Point.swift */; };
-		4EDEA42398413DDE89322B68 /* TicketTypePricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */; };
-		4EDEA4A774FA6942DF195D0C /* CategoryWithQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA5174C3B57909D6F0369 /* CategoryWithQuantity.swift */; };
-		4EDEA5061182FCBDD7373A90 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAC0C4EF1BDA7E69EB7AB /* Style.swift */; };
-		4EDEA540C9F4FDF810ABAC43 /* SelectionValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA7F354DAF869A28A377D /* SelectionValidator.swift */; };
-		4EDEA64D4BBCBE687755DEAC /* releasing.md in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA976297E0ADA1A8BE9C8 /* releasing.md */; };
-		4EDEA67392849D8A8644B1FF /* SeatingChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA6F7303F7AB3A435DCEB /* SeatingChart.swift */; };
-		4EDEA677E5530F12E5E04D0C /* Pricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA099F1693CFC065B3A62 /* Pricing.swift */; };
-		4EDEA7B84867A8207E7EDE3A /* Legend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA39FA63D2FBFF3849BC4 /* Legend.swift */; };
-		4EDEA8E950F463D31F67C49C /* BestAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA6E2F6E170537E3822EC /* BestAvailable.swift */; };
-		4EDEA95316803DC194873FE9 /* SelectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA83844B303A6685ACF8B /* SelectedObject.swift */; };
-		4EDEA970237725FAB2D0D30D /* TicketTypeWithQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */; };
-		4EDEA979B40A137B93B88522 /* SeatingChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA52AC21D4D9AAFDB2E46 /* SeatingChartConfig.swift */; };
-		4EDEA9892FEF157DE1A9F396 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA81DA10F59A65048DF40 /* Labels.swift */; };
-		4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */; };
-		4EDEAA64A7C2984DE75016E0 /* ObjectTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA386B2AED9B7FFA78D48 /* ObjectTooltip.swift */; };
-		4EDEAB8F473117311871E657 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA0763144FD24206F519B /* CategoryFilter.swift */; };
-		4EDEAC4BA9FFF44DB841CFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */; };
-		4EDEACC0E67B41C274F30EDD /* HoldToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAA55D4DDFE1914B4116B /* HoldToken.swift */; };
-		4EDEAE838F53B93BCE0114F4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA633D63982576C1999B1 /* Colors.swift */; };
-		4EDEAF040BFBA579B70AFC19 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA57B75716A2D4D86C3C6 /* Category.swift */; };
-		4EDEAF0D8D5EFDC667045A40 /* SelectionValidatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */; };
-		4EDEAF7141F075ACE831949E /* ReportBySelectability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */; };
-		4EDEAFBCD7841989B4823DDC /* Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEA65F4B160685223EEC59 /* Html.swift */; };
-		4EDEAFCD0B067C46CCA35CBA /* ConfigChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */; };
-		9EDB593A2BB19BFA00C6A0D1 /* SeatParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB59392BB19BFA00C6A0D1 /* SeatParent.swift */; };
-		B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */; };
-		FE12BD1D2CB6B23F002A845A /* SeatsioConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12BD1C2CB6B23F002A845A /* SeatsioConfig.swift */; };
-		FE12BD1F2CB6B25D002A845A /* EventManagerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12BD1E2CB6B25D002A845A /* EventManagerConfig.swift */; };
+		FE5F65EB2CBD636D005E9013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5F65E42CBD636D005E9013 /* AppDelegate.swift */; };
+		FE5F65EC2CBD636D005E9013 /* SeatingChartSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5F65E92CBD636D005E9013 /* SeatingChartSample.swift */; };
+		FE5F65ED2CBD636D005E9013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5F65E52CBD636D005E9013 /* Assets.xcassets */; };
+		FE5F65EE2CBD636D005E9013 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5F65E82CBD636D005E9013 /* Main.storyboard */; };
+		FE5F66092CBE92AE005E9013 /* Seatsio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F66032CBE92AE005E9013 /* Seatsio.framework */; };
+		FE5F660A2CBE92AE005E9013 /* Seatsio.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F66032CBE92AE005E9013 /* Seatsio.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FE5F66072CBE92AE005E9013 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B40BA2522A7D49C00B9A507 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE5F66022CBE92AE005E9013;
+			remoteInfo = Seatsio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FE5F660F2CBE92AE005E9013 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FE5F660A2CBE92AE005E9013 /* Seatsio.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seatsio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B40BA3722A7D49C00B9A507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3B40BA3C22A7D49C00B9A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3BB8A4D72C2B1BFE009D913A /* JustBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustBridge.swift; sourceTree = "<group>"; };
-		4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioWebView.swift; sourceTree = "<group>"; };
-		4EDEA0763144FD24206F519B /* CategoryFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryFilter.swift; sourceTree = "<group>"; };
-		4EDEA099F1693CFC065B3A62 /* Pricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
-		4EDEA386B2AED9B7FFA78D48 /* ObjectTooltip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTooltip.swift; sourceTree = "<group>"; };
-		4EDEA39FA63D2FBFF3849BC4 /* Legend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legend.swift; sourceTree = "<group>"; };
-		4EDEA5174C3B57909D6F0369 /* CategoryWithQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryWithQuantity.swift; sourceTree = "<group>"; };
-		4EDEA52AC21D4D9AAFDB2E46 /* SeatingChartConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatingChartConfig.swift; sourceTree = "<group>"; };
-		4EDEA57B75716A2D4D86C3C6 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		4EDEA633D63982576C1999B1 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		4EDEA64B09FF840D72C49C61 /* TicketType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketType.swift; sourceTree = "<group>"; };
-		4EDEA65F4B160685223EEC59 /* Html.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Html.swift; sourceTree = "<group>"; };
-		4EDEA69A460C361D9C8F3A33 /* TicketListing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketListing.swift; sourceTree = "<group>"; };
-		4EDEA6E2F6E170537E3822EC /* BestAvailable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestAvailable.swift; sourceTree = "<group>"; };
-		4EDEA6F7303F7AB3A435DCEB /* SeatingChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatingChart.swift; sourceTree = "<group>"; };
-		4EDEA7F354DAF869A28A377D /* SelectionValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionValidator.swift; sourceTree = "<group>"; };
-		4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionValidatorType.swift; sourceTree = "<group>"; };
-		4EDEA81DA10F59A65048DF40 /* Labels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
-		4EDEA83844B303A6685ACF8B /* SelectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedObject.swift; sourceTree = "<group>"; };
-		4EDEA8AC302F74374EED0CDF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		3B40BA2D22A7D49C00B9A507 /* Seatsio-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seatsio-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDEA976297E0ADA1A8BE9C8 /* releasing.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = releasing.md; sourceTree = "<group>"; };
-		4EDEAA55D4DDFE1914B4116B /* HoldToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoldToken.swift; sourceTree = "<group>"; };
-		4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
-		4EDEAC0C4EF1BDA7E69EB7AB /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypeWithQuantity.swift; sourceTree = "<group>"; };
-		4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = "<group>"; };
-		4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeatingChartSample.swift; path = Example/SeatingChartSample.swift; sourceTree = "<group>"; };
-		4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportBySelectability.swift; sourceTree = "<group>"; };
-		4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigChange.swift; sourceTree = "<group>"; };
-		4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTypePricing.swift; sourceTree = "<group>"; };
-		55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.debug.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatsio_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EDB59392BB19BFA00C6A0D1 /* SeatParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatParent.swift; sourceTree = "<group>"; };
-		A6A88E8FAE60849004A8E8E6 /* Pods-seatsio-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatsio-ios.release.xcconfig"; path = "Target Support Files/Pods-seatsio-ios/Pods-seatsio-ios.release.xcconfig"; sourceTree = "<group>"; };
-		B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsioObject.swift; sourceTree = "<group>"; };
-		FE12BD1C2CB6B23F002A845A /* SeatsioConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsioConfig.swift; sourceTree = "<group>"; };
-		FE12BD1E2CB6B25D002A845A /* EventManagerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManagerConfig.swift; sourceTree = "<group>"; };
+		FE12BD272CBD5DDC002A845A /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		FE5F65E42CBD636D005E9013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE5F65E52CBD636D005E9013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE5F65E62CBD636D005E9013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = SOURCE_ROOT; };
+		FE5F65E72CBD636D005E9013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE5F65E92CBD636D005E9013 /* SeatingChartSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatingChartSample.swift; sourceTree = "<group>"; };
+		FE5F66032CBE92AE005E9013 /* Seatsio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Seatsio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE5F66B32CBE96A3005E9013 /* seatsio.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = seatsio.podspec; sourceTree = "<group>"; };
+		FE5F66B62CBE98F2005E9013 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FE5F66B72CBE98F2005E9013 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FE5F66042CBE92AE005E9013 /* Seatsio */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Seatsio; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3B40BA2A22A7D49C00B9A507 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15859824B00D0EB49C0C6913 /* Pods_seatsio_ios.framework in Frameworks */,
+				FE5F66092CBE92AE005E9013 /* Seatsio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE5F66002CBE92AE005E9013 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D7DE68DBC739D600807581F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */,
-				A6A88E8FAE60849004A8E8E6 /* Pods-seatsio-ios.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		3B40BA2422A7D49C00B9A507 = {
 			isa = PBXGroup;
 			children = (
-				3B40BA2F22A7D49C00B9A507 /* seatsio-ios */,
+				FE5F65EA2CBD636D005E9013 /* Example */,
+				FE5F66042CBE92AE005E9013 /* Seatsio */,
 				3B40BA2E22A7D49C00B9A507 /* Products */,
-				2D7DE68DBC739D600807581F /* Pods */,
 				8438CC24EAD4C56087A90D9B /* Frameworks */,
+				FE12BD272CBD5DDC002A845A /* Package.swift */,
+				FE5F66B32CBE96A3005E9013 /* seatsio.podspec */,
 				4EDEA976297E0ADA1A8BE9C8 /* releasing.md */,
+				FE5F66B62CBE98F2005E9013 /* LICENSE */,
+				FE5F66B72CBE98F2005E9013 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
 		3B40BA2E22A7D49C00B9A507 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */,
+				3B40BA2D22A7D49C00B9A507 /* Seatsio-Example.app */,
+				FE5F66032CBE92AE005E9013 /* Seatsio.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		3B40BA2F22A7D49C00B9A507 /* seatsio-ios */ = {
-			isa = PBXGroup;
-			children = (
-				4EDEAABFA7B4436D972F2E2D /* AnyEncodable.swift */,
-				4EDEADBF3EADA29EA6A7B5A8 /* AppDelegate.swift */,
-				3B40BA3722A7D49C00B9A507 /* Assets.xcassets */,
-				4EDEA6E2F6E170537E3822EC /* BestAvailable.swift */,
-				4EDEA57B75716A2D4D86C3C6 /* Category.swift */,
-				4EDEA0763144FD24206F519B /* CategoryFilter.swift */,
-				4EDEA5174C3B57909D6F0369 /* CategoryWithQuantity.swift */,
-				4EDEA633D63982576C1999B1 /* Colors.swift */,
-				4EDEAFCFBA22E63057491CF3 /* ConfigChange.swift */,
-				4EDEAA55D4DDFE1914B4116B /* HoldToken.swift */,
-				4EDEA65F4B160685223EEC59 /* Html.swift */,
-				3B40BA3C22A7D49C00B9A507 /* Info.plist */,
-				3BB8A4D72C2B1BFE009D913A /* JustBridge.swift */,
-				4EDEA81DA10F59A65048DF40 /* Labels.swift */,
-				4EDEA39FA63D2FBFF3849BC4 /* Legend.swift */,
-				4EDEA386B2AED9B7FFA78D48 /* ObjectTooltip.swift */,
-				4EDEA8AC302F74374EED0CDF /* Point.swift */,
-				4EDEA099F1693CFC065B3A62 /* Pricing.swift */,
-				4EDEAF2C91ADC8500B3CA854 /* ReportBySelectability.swift */,
-				4EDEA6F7303F7AB3A435DCEB /* SeatingChart.swift */,
-				FE12BD1C2CB6B23F002A845A /* SeatsioConfig.swift */,
-				4EDEA52AC21D4D9AAFDB2E46 /* SeatingChartConfig.swift */,
-				FE12BD1E2CB6B25D002A845A /* EventManagerConfig.swift */,
-				4EDEAECDF76F62994037BC78 /* SeatingChartSample.swift */,
-				9EDB59392BB19BFA00C6A0D1 /* SeatParent.swift */,
-				B5E851D6B4FC0C586C2A0F67 /* SeatsioObject.swift */,
-				4EA4AD6522A86F590030E989 /* SeatsioWebView.swift */,
-				4EDEA83844B303A6685ACF8B /* SelectedObject.swift */,
-				4EDEA7F354DAF869A28A377D /* SelectionValidator.swift */,
-				4EDEA8131A118A251B4E8469 /* SelectionValidatorType.swift */,
-				4EDEAC0C4EF1BDA7E69EB7AB /* Style.swift */,
-				4EDEA69A460C361D9C8F3A33 /* TicketListing.swift */,
-				4EDEA64B09FF840D72C49C61 /* TicketType.swift */,
-				4EDEAFF64F5980E0B290F436 /* TicketTypePricing.swift */,
-				4EDEAD1F78977B90C4DA4B39 /* TicketTypeWithQuantity.swift */,
-			);
-			path = "seatsio-ios";
 			sourceTree = "<group>";
 		};
 		8438CC24EAD4C56087A90D9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				908BD004A0647EAEFBFB7746 /* Pods_seatsio_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE5F65EA2CBD636D005E9013 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F65E42CBD636D005E9013 /* AppDelegate.swift */,
+				FE5F65E92CBD636D005E9013 /* SeatingChartSample.swift */,
+				FE5F65E52CBD636D005E9013 /* Assets.xcassets */,
+				FE5F65E62CBD636D005E9013 /* Info.plist */,
+				FE5F65E82CBD636D005E9013 /* Main.storyboard */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		FE5F65FE2CBE92AE005E9013 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		3B40BA2C22A7D49C00B9A507 /* seatsio-ios */ = {
+		3B40BA2C22A7D49C00B9A507 /* Seatsio-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B40BA5522A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-ios" */;
+			buildConfigurationList = 3B40BA5522A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "Seatsio-Example" */;
 			buildPhases = (
-				E29E4CF9BF68BAEED60C2553 /* [CP] Check Pods Manifest.lock */,
 				3B40BA2922A7D49C00B9A507 /* Sources */,
 				3B40BA2A22A7D49C00B9A507 /* Frameworks */,
 				3B40BA2B22A7D49C00B9A507 /* Resources */,
+				FE5F660F2CBE92AE005E9013 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE5F66082CBE92AE005E9013 /* PBXTargetDependency */,
+			);
+			name = "Seatsio-Example";
+			productName = "seatsio-ios";
+			productReference = 3B40BA2D22A7D49C00B9A507 /* Seatsio-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE5F66022CBE92AE005E9013 /* Seatsio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE5F660C2CBE92AE005E9013 /* Build configuration list for PBXNativeTarget "Seatsio" */;
+			buildPhases = (
+				FE5F65FE2CBE92AE005E9013 /* Headers */,
+				FE5F65FF2CBE92AE005E9013 /* Sources */,
+				FE5F66002CBE92AE005E9013 /* Frameworks */,
+				FE5F66012CBE92AE005E9013 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "seatsio-ios";
-			productName = "seatsio-ios";
-			productReference = 3B40BA2D22A7D49C00B9A507 /* seatsio-ios.app */;
-			productType = "com.apple.product-type.application";
+			fileSystemSynchronizedGroups = (
+				FE5F66042CBE92AE005E9013 /* Seatsio */,
+			);
+			name = Seatsio;
+			packageProductDependencies = (
+			);
+			productName = Seatsio;
+			productReference = FE5F66032CBE92AE005E9013 /* Seatsio.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -211,6 +187,9 @@
 				TargetAttributes = {
 					3B40BA2C22A7D49C00B9A507 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					FE5F66022CBE92AE005E9013 = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
@@ -227,7 +206,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B40BA2C22A7D49C00B9A507 /* seatsio-ios */,
+				3B40BA2C22A7D49C00B9A507 /* Seatsio-Example */,
+				FE5F66022CBE92AE005E9013 /* Seatsio */,
 			);
 		};
 /* End PBXProject section */
@@ -237,80 +217,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B40BA3822A7D49C00B9A507 /* Assets.xcassets in Resources */,
+				FE5F65ED2CBD636D005E9013 /* Assets.xcassets in Resources */,
+				FE5F65EE2CBD636D005E9013 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE5F66012CBE92AE005E9013 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		E29E4CF9BF68BAEED60C2553 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-seatsio-ios-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B40BA2922A7D49C00B9A507 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE12BD1F2CB6B25D002A845A /* EventManagerConfig.swift in Sources */,
-				4EA4AD6622A86F590030E989 /* SeatsioWebView.swift in Sources */,
-				FE12BD1D2CB6B23F002A845A /* SeatsioConfig.swift in Sources */,
-				B5E85DF8A7019A1AA0D8D4DA /* SeatsioObject.swift in Sources */,
-				4EDEA979B40A137B93B88522 /* SeatingChartConfig.swift in Sources */,
-				4EDEA677E5530F12E5E04D0C /* Pricing.swift in Sources */,
-				4EDEA42398413DDE89322B68 /* TicketTypePricing.swift in Sources */,
-				4EDEA8E950F463D31F67C49C /* BestAvailable.swift in Sources */,
-				4EDEA7B84867A8207E7EDE3A /* Legend.swift in Sources */,
-				4EDEA540C9F4FDF810ABAC43 /* SelectionValidator.swift in Sources */,
-				4EDEAF040BFBA579B70AFC19 /* Category.swift in Sources */,
-				4EDEA2E03D2CD09EEC4CAE41 /* TicketListing.swift in Sources */,
-				4EDEA2B7249C0734B9AEE860 /* TicketType.swift in Sources */,
-				4EDEAF0D8D5EFDC667045A40 /* SelectionValidatorType.swift in Sources */,
-				4EDEAA4EEDDD18CEB216DDFF /* AnyEncodable.swift in Sources */,
-				4EDEA4001C0896B83A8D0B0D /* Point.swift in Sources */,
-				4EDEA9892FEF157DE1A9F396 /* Labels.swift in Sources */,
-				9EDB593A2BB19BFA00C6A0D1 /* SeatParent.swift in Sources */,
-				4EDEA67392849D8A8644B1FF /* SeatingChart.swift in Sources */,
-				4EDEAFCD0B067C46CCA35CBA /* ConfigChange.swift in Sources */,
-				4EDEA4A774FA6942DF195D0C /* CategoryWithQuantity.swift in Sources */,
-				4EDEA970237725FAB2D0D30D /* TicketTypeWithQuantity.swift in Sources */,
-				4EDEA95316803DC194873FE9 /* SelectedObject.swift in Sources */,
-				4EDEAA64A7C2984DE75016E0 /* ObjectTooltip.swift in Sources */,
-				4EDEAB8F473117311871E657 /* CategoryFilter.swift in Sources */,
-				4EDEAE838F53B93BCE0114F4 /* Colors.swift in Sources */,
-				4EDEA5061182FCBDD7373A90 /* Style.swift in Sources */,
-				4EDEAFBCD7841989B4823DDC /* Html.swift in Sources */,
-				4EDEA15676C3C508BB4BBE4B /* SeatingChartSample.swift in Sources */,
-				4EDEAC4BA9FFF44DB841CFB9 /* AppDelegate.swift in Sources */,
-				4EDEA64D4BBCBE687755DEAC /* releasing.md in Sources */,
-				4EDEAF7141F075ACE831949E /* ReportBySelectability.swift in Sources */,
-				3BB8A4D82C2B1BFE009D913A /* JustBridge.swift in Sources */,
-				4EDEACC0E67B41C274F30EDD /* HoldToken.swift in Sources */,
+				FE5F65EB2CBD636D005E9013 /* AppDelegate.swift in Sources */,
+				FE5F65EC2CBD636D005E9013 /* SeatingChartSample.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE5F65FF2CBE92AE005E9013 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE5F66082CBE92AE005E9013 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE5F66022CBE92AE005E9013 /* Seatsio */;
+			targetProxy = FE5F66072CBE92AE005E9013 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE5F65E82CBD636D005E9013 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE5F65E72CBD636D005E9013 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3B40BA5322A7D49C00B9A507 /* Debug */ = {
@@ -435,13 +392,12 @@
 		};
 		3B40BA5622A7D49C00B9A507 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55FC4DE26E034E2C40A60EE2 /* Pods-seatsio-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WGUCAYKLS;
-				INFOPLIST_FILE = "seatsio-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,20 +405,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.seats.seatsio-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		3B40BA5722A7D49C00B9A507 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6A88E8FAE60849004A8E8E6 /* Pods-seatsio-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WGUCAYKLS;
-				INFOPLIST_FILE = "seatsio-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,8 +425,93 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.seats.seatsio-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FE5F660D2CBE92AE005E9013 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5WGUCAYKLS;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Seats.io. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = io.seats.seatsio;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FE5F660E2CBE92AE005E9013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5WGUCAYKLS;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Seats.io. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = io.seats.seatsio;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -487,11 +527,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B40BA5522A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "seatsio-ios" */ = {
+		3B40BA5522A7D49C00B9A507 /* Build configuration list for PBXNativeTarget "Seatsio-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B40BA5622A7D49C00B9A507 /* Debug */,
 				3B40BA5722A7D49C00B9A507 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE5F660C2CBE92AE005E9013 /* Build configuration list for PBXNativeTarget "Seatsio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE5F660D2CBE92AE005E9013 /* Debug */,
+				FE5F660E2CBE92AE005E9013 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

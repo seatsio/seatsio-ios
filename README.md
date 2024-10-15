@@ -4,7 +4,7 @@
 
 ## Introduction
 
-seatsio-ios allows rendering seats.io seating charts inside an iOS application. It supports iOS 9.0 and newer.
+seatsio-ios allows rendering seats.io seating charts inside an iOS application. It supports iOS 12.0 and newer.
 
 ## Installation
 
