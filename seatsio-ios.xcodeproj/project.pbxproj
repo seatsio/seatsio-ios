@@ -40,9 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		142A6458A79E1B953A73C53D /* Pods-Seatsio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seatsio.debug.xcconfig"; path = "Target Support Files/Pods-Seatsio/Pods-Seatsio.debug.xcconfig"; sourceTree = "<group>"; };
 		3B40BA2D22A7D49C00B9A507 /* Seatsio-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seatsio-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		401F9295B0483DEFA924303E /* Pods-Seatsio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seatsio.release.xcconfig"; path = "Target Support Files/Pods-Seatsio/Pods-Seatsio.release.xcconfig"; sourceTree = "<group>"; };
 		4EDEA976297E0ADA1A8BE9C8 /* releasing.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = releasing.md; sourceTree = "<group>"; };
 		FE12BD272CBD5DDC002A845A /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		FE5F65E42CBD636D005E9013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,22 +77,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D7DE68DBC739D600807581F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				142A6458A79E1B953A73C53D /* Pods-Seatsio.debug.xcconfig */,
-				401F9295B0483DEFA924303E /* Pods-Seatsio.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		3B40BA2422A7D49C00B9A507 = {
 			isa = PBXGroup;
 			children = (
 				FE5F65EA2CBD636D005E9013 /* Example */,
 				FE5F66042CBE92AE005E9013 /* Seatsio */,
 				3B40BA2E22A7D49C00B9A507 /* Products */,
-				2D7DE68DBC739D600807581F /* Pods */,
 				8438CC24EAD4C56087A90D9B /* Frameworks */,
 				FE12BD272CBD5DDC002A845A /* Package.swift */,
 				FE5F66B32CBE96A3005E9013 /* seatsio.podspec */,
@@ -404,7 +392,6 @@
 		};
 		3B40BA5622A7D49C00B9A507 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 142A6458A79E1B953A73C53D /* Pods-Seatsio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -425,7 +412,6 @@
 		};
 		3B40BA5722A7D49C00B9A507 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 401F9295B0483DEFA924303E /* Pods-Seatsio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,7 +450,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Seats.io. All rights reserved.";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,7 +460,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.seats.seatsio-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = io.seats.seatsio;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -507,7 +493,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Seats.io. All rights reserved.";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -517,7 +503,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.seats.seatsio-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = io.seats.seatsio;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
