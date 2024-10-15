@@ -7,6 +7,6 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/seatsio/seatsio-ios.git', :tag => s.version.to_s }
   s.authors          = { 'The Seats.io team' => 'dev@seats.io' }
   s.ios.deployment_target = '12.0'
-  s.source_files = 'Sources/Seatsio/*'
-  s.swift_versions = ['5.0']
+  s.source_files = 'Seatsio/Sources/*'
+  s.swift_version = '5.0'
 end

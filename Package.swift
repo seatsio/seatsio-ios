@@ -12,6 +12,6 @@ let package = Package(
             targets: ["Seatsio"]),
     ],
     targets: [
-        .target(name: "Seatsio"),
+        .target(name: "Seatsio", path: "Seatsio/Sources"),
     ]
 )
