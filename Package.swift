@@ -9,9 +9,13 @@ let package = Package(
     products: [
         .library(
             name: "Seatsio",
-            targets: ["Seatsio"]),
+            targets: ["Seatsio"]
+        ),
     ],
     targets: [
-        .target(name: "Seatsio", path: "Seatsio/Sources"),
+        .target(
+            name: "Seatsio",
+            path: "Seatsio/Sources"
+        ),
     ]
 )
