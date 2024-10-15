@@ -56,18 +56,8 @@
 		FE5F66B72CBE98F2005E9013 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		FE5F660B2CBE92AE005E9013 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			publicHeaders = (
-				Seatsio.h,
-			);
-			target = FE5F66022CBE92AE005E9013 /* Seatsio */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		FE5F66042CBE92AE005E9013 /* Seatsio */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (FE5F660B2CBE92AE005E9013 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Seatsio; sourceTree = "<group>"; };
+		FE5F66042CBE92AE005E9013 /* Seatsio */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Seatsio; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
