@@ -1,5 +1,6 @@
 import UIKit
 import WebKit
+import Seatsio
 
 class SeatingChartSample: UIViewController {
 
