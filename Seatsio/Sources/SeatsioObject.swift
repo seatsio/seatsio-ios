@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 public struct SeatsioObject: Decodable {
     public let objectType: String
@@ -21,6 +22,7 @@ public struct SeatsioObject: Decodable {
     public let disabledBySocialDistancingRules: Bool?
     public let parent: SeatParent?
     public let displayObjectType: String?
+    public let extraData: JSON?
 
     public let capacity: Int?
     public let numBooked: Int?
@@ -36,7 +38,7 @@ public struct SeatsioObject: Decodable {
 
     public init(objectType: String, label: String, labels: Labels, id: String, category: Category? = nil, center: Point? = nil, pricing: Pricing? = nil, status: String? = nil, forSale: Bool? = nil,
                 selectable: Bool? = nil, inSelectableChannel: Bool? = nil, selected: Bool? = nil, selectedTicketType: String? = nil, accessible: Bool? = nil, companionSeat: Bool? = nil, restrictedView: Bool? = nil,
-                disabledBySocialDistancingRules: Bool? = nil, parent: SeatParent?, displayObjectType: String?, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String: Int]? = nil,
+                disabledBySocialDistancingRules: Bool? = nil, parent: SeatParent?, displayObjectType: String?, extraData: JSON?, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String: Int]? = nil,
                 sectionCategory: Category? = nil, numberOfSelectableObjects: Int? = nil, numberOfSelectedObjects: Int? = nil, selectableCategories: [Category]? = nil, isInteractive: Bool? = nil) {
         self.objectType = objectType
         self.label = label
@@ -58,6 +60,7 @@ public struct SeatsioObject: Decodable {
         self.disabledBySocialDistancingRules = disabledBySocialDistancingRules
         self.parent = parent
         self.displayObjectType = displayObjectType
+        self.extraData = extraData
 
         self.capacity = capacity
         self.numBooked = numBooked
