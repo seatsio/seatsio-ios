@@ -105,6 +105,17 @@ SeatingChartConfig()
     })
 ```
 
+### extraData
+
+`extraData` on objects is exposed as a `JSON` object from `[SwiftyJSON]`(https://github.com/SwiftyJSON/SwiftyJSON):
+
+```swift
+SeatingChartConfig()
+    .onObjectSelected({ (object, ticketType) in
+        print(object.extraData!["foo"])
+    })
+```
+
 ### chart.listSelectedObjects
 
 ```swift
