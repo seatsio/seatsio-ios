@@ -46,7 +46,7 @@ class SeatingChartSample: UIViewController {
 }
 ```
 
-You can find the all the configuration options at https://docs.seats.io/docs/renderer-configure-your-floor-plan
+You can find the all the configuration options at https://docs.seats.io/docs/renderer/embed-a-floor-plan
 
 ### Simple pricing
 
