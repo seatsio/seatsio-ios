@@ -14,6 +14,14 @@ Add this to your podfile:
 pod 'seatsio', '18.0.0'
 ```
 
+Or if you prefer Swift Package Manager:
+
+```
+dependencies: [
+    .package(url: "https://github.com/seatsio/seatsio-ios", from: "18.0.0")
+]
+```
+
 ## Usage
 
 ```swift
