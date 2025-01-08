@@ -7,7 +7,6 @@
 // Copyright (c) 2018 Xiaoye220 <576934532@qq.com>
 //
 
-import UIKit
 import WebKit
 
 public class JustBridge: NSObject {

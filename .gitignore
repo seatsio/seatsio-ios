@@ -4,3 +4,5 @@
 xcuserdata
 Pods/
 .DS_Store
+.swiftpm/
+.build/
