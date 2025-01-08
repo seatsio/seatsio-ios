@@ -10,7 +10,7 @@ let package = Package(
         .library(
             name: "Seatsio",
             targets: ["Seatsio"]
-        ),
+        )
     ],
     dependencies: [
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", from: "4.0.0"),
@@ -22,6 +22,6 @@ let package = Package(
                 .product(name: "SwiftyJSON", package: "SwiftyJSON")
             ],
             path: "Seatsio/Sources"
-        ),
+        )
     ]
 )

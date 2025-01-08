@@ -24,13 +24,8 @@ jobs:
       - uses: fregante/setup-git-user@v2
       - name: Install dependencies
         run: yarn add -D -E zx@8.1.4 semver@7.6.3
-      - name: Run release script  
+      - name: Run release script
         run: yarn zx ./release.mjs -v $VERSION_TO_BUMP
         env:
           VERSION_TO_BUMP: ${{ inputs.versionToBump }}
           GH_TOKEN: ${{ github.token }}
-      - run: pod install
-      - run: pod lib lint
-      - run: pod trunk push
-        env:
-          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
