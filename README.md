@@ -18,7 +18,7 @@ Or if you prefer Swift Package Manager:
 
 ```
 dependencies: [
-    .package(url: "https://github.com/seatsio/seatsio-ios", from: "18.0.0")
+    .package(url: "https://github.com/seatsio/seatsio-ios", from: "18.1.0")
 ]
 ```
 

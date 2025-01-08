@@ -57,7 +57,7 @@ async function replaceInFile(filename, latestVersion, nextVersion) {
             }
             return text
         })
-        .then(text => text.replace(latestVersion, nextVersion))
+        .then(text => text.replaceAll(latestVersion, nextVersion))
         .then(text => fs.writeFileSync(filename, text))
         .then(() => gitAdd(filename))
 }
