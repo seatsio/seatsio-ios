@@ -107,7 +107,7 @@ SeatingChartConfig()
 
 ### extraData
 
-`extraData` on objects is exposed as a `JSON` object from `[SwiftyJSON]`(https://github.com/SwiftyJSON/SwiftyJSON):
+`extraData` on objects is exposed as a `JSON` object from [`SwiftyJSON`](https://github.com/SwiftyJSON/SwiftyJSON):
 
 ```swift
 SeatingChartConfig()
