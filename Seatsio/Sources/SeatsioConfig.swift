@@ -4,6 +4,7 @@ public protocol SeatsioConfig {
     
     var priceFormatter: ((Float) -> String)? { get }
     var tooltipInfo: ((SeatsioObject) -> String)? { get }
+    var popoverInfo: ((SeatsioObject) -> String)? { get }
     var onSelectionValid: (() -> Void)? { get }
     var onSelectionInvalid: (([SelectionValidatorType]) -> Void)? { get }
     var onObjectSelected: ((SeatsioObject, TicketType?) -> Void)? { get }
