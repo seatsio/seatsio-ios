@@ -53,6 +53,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var sectionColor: String?
     public private(set) var extraConfig: AnyEncodable?
     public private(set) var objectTooltip: ObjectTooltip?
+    public private(set) var objectPopover: ObjectPopover?
     public private(set) var tooltipInfo: ((SeatsioObject) -> String)?
     public private(set) var showZoomOutButtonOnMobile: Bool?
     public private(set) var colorScheme: String?
@@ -387,6 +388,11 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         self.objectTooltip = objectTooltip
         return self
     }
+    
+    public func objectPopover(_ objectPopover: ObjectPopover) -> Self {
+        self.objectPopover = objectPopover
+        return self
+    }
 
     public func tooltipInfo(_ tooltipInfo: @escaping (SeatsioObject) -> String) -> Self {
         self.tooltipInfo = tooltipInfo
@@ -491,6 +497,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         case sectionColor
         case extraConfig
         case objectTooltip
+        case objectPopover
         case categoryFilter
         case showZoomOutButtonOnMobile
         case showSectionPricingOverlay
