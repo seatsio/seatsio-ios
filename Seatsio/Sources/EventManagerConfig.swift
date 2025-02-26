@@ -33,6 +33,7 @@ public final class EventManagerConfig: SeatsioConfig {
     private(set) var params = EventManagerConfigParams()
     public private(set) var priceFormatter: ((Float) -> String)?
     public private(set) var tooltipInfo: ((SeatsioObject) -> String)?
+    public private(set) var popoverInfo: ((SeatsioObject) -> String)?
     public private(set) var onSelectionValid: (() -> Void)?
     public private(set) var onSelectionInvalid: (([SelectionValidatorType]) -> Void)?
     public private(set) var onObjectSelected: ((SeatsioObject, TicketType?) -> Void)?
@@ -177,6 +178,11 @@ public final class EventManagerConfig: SeatsioConfig {
 
     public func tooltipInfo(_ tooltipInfo: @escaping (SeatsioObject) -> String) -> Self {
         self.tooltipInfo = tooltipInfo
+        return self
+    }
+    
+    public func popoverInfo(_ popoverInfo: @escaping (SeatsioObject) -> String) -> Self {
+        self.popoverInfo = popoverInfo
         return self
     }
 

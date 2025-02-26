@@ -160,6 +160,13 @@ public class SeatsioWebView: WKWebView {
             }
             callbacks.append(buildCallbackConfigAsJS("tooltipInfo"))
         }
+        
+        if (self.seatsioConfig.popoverInfo != nil) {
+            bridge.register("popoverInfo") { (data, callback) in
+                callback(self.seatsioConfig.popoverInfo!(decodeSeatsioObject(firstArg(data))))
+            }
+            callbacks.append(buildCallbackConfigAsJS("popoverInfo"))
+        }
 
         if (self.seatsioConfig.onChartRendered != nil) {
             bridge.register("onChartRendered") { (data, callback) in
