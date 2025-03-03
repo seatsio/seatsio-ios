@@ -7,6 +7,18 @@ public class SeatingChart {
     public init(_ seatsioWebView: SeatsioWebView) {
         self.seatsioWebView = seatsioWebView
     }
+    
+    public func setSpotlightObjects(_ objects: [String]) {
+        seatsioWebView.bridge.call("setSpotlightObjects", data: objects)
+    }
+    
+    public func setSpotlightOnSelection() {
+        seatsioWebView.bridge.call("setSpotlightOnSelection", data: nil)
+    }
+    
+    public func clearSpotlightObjects() {
+        seatsioWebView.bridge.call("clearSpotlightObjects", data: nil)
+    }
 
     public func selectObjects(_ objects: [String]) {
         seatsioWebView.bridge.call("selectObjects", data: objects)

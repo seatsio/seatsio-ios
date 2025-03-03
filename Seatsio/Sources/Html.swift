@@ -11,6 +11,18 @@ let HTML = """
 
                 <script>
                     let chart = new seatsio.%toolName%(%configAsJs%).render();
+                    
+                    window.bridge.register("setSpotlightObjects", function(objects) {
+                        chart.setSpotlightObjects(objects)
+                    });
+                    
+                    window.bridge.register("setSpotlightOnSelection", function() {
+                        chart.setSpotlightOnSelection()
+                    });
+                    
+                    window.bridge.register("clearSpotlightObjects", function() {
+                        chart.clearSpotlightObjects()
+                    });
 
                     window.bridge.register("selectObjects", function(objects) {
                         chart.selectObjects(objects)
