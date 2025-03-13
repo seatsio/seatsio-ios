@@ -7,6 +7,8 @@ public protocol SeatsioConfig {
     var popoverInfo: ((SeatsioObject) -> String)? { get }
     var onSelectionValid: (() -> Void)? { get }
     var onSelectionInvalid: (([SelectionValidatorType]) -> Void)? { get }
+    var onHoldCallsInProgress: (() -> Void)? { get }
+    var onHoldCallsComplete: (() -> Void)? { get }
     var onObjectSelected: ((SeatsioObject, TicketType?) -> Void)? { get }
     var onObjectDeselected: ((SeatsioObject, TicketType?) -> Void)? { get }
     var onObjectClicked: ((SeatsioObject) -> Void)? { get }

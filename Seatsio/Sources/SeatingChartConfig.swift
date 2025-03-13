@@ -67,6 +67,8 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
 
     public private(set) var onSelectionValid: (() -> Void)?
     public private(set) var onSelectionInvalid: (([SelectionValidatorType]) -> Void)?
+    public private(set) var onHoldCallsInProgress: (() -> Void)?
+    public private(set) var onHoldCallsComplete: (() -> Void)?
     public private(set) var onObjectSelected: ((SeatsioObject, TicketType?) -> Void)?
     public private(set) var onObjectDeselected: ((SeatsioObject, TicketType?) -> Void)?
     public private(set) var onObjectClicked: ((SeatsioObject) -> Void)?
@@ -317,6 +319,16 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
 
     public func onSelectionInvalid(_ onSelectionInvalid: @escaping ([SelectionValidatorType]) -> ()) -> Self {
         self.onSelectionInvalid = onSelectionInvalid
+        return self
+    }
+
+    public func onHoldCallsComplete(_ onHoldCallsComplete: @escaping () -> ()) -> Self {
+        self.onHoldCallsComplete = onHoldCallsComplete
+        return self
+    }
+
+    public func onHoldCallsInProgress(_ onHoldCallsInProgress: @escaping () -> ()) -> Self {
+        self.onHoldCallsInProgress = onHoldCallsInProgress
         return self
     }
 

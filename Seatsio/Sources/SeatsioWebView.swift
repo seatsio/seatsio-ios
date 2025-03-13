@@ -63,6 +63,20 @@ public class SeatsioWebView: WKWebView {
             callbacks.append(buildCallbackConfigAsJS("onSelectionInvalid"))
         }
 
+        if (self.seatsioConfig.onHoldCallsInProgress != nil) {
+            bridge.register("onHoldCallsInProgress") { (data, callback) in
+                self.seatsioConfig.onHoldCallsInProgress!()
+            }
+            callbacks.append(buildCallbackConfigAsJS("onHoldCallsInProgress"))
+        }
+
+        if (self.seatsioConfig.onHoldCallsComplete != nil) {
+            bridge.register("onHoldCallsComplete") { (data, callback) in
+                self.seatsioConfig.onHoldCallsComplete!()
+            }
+            callbacks.append(buildCallbackConfigAsJS("onHoldCallsComplete"))
+        }
+
         if (self.seatsioConfig.onObjectSelected != nil) {
             bridge.register("onObjectSelected") { (data, callback) in
                 self.seatsioConfig.onObjectSelected!(decodeSeatsioObject(firstArg(data)), decodeTicketType(secondArg(data)))
