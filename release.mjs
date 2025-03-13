@@ -46,7 +46,7 @@ async function determineNextVersionNumber(previous) {
 
 async function bumpVersionInFiles() {
     await replaceInFile("seatsio.podspec", `= '${latestVersion}'`, `= '${nextVersion}'`)
-    await replaceInFile("README.md", `pod 'seatsio', '${latestVersion}'`, `pod 'seatsio', '${nextVersion}'`)
+    await replaceInFile("README.md", latestVersion, nextVersion)
 }
 
 async function replaceInFile(filename, latestVersion, nextVersion) {
