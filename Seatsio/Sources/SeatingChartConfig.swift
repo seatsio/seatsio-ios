@@ -84,9 +84,12 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var onSelectedObjectBooked: ((SeatsioObject) -> Void)?
     public private(set) var onChartRendered: ((SeatingChart) -> Void)?
     public private(set) var onChartRenderingFailed: (() -> Void)?
+    public private(set) var onPlacesPrompt: ((OnPlacesPromptParams, (Int) -> Void) -> Void)?
+    public private(set) var onTicketTypePrompt: ((OnTicketTypePromptParams, (String) -> Void) -> Void)?
+    public private(set) var onPlacesWithTicketTypesPrompt: ((OnPlacesWithTicketTypesPromptParams, ([String: Int]) -> Void) -> Void)?
 
     let _library: String = "ios"
-    
+
     public var toolName: String { "SeatingChart" }
 
     public init() {}
@@ -401,7 +404,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         self.objectTooltip = objectTooltip
         return self
     }
-    
+
     public func objectPopover(_ objectPopover: ObjectPopover) -> Self {
         self.objectPopover = objectPopover
         return self
@@ -411,7 +414,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         self.tooltipInfo = tooltipInfo
         return self
     }
-    
+
     public func popoverInfo(_ popoverInfo: @escaping (SeatsioObject) -> String) -> Self {
         self.popoverInfo = popoverInfo
         return self
@@ -424,6 +427,21 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
 
     public func onChartRenderingFailed(_ onChartRenderingFailed: @escaping () -> ()) -> Self {
         self.onChartRenderingFailed = onChartRenderingFailed
+        return self
+    }
+
+    public func onPlacesPrompt(_ onPlacesPrompt: @escaping (OnPlacesPromptParams, (Int) -> Void) -> ()) -> Self {
+        self.onPlacesPrompt = onPlacesPrompt
+        return self
+    }
+
+    public func onTicketTypePrompt(_ onTicketTypePrompt: @escaping (OnTicketTypePromptParams, (String) -> Void) -> ()) -> Self {
+        self.onTicketTypePrompt = onTicketTypePrompt
+        return self
+    }
+
+    public func onPlacesWithTicketTypesPrompt(_ onPlacesWithTicketTypesPrompt: @escaping (OnPlacesWithTicketTypesPromptParams, ([String: Int]) -> Void) -> ()) -> Self {
+        self.onPlacesWithTicketTypesPrompt = onPlacesWithTicketTypesPrompt
         return self
     }
 
@@ -466,7 +484,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         self.channels = channels
         return self
     }
-    
+
     public var jsonStringRepresentation: String {
         let jsonEncoder = JSONEncoder()
         let jsonData = try! jsonEncoder.encode(self)

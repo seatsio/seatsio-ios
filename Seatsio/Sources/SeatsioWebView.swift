@@ -19,19 +19,19 @@ public class SeatsioWebView: WKWebView {
     private func loadSeatingChart(region: String) {
         let callbacks = self.buildCallbacksConfiguration().joined(separator: ",")
         var config = self.buildConfiguration()
-        
+
         if !callbacks.isEmpty {
             config = config.dropLast() // Removes the } from config json
             + ","
             + callbacks
             + "}"
         }
-        
+
         let htmlString = HTML
             .replacingOccurrences(of: "%configAsJs%", with: config)
             .replacingOccurrences(of: "%region%", with: region)
             .replacingOccurrences(of: "%toolName%", with: seatsioConfig.toolName)
-        
+
         self.loadHTMLString(htmlString, baseURL: nil)
     }
 
@@ -174,7 +174,7 @@ public class SeatsioWebView: WKWebView {
             }
             callbacks.append(buildCallbackConfigAsJS("tooltipInfo"))
         }
-        
+
         if (self.seatsioConfig.popoverInfo != nil) {
             bridge.register("popoverInfo") { (data, callback) in
                 callback(self.seatsioConfig.popoverInfo!(decodeSeatsioObject(firstArg(data))))
@@ -196,6 +196,29 @@ public class SeatsioWebView: WKWebView {
             callbacks.append(buildCallbackConfigAsJS("onChartRenderingFailed"))
         }
 
+        if let seatingChartConfig = self.seatsioConfig as? SeatingChartConfig {
+            if (seatingChartConfig.onPlacesPrompt != nil) {
+                bridge.register("onPlacesPrompt") { (data, callback) in
+                    seatingChartConfig.onPlacesPrompt!(decodeOnPlacesPromptParams(firstArg(data)), {(data: Int) -> () in self.callInternalCallback("onPlacesPrompt", data)})
+                }
+                callbacks.append(buildCallbackConfigAsJS("onPlacesPrompt"))
+            }
+
+            if (seatingChartConfig.onTicketTypePrompt != nil) {
+                bridge.register("onTicketTypePrompt") { (data, callback) in
+                    seatingChartConfig.onTicketTypePrompt!(decodeOnTicketTypePromptParams(firstArg(data)), {(data: String) -> () in self.callInternalCallback("onTicketTypePrompt", data)})
+                }
+                callbacks.append(buildCallbackConfigAsJS("onTicketTypePrompt"))
+            }
+
+            if (seatingChartConfig.onPlacesWithTicketTypesPrompt != nil) {
+                bridge.register("onPlacesWithTicketTypesPrompt") { (data, callback) in
+                    seatingChartConfig.onPlacesWithTicketTypesPrompt!(decodeOnPlacesWithTicketTypesPromptParams(firstArg(data)), {(data: [String: Int]) -> () in self.callInternalCallback("onPlacesWithTicketTypesPrompt", data)})
+                }
+                callbacks.append(buildCallbackConfigAsJS("onPlacesWithTicketTypesPrompt"))
+            }
+        }
+
         return callbacks
     }
 
@@ -203,10 +226,19 @@ public class SeatsioWebView: WKWebView {
         return """
                \(name): (arg1, arg2) => (
                    new Promise((resolve, reject) => {
-                       window.bridge.call("\(name)", [JSON.stringify(arg1), JSON.stringify(arg2)], data => resolve(data), error => reject(error))
+                       if (arg2 instanceof Function) {
+                           window.bridge.setInnerCallback("\(name)", arg2)
+                           window.bridge.call("\(name)", [JSON.stringify(arg1), "\(name)"], data => resolve(data), error => reject(error))
+                       } else {
+                           window.bridge.call("\(name)", [JSON.stringify(arg1), JSON.stringify(arg2)], data => resolve(data), error => reject(error))
+                       }
                    })
                )
                """
+    }
+
+    public func callInternalCallback(_ name: String, _ data: Any) {
+        bridge.callInternalCallback(name, data)
     }
 
     public func cleanup() {
@@ -287,4 +319,19 @@ func decodeTicketTypes(_ data: Any) -> [TicketType]? {
 func decodeSelectionValidatorTypes(_ data: Any) -> [SelectionValidatorType] {
     let data = (data as! String).data(using: .utf8)
     return try! JSONDecoder().decode([SelectionValidatorType].self, from: data!)
+}
+
+func decodeOnPlacesPromptParams(_ data: Any) -> OnPlacesPromptParams {
+    let dataToDecode = (data as! String).data(using: .utf8)!
+    return try! JSONDecoder().decode(OnPlacesPromptParams.self, from: dataToDecode)
+}
+
+func decodeOnTicketTypePromptParams(_ data: Any) -> OnTicketTypePromptParams {
+    let dataToDecode = (data as! String).data(using: .utf8)!
+    return try! JSONDecoder().decode(OnTicketTypePromptParams.self, from: dataToDecode)
+}
+
+func decodeOnPlacesWithTicketTypesPromptParams(_ data: Any) -> OnPlacesWithTicketTypesPromptParams {
+    let dataToDecode = (data as! String).data(using: .utf8)!
+    return try! JSONDecoder().decode(OnPlacesWithTicketTypesPromptParams.self, from: dataToDecode)
 }

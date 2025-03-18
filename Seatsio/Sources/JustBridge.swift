@@ -42,6 +42,7 @@ public class JustBridge: NSObject {
             var handlers = {},
                 callbacks = {},
                 errorCallbacks = {},
+                innerCallbacks = {},
                 jsCallbackId = 0;
 
             function postMessage(name, data, swiftCallbackId, jsCallbackId, error) {
@@ -101,12 +102,16 @@ public class JustBridge: NSObject {
                             postMessage(name, data, swiftCallbackId, null, "HandlerNotExistError");
                         }
                     }
+                },
+                "setInnerCallback": function(name, fn) {
+                    innerCallbacks[name + '_innerCallback'] = fn;
+                },
+                "callInnerCallback": function(name, data) {
+                    innerCallbacks[name + '_innerCallback'](data);
+                    delete innerCallbacks[name + '_innerCallback'];
                 }
             }
         }()
-
-
-
     })();
     """
 
@@ -165,6 +170,10 @@ public class JustBridge: NSObject {
         self.errorCallbacks[id] = errorCallback
         self.postMessage(name, data: data, swiftCallbackId: id)
     }
+
+    public func callInternalCallback(_ name: String, _ data: Any) {
+        self.callInnerCallback(name, data)
+    }
 }
 
 extension JustBridge {
@@ -194,6 +203,18 @@ extension JustBridge {
         }
     }
 
+    fileprivate func callInnerCallback(_ name: String, _ data: Any) {
+        if (data is Int) {
+            self.webview!.evaluateJavaScript("window.bridge.callInnerCallback('\(name)', \(data));", completionHandler: nil)
+        } else if (data is Int || data is String) {
+            self.webview!.evaluateJavaScript("window.bridge.callInnerCallback('\(name)', '\(data)');", completionHandler: nil)
+        } else {
+            if let messageJSONData = try? JSONSerialization.data(withJSONObject: data, options: []),
+                let messageJSON = String(data: messageJSONData, encoding: .utf8) {
+                self.webview!.evaluateJavaScript("window.bridge.callInnerCallback('\(name)', \(messageJSON));", completionHandler: nil)
+            }
+        }
+    }
 }
 
 extension JustBridge: WKScriptMessageHandler {
@@ -226,7 +247,5 @@ extension JustBridge: WKScriptMessageHandler {
                 }
             }
         }
-
     }
-
 }
