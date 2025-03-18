@@ -1,9 +1,9 @@
 import Foundation
 
-public struct  OnPlacesPromptParams: Decodable {
+public struct OnPlacesPromptParams: Decodable {
     var selectedPlaces: Int
     var minPlaces: Int
-    var maxPlaces:     Int
+    var maxPlaces: Int
     var objectToSelect: SeatsioObject
 }
 
