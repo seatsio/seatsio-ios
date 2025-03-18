@@ -206,7 +206,7 @@ extension JustBridge {
     fileprivate func callInnerCallback(_ name: String, _ data: Any) {
         if (data is Int) {
             self.webview!.evaluateJavaScript("window.bridge.callInnerCallback('\(name)', \(data));", completionHandler: nil)
-        } else if (data is Int || data is String) {
+        } else if (data is String) {
             self.webview!.evaluateJavaScript("window.bridge.callInnerCallback('\(name)', '\(data)');", completionHandler: nil)
         } else {
             if let messageJSONData = try? JSONSerialization.data(withJSONObject: data, options: []),
