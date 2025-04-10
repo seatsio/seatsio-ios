@@ -169,6 +169,11 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         return self
     }
 
+    public func maxSelectedObjects(_ maxSelectedObjects: [CategoryWithTicketTypesAndQuantity]) -> Self {
+        self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
+        return self
+    }
+
     public func maxSelectedObjects(_ maxSelectedObjects: [TicketTypeWithQuantity]) -> Self {
         self.maxSelectedObjects = AnyEncodable(value: maxSelectedObjects)
         return self
