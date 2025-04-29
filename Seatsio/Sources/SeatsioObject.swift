@@ -6,6 +6,7 @@ public struct SeatsioObject: Decodable {
     public let label: String
     public let labels: Labels
     public let id: String
+    public let resaleListingId: String?
 
     public let category: Category?
     public let center: Point?
@@ -39,11 +40,12 @@ public struct SeatsioObject: Decodable {
     public init(objectType: String, label: String, labels: Labels, id: String, category: Category? = nil, center: Point? = nil, pricing: Pricing? = nil, status: String? = nil, forSale: Bool? = nil,
                 selectable: Bool? = nil, inSelectableChannel: Bool? = nil, selected: Bool? = nil, selectedTicketType: String? = nil, accessible: Bool? = nil, companionSeat: Bool? = nil, restrictedView: Bool? = nil,
                 disabledBySocialDistancingRules: Bool? = nil, parent: SeatParent?, displayObjectType: String?, extraData: JSON?, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String: Int]? = nil,
-                sectionCategory: Category? = nil, numberOfSelectableObjects: Int? = nil, numberOfSelectedObjects: Int? = nil, selectableCategories: [Category]? = nil, isInteractive: Bool? = nil) {
+                sectionCategory: Category? = nil, numberOfSelectableObjects: Int? = nil, numberOfSelectedObjects: Int? = nil, selectableCategories: [Category]? = nil, isInteractive: Bool? = nil, resaleListingId: String? = nil) {
         self.objectType = objectType
         self.label = label
         self.labels = labels
         self.id = id
+        self.resaleListingId = resaleListingId
 
         self.category = category
         self.center = center
