@@ -64,6 +64,10 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var showFullScreenButton: Bool = false
     public private(set) var showSectionPricingOverlay: Bool?
     public private(set) var channels: Set<String>?
+    public private(set) var hideSectionsNotForSale: Bool?
+    public private(set) var activeFloor: String?
+    public private(set) var lockActiveFloor: Bool?
+    public private(set) var showFloorElevator: Bool?
 
     public private(set) var onSelectionValid: (() -> Void)?
     public private(set) var onSelectionInvalid: (([SelectionValidatorType]) -> Void)?
@@ -83,10 +87,13 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var onReleaseHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)?
     public private(set) var onSelectedObjectBooked: ((SeatsioObject) -> Void)?
     public private(set) var onChartRendered: ((SeatingChart) -> Void)?
-    public private(set) var onChartRenderingFailed: (() -> Void)?
+    public private(set) var onChartRenderingFailed: ((SeatingChart) -> Void)?
     public private(set) var onPlacesPrompt: ((OnPlacesPromptParams, (Int) -> Void) -> Void)?
     public private(set) var onTicketTypePrompt: ((OnTicketTypePromptParams, (String) -> Void) -> Void)?
     public private(set) var onPlacesWithTicketTypesPrompt: ((OnPlacesWithTicketTypesPromptParams, ([String: Int]) -> Void) -> Void)?
+    public private(set) var onFloorChanged: ((Floor?) -> Void)?
+    public private(set) var onFilteredCategoriesChanged: (([Category]) -> Void)?
+    public private(set) var onChartRerenderingStarted: ((SeatingChart) -> Void)?
 
     let _library: String = "ios"
 
@@ -285,17 +292,35 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         return self
     }
 
+    @available(*, deprecated, renamed: "objectLabelJavascriptFunction")
     public func objectLabel(_ objectLabel: String) -> Self {
         self.objectLabel = objectLabel
         return self
     }
 
+    public func objectLabelJavascriptFunction(_ objectLabel: String) -> Self {
+        self.objectLabel = objectLabel
+        return self
+    }
+
+    @available(*, deprecated, renamed: "objectIconJavascriptFunction")
     public func objectIcon(_ objectIcon: String) -> Self {
         self.objectIcon = objectIcon
         return self
     }
 
+    public func objectIconJavascriptFunction(_ objectIcon: String) -> Self {
+        self.objectIcon = objectIcon
+        return self
+    }
+
+    @available(*, deprecated, renamed: "isObjectVisibleJavascriptFunction")
     public func isObjectVisible(_ isObjectVisible: String) -> Self {
+        self.isObjectVisible = isObjectVisible
+        return self
+    }
+
+    public func isObjectVisibleJavascriptFunction(_ isObjectVisible: String) -> Self {
         self.isObjectVisible = isObjectVisible
         return self
     }
@@ -305,18 +330,50 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         return self
     }
 
+    @available(*, deprecated, renamed: "objectColorJavascriptFunction")
     public func objectColor(_ objectColor: String) -> Self {
         self.objectColor = objectColor
         return self
     }
 
+    public func objectColorJavascriptFunction(_ objectColor: String) -> Self {
+        self.objectColor = objectColor
+        return self
+    }
+
+    @available(*, deprecated, renamed: "sectionColorJavascriptFunction")
     public func sectionColor(_ sectionColor: String) -> Self {
+        self.sectionColor = sectionColor
+        return self
+    }
+
+    public func sectionColorJavascriptFunction(_ sectionColor: String) -> Self {
         self.sectionColor = sectionColor
         return self
     }
 
     public func extraConfig(_ extraConfig: Encodable) -> Self {
         self.extraConfig = AnyEncodable(value: extraConfig)
+        return self
+    }
+
+    public func hideSectionsNotForSale(_ hideSectionsNotForSale: Bool) -> Self {
+        self.hideSectionsNotForSale = hideSectionsNotForSale
+        return self
+    }
+
+    public func activeFloor(_ activeFloor: String) -> Self {
+        self.activeFloor = activeFloor
+        return self
+    }
+
+    public func lockActiveFloor(_ lockActiveFloor: Bool) -> Self {
+        self.lockActiveFloor = lockActiveFloor
+        return self
+    }
+
+    public func showFloorElevator(_ showFloorElevator: Bool) -> Self {
+        self.showFloorElevator = showFloorElevator
         return self
     }
 
@@ -430,8 +487,13 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         return self
     }
 
-    public func onChartRenderingFailed(_ onChartRenderingFailed: @escaping () -> ()) -> Self {
+    public func onChartRenderingFailed(_ onChartRenderingFailed: @escaping (SeatingChart) -> ()) -> Self {
         self.onChartRenderingFailed = onChartRenderingFailed
+        return self
+    }
+
+    public func onChartRerenderingStarted(_ onChartRerenderingStarted: @escaping (SeatingChart) -> ()) -> Self {
+        self.onChartRerenderingStarted = onChartRerenderingStarted
         return self
     }
 
@@ -487,6 +549,16 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
 
     public func channels(_ channels: Set<String>) -> Self {
         self.channels = channels
+        return self
+    }
+
+    public func onFloorChanged(_ onFloorChanged: @escaping (Floor?) -> ()) -> Self {
+        self.onFloorChanged = onFloorChanged
+        return self
+    }
+
+    public func onFilteredCategoriesChanged(_ onFilteredCategoriesChanged: @escaping ([Category]) -> ()) -> Self {
+        self.onFilteredCategoriesChanged = onFilteredCategoriesChanged
         return self
     }
 
@@ -548,6 +620,10 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         case style
         case showFullScreenButton
         case channels
+        case hideSectionsNotForSale
+        case activeFloor
+        case lockActiveFloor
+        case showFloorElevator
         case _library
     }
 }

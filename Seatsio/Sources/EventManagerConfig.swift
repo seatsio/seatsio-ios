@@ -52,7 +52,9 @@ public final class EventManagerConfig: SeatsioConfig {
     public private(set) var onReleaseHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)?
     public private(set) var onSelectedObjectBooked: ((SeatsioObject) -> Void)?
     public private(set) var onChartRendered: ((SeatingChart) -> Void)?
-    public private(set) var onChartRenderingFailed: (() -> Void)?
+    public private(set) var onChartRenderingFailed: ((SeatingChart) -> Void)?
+    public private(set) var onChartRerenderingStarted: ((SeatingChart) -> Void)?
+
 
     public var toolName: String { "EventManager" }
     
@@ -203,8 +205,13 @@ public final class EventManagerConfig: SeatsioConfig {
         return self
     }
 
-    public func onChartRenderingFailed(_ onChartRenderingFailed: @escaping () -> ()) -> Self {
+    public func onChartRenderingFailed(_ onChartRenderingFailed: @escaping (SeatingChart) -> ()) -> Self {
         self.onChartRenderingFailed = onChartRenderingFailed
+        return self
+    }
+
+    public func onChartRerenderingStarted(_ onChartRerenderingStarted: @escaping (SeatingChart) -> ()) -> Self {
+        self.onChartRerenderingStarted = onChartRerenderingStarted
         return self
     }
 

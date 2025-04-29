@@ -191,9 +191,16 @@ public class SeatsioWebView: WKWebView {
 
         if (self.seatsioConfig.onChartRenderingFailed != nil) {
             bridge.register("onChartRenderingFailed") { (data, callback) in
-                self.seatsioConfig.onChartRenderingFailed!()
+                self.seatsioConfig.onChartRenderingFailed!(SeatingChart(self))
             }
             callbacks.append(buildCallbackConfigAsJS("onChartRenderingFailed"))
+        }
+
+        if (self.seatsioConfig.onChartRerenderingStarted != nil) {
+            bridge.register("onChartRerenderingStarted") { (data, callback) in
+                self.seatsioConfig.onChartRerenderingStarted!(SeatingChart(self))
+            }
+            callbacks.append(buildCallbackConfigAsJS("onChartRerenderingStarted"))
         }
 
         if let seatingChartConfig = self.seatsioConfig as? SeatingChartConfig {
@@ -216,6 +223,20 @@ public class SeatsioWebView: WKWebView {
                     seatingChartConfig.onPlacesWithTicketTypesPrompt!(decodeOnPlacesWithTicketTypesPromptParams(firstArg(data)), {(data: [String: Int]) -> () in self.callInternalCallback("onPlacesWithTicketTypesPrompt", data)})
                 }
                 callbacks.append(buildCallbackConfigAsJS("onPlacesWithTicketTypesPrompt"))
+            }
+
+            if (seatingChartConfig.onFloorChanged != nil) {
+                bridge.register("onFloorChanged") { (data, callback) in
+                    seatingChartConfig.onFloorChanged!(decodeFloor(firstArg(data)))
+                }
+                callbacks.append(buildCallbackConfigAsJS("onFloorChanged"))
+            }
+
+            if (seatingChartConfig.onFilteredCategoriesChanged != nil) {
+                bridge.register("onFilteredCategoriesChanged") { (data, callback) in
+                    seatingChartConfig.onFilteredCategoriesChanged!(decodeCategories(firstArg(data)))
+                }
+                callbacks.append(buildCallbackConfigAsJS("onFilteredCategoriesChanged"))
             }
         }
 
@@ -253,6 +274,10 @@ private func firstArg(_ data: Any?) -> Any {
 
 private func secondArg(_ data: Any?) -> Any {
     return (data as! [Any])[1]
+}
+
+private func thirdArg(_ data: Any?) -> Any {
+    return (data as! [Any])[2]
 }
 
 func decodeSeatsioObject(_ data: Any) -> SeatsioObject {
@@ -334,4 +359,9 @@ func decodeOnTicketTypePromptParams(_ data: Any) -> OnTicketTypePromptParams {
 func decodeOnPlacesWithTicketTypesPromptParams(_ data: Any) -> OnPlacesWithTicketTypesPromptParams {
     let dataToDecode = (data as! String).data(using: .utf8)!
     return try! JSONDecoder().decode(OnPlacesWithTicketTypesPromptParams.self, from: dataToDecode)
+}
+
+func decodeFloor(_ data: Any) -> Floor {
+    let dataToDecode = (data as! String).data(using: .utf8)!
+    return try! JSONDecoder().decode(Floor.self, from: dataToDecode)
 }

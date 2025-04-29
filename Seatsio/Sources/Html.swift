@@ -11,15 +11,15 @@ let HTML = """
 
                 <script>
                     let chart = new seatsio.%toolName%(%configAsJs%).render();
-                    
+
                     window.bridge.register("setSpotlightObjects", function(objects) {
                         chart.setSpotlightObjects(objects)
                     });
-                    
+
                     window.bridge.register("setSpotlightOnSelection", function() {
                         chart.setSpotlightOnSelection()
                     });
-                    
+
                     window.bridge.register("clearSpotlightObjects", function() {
                         chart.clearSpotlightObjects()
                     });
@@ -70,7 +70,7 @@ let HTML = """
 
                     window.bridge.register("listSelectedObjects", function(data, callback) {
                         chart.listSelectedObjects(objects => callback(JSON.stringify(objects)))
-                    });     
+                    });
 
                     window.bridge.register("getReportBySelectability", function(data, callback) {
                         chart.getReportBySelectability(report => callback(JSON.stringify(report)))
@@ -94,22 +94,46 @@ let HTML = """
 
                     window.bridge.register("selectObject", function(data, callback) {
                         chart.findObject(data.label).then(object => object.select(data.ticketType === null ? undefined : data.ticketType))
-                    });   
+                    });
 
                     window.bridge.register("deselectObject", function(data, callback) {
                         chart.findObject(data.label).then(object => object.deselect(data.ticketType === null ? undefined : data.ticketType))
-                    });   
+                    });
 
                     window.bridge.register("pulseObject", function(data, callback) {
                         chart.findObject(data).then(object => object.pulse())
-                    });   
+                    });
 
                     window.bridge.register("unpulseObject", function(data, callback) {
                         chart.findObject(data).then(object => object.unpulse())
-                    });    
+                    });
 
                     window.bridge.register("isObjectInChannel", function(data, callback) {
                         chart.findObject(data.label).then(object => callback(object.isInChannel(data.channel)))
+                    });
+
+                    window.bridge.register("goToFloor", function(floorName, callback) {
+                        chart.goToFloor(floorName)
+                    });
+
+                    window.bridge.register("goToAllFloorsView", function(data, callback) {
+                        chart.goToAllFloorsView()
+                    });
+
+                    window.bridge.register("zoomToObjects", function(data, callback) {
+                        chart.zoomToObjects(data)
+                    });
+
+                    window.bridge.register("trySelectObjects", function(data, callback) {
+                        chart.trySelectObjects(data)
+                    });
+
+                    window.bridge.register("doSelectObjects", function(data, callback) {
+                        chart.doSelectObjects(data)
+                    });
+
+                    window.bridge.register("zoomToFilteredCategories", function(data, callback) {
+                        chart.zoomToFilteredCategories()
                     });
                 </script>
             </body>

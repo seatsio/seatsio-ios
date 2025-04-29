@@ -7,15 +7,15 @@ public class SeatingChart {
     public init(_ seatsioWebView: SeatsioWebView) {
         self.seatsioWebView = seatsioWebView
     }
-    
+
     public func setSpotlightObjects(_ objects: [String]) {
         seatsioWebView.bridge.call("setSpotlightObjects", data: objects)
     }
-    
+
     public func setSpotlightOnSelection() {
         seatsioWebView.bridge.call("setSpotlightOnSelection", data: nil)
     }
-    
+
     public func clearSpotlightObjects() {
         seatsioWebView.bridge.call("clearSpotlightObjects", data: nil)
     }
@@ -136,6 +136,38 @@ public class SeatingChart {
 
     public func isObjectInChannel(_ label: String, _ channel: String, _ callback: @escaping (Bool) -> ()) {
         seatsioWebView.bridge.call("isObjectInChannel", data: ["label": label, "channel": channel], callback: { (response) in callback((response as? Bool)!) })
+    }
+
+    public func goToFloor(_ floorName: String) {
+        seatsioWebView.bridge.call("goToFloor", data: floorName)
+    }
+
+    public func goToAllFloorsView() {
+        seatsioWebView.bridge.call("goToAllFloorsView", data: nil)
+    }
+
+    public func zoomToObjects(_ labels: [String]) {
+        seatsioWebView.bridge.call("zoomToObjects", data: labels)
+    }
+
+    public func trySelectObjects(_ labels: [String]) {
+        seatsioWebView.bridge.call("trySelectObjects", data: labels)
+    }
+
+    public func trySelectObjects(_ objects: [SelectedObject]) {
+        seatsioWebView.bridge.call("trySelectObjects", data: toJsonString(AnyEncodable(value: objects)))
+    }
+
+    public func doSelectObjects(_ labels: [String]) {
+        seatsioWebView.bridge.call("doSelectObjects", data: labels)
+    }
+
+    public func doSelectObjects(_ objects: [SelectedObject]) {
+        seatsioWebView.bridge.call("doSelectObjects", data: toJsonString(AnyEncodable(value: objects)))
+    }
+
+    public func zoomToFilteredCategories() {
+        seatsioWebView.bridge.call("zoomToFilteredCategories", data: nil)
     }
 }
 
