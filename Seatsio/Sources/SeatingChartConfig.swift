@@ -68,6 +68,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var activeFloor: String?
     public private(set) var lockActiveFloor: Bool?
     public private(set) var showFloorElevator: Bool?
+    public private(set) final var unifiedObjectPropertiesInCallbacks = true
 
     public private(set) var onSelectionValid: (() -> Void)?
     public private(set) var onSelectionInvalid: (([SelectionValidatorType]) -> Void)?
@@ -624,6 +625,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         case activeFloor
         case lockActiveFloor
         case showFloorElevator
+        case unifiedObjectPropertiesInCallbacks
         case _library
     }
 }
