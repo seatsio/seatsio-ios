@@ -1,7 +1,7 @@
 public protocol SeatsioConfig {
     var jsonStringRepresentation: String { get }
     var toolName: String { get }
-    
+
     var priceFormatter: ((Float) -> String)? { get }
     var tooltipInfo: ((SeatsioObject) -> String)? { get }
     var popoverInfo: ((SeatsioObject) -> String)? { get }
@@ -23,5 +23,6 @@ public protocol SeatsioConfig {
     var onReleaseHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)? { get }
     var onSelectedObjectBooked: ((SeatsioObject) -> Void)? { get }
     var onChartRendered: ((SeatingChart) -> Void)? { get }
-    var onChartRenderingFailed: (() -> Void)? { get }
+    var onChartRenderingFailed: ((SeatingChart) -> Void)? { get }
+    var onChartRerenderingStarted: ((SeatingChart) -> Void)? { get }
 }
