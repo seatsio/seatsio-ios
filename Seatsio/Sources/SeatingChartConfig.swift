@@ -69,6 +69,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var lockActiveFloor: Bool?
     public private(set) var showFloorElevator: Bool?
     public private(set) final var unifiedObjectPropertiesInCallbacks = true
+    public private(set) var ticketBuyerId: String?
 
     public private(set) var onSelectionValid: (() -> Void)?
     public private(set) var onSelectionInvalid: (([SelectionValidatorType]) -> Void)?
@@ -375,6 +376,11 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
 
     public func showFloorElevator(_ showFloorElevator: Bool) -> Self {
         self.showFloorElevator = showFloorElevator
+        return self
+    }
+
+    public func ticketBuyerId(_ ticketBuyerId: String) -> Self {
+        self.ticketBuyerId = ticketBuyerId
         return self
     }
 
