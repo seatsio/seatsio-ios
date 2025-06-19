@@ -632,6 +632,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         case lockActiveFloor
         case showFloorElevator
         case unifiedObjectPropertiesInCallbacks
+        case ticketBuyerId
         case _library
     }
 }
