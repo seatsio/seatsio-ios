@@ -18,7 +18,7 @@ on:
           - major
 jobs:
   release:
-    runs-on: macos-latest
+    runs-on: macos-14
     steps:
       - uses: actions/checkout@v3
       - uses: fregante/setup-git-user@v2
