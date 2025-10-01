@@ -2,7 +2,7 @@ public protocol SeatsioConfig {
     var jsonStringRepresentation: String { get }
     var toolName: String { get }
 
-    var priceFormatter: ((Float) -> String)? { get }
+    var pricing: Pricing? { get }
     var tooltipInfo: ((SeatsioObject) -> String)? { get }
     var popoverInfo: ((SeatsioObject) -> String)? { get }
     var onSelectionValid: (() -> Void)? { get }

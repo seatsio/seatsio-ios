@@ -10,7 +10,7 @@ public struct SeatsioObject: Decodable {
 
     public let category: Category?
     public let center: Point?
-    public let pricing: Pricing?
+    public let pricing: SeatsioObjectPricing?
     public let status: String?
     public let forSale: Bool?
     public let selectable: Bool?
@@ -37,7 +37,7 @@ public struct SeatsioObject: Decodable {
     public let selectableCategories: [Category]?
     public let isInteractive: Bool?
 
-    public init(objectType: String, label: String, labels: Labels, id: String, category: Category? = nil, center: Point? = nil, pricing: Pricing? = nil, status: String? = nil, forSale: Bool? = nil,
+    public init(objectType: String, label: String, labels: Labels, id: String, category: Category? = nil, center: Point? = nil, pricing: SeatsioObjectPricing? = nil, status: String? = nil, forSale: Bool? = nil,
                 selectable: Bool? = nil, inSelectableChannel: Bool? = nil, selected: Bool? = nil, selectedTicketType: String? = nil, accessible: Bool? = nil, companionSeat: Bool? = nil, restrictedView: Bool? = nil,
                 disabledBySocialDistancingRules: Bool? = nil, parent: SeatParent?, displayObjectType: String?, extraData: JSON?, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String: Int]? = nil,
                 sectionCategory: Category? = nil, numberOfSelectableObjects: Int? = nil, numberOfSelectedObjects: Int? = nil, selectableCategories: [Category]? = nil, isInteractive: Bool? = nil, resaleListingId: String? = nil) {
