@@ -31,7 +31,7 @@ struct EventManagerConfigParams: Encodable {
 public final class EventManagerConfig: SeatsioConfig {
     
     private(set) var params = EventManagerConfigParams()
-    public private(set) var priceFormatter: ((Float) -> String)?
+    public private(set) var pricing: Pricing?
     public private(set) var tooltipInfo: ((SeatsioObject) -> String)?
     public private(set) var popoverInfo: ((SeatsioObject) -> String)?
     public private(set) var onSelectionValid: (() -> Void)?

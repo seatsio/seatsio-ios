@@ -1,32 +1,32 @@
 import Foundation
 
-public struct ChannelPricing: Codable {
+public struct ObjectPricing: Codable {
 
-    public let channel: String
+    public let objects: [String]
     public let price: Float?
     public let originalPrice: Float?
     public let fee: Float?
     public let ticketTypes: [TicketTypePricing]?
 
-    public init(channel: String, ticketTypes: [TicketTypePricing]) {
-        self.channel = channel
-        self.ticketTypes = ticketTypes
-        self.price = nil
-        self.originalPrice = nil
-        self.fee = nil
-    }
-
-    public init(channel: String, price: Float, originalPrice: Float? = nil, fee: Float? = nil) {
-        self.channel = channel
+    public init(objects: [String], price: Float, originalPrice: Float? = nil, fee: Float? = nil) {
+        self.objects = objects
         self.price = price
         self.originalPrice = originalPrice
         self.fee = fee
         self.ticketTypes = nil
     }
 
+    public init(objects: [String], ticketTypes: [TicketTypePricing]) {
+        self.objects = objects
+        self.ticketTypes = ticketTypes
+        self.price = nil
+        self.originalPrice = nil
+        self.fee = nil
+    }
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        channel = try container.decode(String.self, forKey: .channel)
+        objects = try container.decode([String].self, forKey: .objects)
         price = try container.decodeIfPresent(Float.self, forKey: .price)
         originalPrice = try container.decodeIfPresent(Float.self, forKey: .originalPrice)
         fee = try container.decodeIfPresent(Float.self, forKey: .fee)
@@ -34,9 +34,10 @@ public struct ChannelPricing: Codable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case channel
+        case objects
         case price
         case originalPrice
         case fee
         case ticketTypes
-    }}
+    }
+}

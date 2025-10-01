@@ -12,9 +12,8 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var workspaceKey: String?
     public private(set) var events: Set<String>?
     public private(set) var chart: String?
-    public private(set) var pricing: [Pricing]?
+    public private(set) var pricing: Pricing?
 
-    public private(set) var priceFormatter: ((Float) -> String)?
     public private(set) var numberOfPlacesToSelect: Int?
     public private(set) var objectWithoutPricingSelectable: Bool?
     public private(set) var selectedObjects: [SelectedObject]?
@@ -97,6 +96,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var onFilteredCategoriesChanged: (([Category]) -> Void)?
     public private(set) var onChartRerenderingStarted: ((SeatingChart) -> Void)?
 
+
     let _library: String = "ios"
 
     public var toolName: String { "SeatingChart" }
@@ -123,13 +123,8 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         return self
     }
 
-    public func pricing(_ pricing: [Pricing]) -> Self {
+    public func pricing(_ pricing: Pricing) -> Self {
         self.pricing = pricing
-        return self
-    }
-
-    public func priceFormatter(_ priceFormatter: @escaping (Float) -> String) -> Self {
-        self.priceFormatter = priceFormatter
         return self
     }
 

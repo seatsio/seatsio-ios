@@ -31,6 +31,7 @@ public class SeatsioWebView: WKWebView {
             .replacingOccurrences(of: "%configAsJs%", with: config)
             .replacingOccurrences(of: "%region%", with: region)
             .replacingOccurrences(of: "%toolName%", with: seatsioConfig.toolName)
+            .replacingOccurrences(of: "\"%priceFormatterPlaceholder%\"", with: buildPlaceholderCallbackConfigAsJS("priceFormatter"))
 
         self.loadHTMLString(htmlString, baseURL: nil)
     }
@@ -42,11 +43,10 @@ public class SeatsioWebView: WKWebView {
     private func buildCallbacksConfiguration() -> [String] {
         var callbacks = [String]()
 
-        if (self.seatsioConfig.priceFormatter != nil) {
+        if (self.seatsioConfig.pricing?.priceFormatter != nil) {
             bridge.register("priceFormatter") { (data, callback) in
-                callback(self.seatsioConfig.priceFormatter!(decodeFloat(firstArg(data))))
+                callback(self.seatsioConfig.pricing?.priceFormatter?(decodeFloat(firstArg(data))))
             }
-            callbacks.append(buildCallbackConfigAsJS("priceFormatter"))
         }
 
         if (self.seatsioConfig.onSelectionValid != nil) {
@@ -246,6 +246,21 @@ public class SeatsioWebView: WKWebView {
     private func buildCallbackConfigAsJS(_ name: String) -> String {
         return """
                \(name): (arg1, arg2) => (
+                   new Promise((resolve, reject) => {
+                       if (arg2 instanceof Function) {
+                           window.bridge.setInnerCallback("\(name)", arg2)
+                           window.bridge.call("\(name)", [JSON.stringify(arg1), "\(name)"], data => resolve(data), error => reject(error))
+                       } else {
+                           window.bridge.call("\(name)", [JSON.stringify(arg1), JSON.stringify(arg2)], data => resolve(data), error => reject(error))
+                       }
+                   })
+               )
+               """
+    }
+
+    private func buildPlaceholderCallbackConfigAsJS(_ name: String) -> String {
+        return """
+               (arg1, arg2) => (
                    new Promise((resolve, reject) => {
                        if (arg2 instanceof Function) {
                            window.bridge.setInnerCallback("\(name)", arg2)

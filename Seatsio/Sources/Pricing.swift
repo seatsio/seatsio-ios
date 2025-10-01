@@ -2,55 +2,40 @@ import Foundation
 
 public struct Pricing: Codable {
 
-    public let category: String?
-    public let price: Float?
-    public let ticketTypes: [TicketTypePricing]?
-    public let channels: [ChannelPricing]?
+    public let allFeesIncluded: Bool?
+    public let showSectionPricingOverlay: Bool?
+    public let priceFormatter: ((Float) -> String)?
+    public let prices: [Price]
 
-    public init(category: String, price: Float) {
-        self.category = category
-        self.price = price
-        self.ticketTypes = nil
-        self.channels = nil
-    }
-
-    public init(category: String, ticketTypes: [TicketTypePricing]) {
-        self.category = category
-        self.price = nil
-        self.ticketTypes = ticketTypes
-        self.channels = nil
-    }
-
-    public init(category: String, price: Float, channels: [ChannelPricing]) {
-        self.category = category
-        self.price = price
-        self.ticketTypes = nil
-        self.channels = channels
-    }
-
-    public init(category: String, ticketTypes: [TicketTypePricing], channels: [ChannelPricing]) {
-        self.category = category
-        self.price = nil
-        self.ticketTypes = ticketTypes
-        self.channels = channels
+    public init(prices: [Price], allFeesIncluded: Bool? = nil, showSectionPricingOverlay: Bool? = nil, priceFormatter: ((Float) -> String)? = nil) {
+        self.prices = prices
+        self.allFeesIncluded = allFeesIncluded
+        self.showSectionPricingOverlay = showSectionPricingOverlay
+        self.priceFormatter = priceFormatter
     }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        if let value = try? container.decodeIfPresent(Int.self, forKey: .category) {
-            category = String(value)
-        } else {
-            category = try container.decodeIfPresent(String.self, forKey: .category)
+        prices = try container.decode([Price].self, forKey: .prices)
+        allFeesIncluded = try container.decodeIfPresent(Bool.self, forKey: .allFeesIncluded)
+        showSectionPricingOverlay = try container.decodeIfPresent(Bool.self, forKey: .showSectionPricingOverlay)
+        priceFormatter = nil
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(self.allFeesIncluded, forKey: .allFeesIncluded)
+        try container.encodeIfPresent(self.showSectionPricingOverlay, forKey: .showSectionPricingOverlay)
+        try container.encode(self.prices, forKey: .prices)
+        if (self.priceFormatter != nil) {
+            try container.encode("%priceFormatterPlaceholder%", forKey: .priceFormatter)
         }
-        price = try container.decodeIfPresent(Float.self, forKey: .price)
-        ticketTypes = try container.decodeIfPresent([TicketTypePricing].self, forKey: .ticketTypes)
-        channels = try container.decodeIfPresent([ChannelPricing].self, forKey: .channels)
     }
 
     private enum CodingKeys: String, CodingKey {
-        case category
-        case price
-        case ticketTypes
-        case channels
+        case allFeesIncluded
+        case showSectionPricingOverlay
+        case priceFormatter
+        case prices
     }
 }
