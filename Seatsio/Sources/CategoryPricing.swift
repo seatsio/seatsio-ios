@@ -48,7 +48,7 @@ public struct CategoryPricing: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         if let value = try? container.decodeIfPresent(Int.self, forKey: .category) {
-            category = try container.decode(Int.self, forKey: .category)
+            category = value
         } else {
             category = try container.decode(String.self, forKey: .category)
         }

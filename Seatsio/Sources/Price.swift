@@ -27,7 +27,6 @@ extension Price: Codable {
     }
 
     public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
         switch self {
             case .priceForCategory(let payload):
                 try payload.encode(to: encoder)
