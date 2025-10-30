@@ -8,45 +8,18 @@
 
 import Foundation
 
-public enum StringOrFloat: Codable {
-    case string(String)
-    case float(Float)
-    
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        
-        if let floatValue = try? container.decode(Float.self) {
-            self = .float(floatValue)
-        } else if let stringValue = try? container.decode(String.self) {
-            self = .string(stringValue)
-        } else {
-            throw DecodingError.typeMismatch(StringOrFloat.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Expected String or Float"))
-        }
-    }
-    
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        
-        switch self {
-        case .string(let stringValue):
-            try container.encode(stringValue)
-        case .float(let floatValue):
-            try container.encode(floatValue)
-        }
-    }
-}
-
 public struct SeatsioObjectPricing: Codable {
+    
     public let ticketType: String?
     public let price: Float?
-    public let formattedPrice: StringOrFloat?
+    public let formattedPrice: String?
     public let originalPrice: Float?
-    public let formattedOriginalPrice: StringOrFloat?
+    public let formattedOriginalPrice: String?
     public let label: String?
     public let fee: Float?
     public let description: String?
-
-    public init(ticketType: String? = nil, price: Float? = nil, formattedPrice: StringOrFloat? = nil, originalPrice: Float? = nil, formattedOriginalPrice: StringOrFloat? = nil,
+    
+    public init(ticketType: String? = nil, price: Float? = nil, formattedPrice: String? = nil, originalPrice: Float? = nil, formattedOriginalPrice: String? = nil,
                 label: String? = nil, fee: Float? = nil, description: String? = nil) {
         self.ticketType = ticketType
         self.price = price
@@ -56,6 +29,26 @@ public struct SeatsioObjectPricing: Codable {
         self.label = label
         self.fee = fee
         self.description = description
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        ticketType = try container.decodeIfPresent(String.self, forKey: .ticketType)
+        price = try container.decodeIfPresent(Float.self, forKey: .price)
+        if let value = try? container.decodeIfPresent(Float.self, forKey: .formattedPrice) {
+            formattedPrice = String(value)
+        } else {
+            formattedPrice = try container.decode(String.self, forKey: .formattedPrice)
+        }
+        originalPrice = try container.decodeIfPresent(Float.self, forKey: .originalPrice)
+        if let value = try? container.decode(Float.self, forKey: .formattedOriginalPrice) {
+            formattedOriginalPrice = String(value)
+        } else {
+            formattedOriginalPrice = try container.decodeIfPresent(String.self, forKey: .formattedOriginalPrice)
+        }
+        label = try container.decodeIfPresent(String.self, forKey: .label)
+        fee = try container.decodeIfPresent(Float.self, forKey: .fee)
+        description = try container.decodeIfPresent(String.self, forKey: .description)
     }
     
     private enum CodingKeys: String, CodingKey {
@@ -69,3 +62,4 @@ public struct SeatsioObjectPricing: Codable {
         case description
     }
 }
+
