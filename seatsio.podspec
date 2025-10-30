@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'seatsio'
-    s.version          = '20.1.0'
+    s.version          = '20.2.0'
     s.summary          = 'The official Seats.io library for iOS'
     s.homepage         = 'https://github.com/seatsio/seatsio-ios'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
