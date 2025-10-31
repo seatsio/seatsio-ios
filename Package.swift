@@ -29,5 +29,4 @@ let package = Package(
             path: "Seatsio/Tests"
         )
     ]
-    
 )
