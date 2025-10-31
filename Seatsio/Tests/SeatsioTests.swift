@@ -4,6 +4,6 @@ import XCTest
 final class SeatsioTests: XCTestCase {
 
     func testExample() {
-        XCTAssertEqual(2 + 2, 5)
+        XCTAssertEqual(2 + 2, 4)
     }
 }
