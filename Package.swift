@@ -22,6 +22,11 @@ let package = Package(
                 .product(name: "SwiftyJSON", package: "SwiftyJSON")
             ],
             path: "Seatsio/Sources"
+        ),
+        .testTarget(
+            name: "SeatsioTests",
+            dependencies: ["Seatsio"],
+            path: "Seatsio/Tests"
         )
     ]
 )
