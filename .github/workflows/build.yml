@@ -12,6 +12,10 @@ jobs:
     runs-on: macos-14
 
     steps:
-    - uses: actions/checkout@v2
-    - run: swift build
-    - run: pod lib lint
+    - uses: actions/checkout@v4
+    - name: Build
+      run: swift build
+    - name: Run tests
+      run: swift test --parallel
+    - name: Lint podspec
+      run: pod lib lint
