@@ -61,6 +61,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var stylePreset: String?
     public private(set) var style: Style?
     public private(set) var showFullScreenButton: Bool = false
+    public private(set) var showAccessibilityFilter: Bool = true
     public private(set) var showSectionPricingOverlay: Bool?
     public private(set) var channels: Set<String>?
     public private(set) var hideSectionsNotForSale: Bool?
@@ -87,6 +88,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var onReleaseHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)?
     public private(set) var onReleaseHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)?
     public private(set) var onSelectedObjectBooked: ((SeatsioObject) -> Void)?
+    public private(set) var onSelectedObjectUnavailable: ((SeatsioObject) -> Void)?
     public private(set) var onChartRendered: ((SeatingChart) -> Void)?
     public private(set) var onChartRenderingFailed: ((SeatingChart) -> Void)?
     public private(set) var onPlacesPrompt: ((OnPlacesPromptParams, (Int) -> Void) -> Void)?
@@ -459,8 +461,14 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         return self
     }
 
+    @available(*, deprecated, message: "use onSelectedObjectUnavailable instead")
     public func onSelectedObjectBooked(_ onSelectedObjectBooked: @escaping (SeatsioObject) -> ()) -> Self {
         self.onSelectedObjectBooked = onSelectedObjectBooked
+        return self
+    }
+
+    public func onSelectedObjectUnavailable(_ onSelectedObjectUnavailable: @escaping (SeatsioObject) -> ()) -> Self {
+        self.onSelectedObjectUnavailable = onSelectedObjectUnavailable
         return self
     }
 
@@ -621,6 +629,7 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
         case stylePreset
         case style
         case showFullScreenButton
+        case showAccessibilityFilter
         case channels
         case hideSectionsNotForSale
         case activeFloor
