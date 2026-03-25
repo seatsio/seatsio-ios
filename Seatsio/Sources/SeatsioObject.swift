@@ -21,6 +21,7 @@ public struct SeatsioObject: Decodable {
     public let accessible: Bool?
     public let companionSeat: Bool?
     public let restrictedView: Bool?
+    public let wheelchairSpaceType: WheelchairSpaceType?
     public let disabledBySocialDistancingRules: Bool?
     public let parent: SeatParent?
     public let displayObjectType: String?
@@ -40,7 +41,7 @@ public struct SeatsioObject: Decodable {
 
     public init(objectType: String, label: String, labels: Labels, id: String, category: Category? = nil, center: Point? = nil, pricing: SeatsioObjectPricing? = nil, status: String? = nil, forSale: Bool? = nil,
                 selectable: Bool? = nil, inSelectableChannel: Bool? = nil, selected: Bool? = nil, selectedTicketType: String? = nil, accessible: Bool? = nil, companionSeat: Bool? = nil, restrictedView: Bool? = nil,
-                disabledBySocialDistancingRules: Bool? = nil, parent: SeatParent?, displayObjectType: String?, extraData: JSON?, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String: Int]? = nil,
+                disabledBySocialDistancingRules: Bool? = nil, wheelchairSpaceType: WheelchairSpaceType? = nil, parent: SeatParent?, displayObjectType: String?, extraData: JSON?, capacity: Int? = nil, numBooked: Int? = nil, numFree: Int? = nil, numSelected: Int? = nil, selectionPerTicketType: [String: Int]? = nil,
                 sectionCategory: Category? = nil, numberOfSelectableObjects: Int? = nil, numberOfSelectedObjects: Int? = nil, selectableCategories: [Category]? = nil, isInteractive: Bool? = nil, resaleListingId: String? = nil, floor: String? = nil) {
         self.objectType = objectType
         self.label = label
@@ -61,6 +62,7 @@ public struct SeatsioObject: Decodable {
         self.accessible = accessible
         self.companionSeat = companionSeat
         self.restrictedView = restrictedView
+        self.wheelchairSpaceType = wheelchairSpaceType
         self.disabledBySocialDistancingRules = disabledBySocialDistancingRules
         self.parent = parent
         self.displayObjectType = displayObjectType
