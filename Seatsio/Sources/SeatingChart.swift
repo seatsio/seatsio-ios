@@ -68,6 +68,10 @@ public class SeatingChart {
         seatsioWebView.bridge.call("selectBestAvailable", data: toJsonString(AnyEncodable(value: bestAvailable)))
     }
 
+    public func holdBestAvailable(_ bestAvailableForHolding: BestAvailableForHolding) {
+        seatsioWebView.bridge.call("holdBestAvailable", data: toJsonString(AnyEncodable(value: bestAvailableForHolding)))
+    }
+
     public func changeConfig(_ configChange: ConfigChange) {
         seatsioWebView.bridge.call("changeConfig", data: toJsonString(AnyEncodable(value: configChange)))
     }

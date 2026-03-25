@@ -46,6 +46,8 @@ public final class EventManagerConfig: SeatsioConfig {
     public private(set) var onHoldTokenExpired: (() -> Void)?
     public private(set) var onBestAvailableSelected: (([SeatsioObject], Bool) -> Void)?
     public private(set) var onBestAvailableSelectionFailed: (() -> Void)?
+    public private(set) var onBestAvailableHeld: (([String], Bool?) -> Void)?
+    public private(set) var onBestAvailableHoldFailed: ((String) -> Void)?
     public private(set) var onHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)?
     public private(set) var onHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)?
     public private(set) var onReleaseHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)?
