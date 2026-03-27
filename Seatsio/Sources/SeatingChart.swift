@@ -68,6 +68,22 @@ public class SeatingChart {
         seatsioWebView.bridge.call("selectBestAvailable", data: toJsonString(AnyEncodable(value: bestAvailable)))
     }
 
+    public func holdBestAvailable(_ bestAvailableForHolding: BestAvailableForHolding, _ callback: @escaping (BestAvailableHeldResult) -> (), _ errorCallback: @escaping (String) -> () = { _ in }) {
+        seatsioWebView.bridge.call(
+                "holdBestAvailable",
+                data: toJsonString(AnyEncodable(value: bestAvailableForHolding)),
+                callback: { (response) in
+                    if response == nil {
+                        errorCallback("Failed to hold best available seats")
+                    } else {
+                        let dataToDecode = (response as! String).data(using: .utf8)!
+                        let decoded = try! JSONDecoder().decode(BestAvailableHeldResult.self, from: dataToDecode)
+                        callback(decoded)
+                    }
+                }
+        )
+    }
+
     public func changeConfig(_ configChange: ConfigChange) {
         seatsioWebView.bridge.call("changeConfig", data: toJsonString(AnyEncodable(value: configChange)))
     }

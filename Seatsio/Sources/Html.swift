@@ -68,6 +68,10 @@ let HTML = """
                         chart.selectBestAvailable(JSON.parse(data))
                     });
 
+                    window.bridge.register("holdBestAvailable", function(data, callback) {
+                        chart.holdBestAvailable(JSON.parse(data)).then(result => callback(JSON.stringify(result)), error => callback(null))
+                    });
+
                     window.bridge.register("listSelectedObjects", function(data, callback) {
                         chart.listSelectedObjects(objects => callback(JSON.stringify(objects)))
                     });
