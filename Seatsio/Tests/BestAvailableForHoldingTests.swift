@@ -63,39 +63,35 @@ final class BestAvailableForHoldingTests: XCTestCase {
     func testDecodesBestAvailableHeldResult() throws {
         let json = """
         {
-            "objects": ["A-1", "A-2", "A-3"],
+            "objects": [
+                {"objectType": "seat", "label": "A-1", "labels": {"own": "1", "parent": "A", "displayedLabel": "A-1"}, "id": "A-1"},
+                {"objectType": "seat", "label": "A-2", "labels": {"own": "2", "parent": "A", "displayedLabel": "A-2"}, "id": "A-2"}
+            ],
             "nextToEachOther": true
         }
         """.data(using: .utf8)!
 
         let decoded = try JSONDecoder().decode(BestAvailableHeldResult.self, from: json)
 
-        XCTAssertEqual(decoded.objects, ["A-1", "A-2", "A-3"])
+        XCTAssertEqual(decoded.objects.count, 2)
+        XCTAssertEqual(decoded.objects[0].label, "A-1")
+        XCTAssertEqual(decoded.objects[1].label, "A-2")
         XCTAssertEqual(decoded.nextToEachOther, true)
     }
 
     func testDecodesBestAvailableHeldResultWithoutNextToEachOther() throws {
         let json = """
         {
-            "objects": ["A-1"]
+            "objects": [
+                {"objectType": "seat", "label": "A-1", "labels": {"own": "1", "parent": "A", "displayedLabel": "A-1"}, "id": "A-1"}
+            ]
         }
         """.data(using: .utf8)!
 
         let decoded = try JSONDecoder().decode(BestAvailableHeldResult.self, from: json)
 
-        XCTAssertEqual(decoded.objects, ["A-1"])
+        XCTAssertEqual(decoded.objects.count, 1)
+        XCTAssertEqual(decoded.objects[0].label, "A-1")
         XCTAssertNil(decoded.nextToEachOther)
-    }
-
-    func testDecodesBestAvailableHoldFailedResult() throws {
-        let json = """
-        {
-            "message": "Not enough seats available"
-        }
-        """.data(using: .utf8)!
-
-        let decoded = try JSONDecoder().decode(BestAvailableHoldFailedResult.self, from: json)
-
-        XCTAssertEqual(decoded.message, "Not enough seats available")
     }
 }

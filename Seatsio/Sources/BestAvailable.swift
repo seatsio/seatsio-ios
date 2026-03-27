@@ -41,11 +41,7 @@ public struct BestAvailableForHolding: Codable {
     }
 }
 
-struct BestAvailableHeldResult: Codable {
-    let objects: [String]
-    let nextToEachOther: Bool?
-}
-
-struct BestAvailableHoldFailedResult: Codable {
-    let message: String
+public struct BestAvailableHeldResult: Decodable {
+    public let objects: [SeatsioObject]
+    public let nextToEachOther: Bool?
 }

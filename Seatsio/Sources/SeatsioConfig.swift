@@ -17,8 +17,6 @@ public protocol SeatsioConfig {
     var onHoldTokenExpired: (() -> Void)? { get }
     var onBestAvailableSelected: (([SeatsioObject], Bool) -> Void)? { get }
     var onBestAvailableSelectionFailed: (() -> Void)? { get }
-    var onBestAvailableHeld: (([String], Bool?) -> Void)? { get }
-    var onBestAvailableHoldFailed: ((String) -> Void)? { get }
     var onHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)? { get }
     var onHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)? { get }
     var onReleaseHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)? { get }

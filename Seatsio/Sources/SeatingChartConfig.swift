@@ -83,8 +83,6 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
     public private(set) var onHoldTokenExpired: (() -> Void)?
     public private(set) var onBestAvailableSelected: (([SeatsioObject], Bool) -> Void)?
     public private(set) var onBestAvailableSelectionFailed: (() -> Void)?
-    public private(set) var onBestAvailableHeld: (([String], Bool?) -> Void)?
-    public private(set) var onBestAvailableHoldFailed: ((String) -> Void)?
     public private(set) var onHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)?
     public private(set) var onHoldFailed: (([SeatsioObject], [TicketType]?) -> Void)?
     public private(set) var onReleaseHoldSucceeded: (([SeatsioObject], [TicketType]?) -> Void)?
@@ -440,16 +438,6 @@ public class SeatingChartConfig: SeatsioConfig, Encodable {
 
     public func onBestAvailableSelectionFailed(_ onBestAvailableSelectionFailed: @escaping () -> ()) -> Self {
         self.onBestAvailableSelectionFailed = onBestAvailableSelectionFailed
-        return self
-    }
-
-    public func onBestAvailableHeld(_ onBestAvailableHeld: @escaping ([String], Bool?) -> ()) -> Self {
-        self.onBestAvailableHeld = onBestAvailableHeld
-        return self
-    }
-
-    public func onBestAvailableHoldFailed(_ onBestAvailableHoldFailed: @escaping (String) -> ()) -> Self {
-        self.onBestAvailableHoldFailed = onBestAvailableHoldFailed
         return self
     }
 

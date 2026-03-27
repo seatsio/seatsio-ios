@@ -133,26 +133,6 @@ public class SeatsioWebView: WKWebView {
             callbacks.append(buildCallbackConfigAsJS("onBestAvailableSelectionFailed"))
         }
 
-        if (self.seatsioConfig.onBestAvailableHeld != nil) {
-            bridge.register("onBestAvailableHeld") { (data, callback) in
-                let result = firstArg(data) as! String
-                let dataToDecode = result.data(using: .utf8)!
-                let decoded = try! JSONDecoder().decode(BestAvailableHeldResult.self, from: dataToDecode)
-                self.seatsioConfig.onBestAvailableHeld!(decoded.objects, decoded.nextToEachOther)
-            }
-            callbacks.append(buildCallbackConfigAsJS("onBestAvailableHeld"))
-        }
-
-        if (self.seatsioConfig.onBestAvailableHoldFailed != nil) {
-            bridge.register("onBestAvailableHoldFailed") { (data, callback) in
-                let result = firstArg(data) as! String
-                let dataToDecode = result.data(using: .utf8)!
-                let decoded = try! JSONDecoder().decode(BestAvailableHoldFailedResult.self, from: dataToDecode)
-                self.seatsioConfig.onBestAvailableHoldFailed!(decoded.message)
-            }
-            callbacks.append(buildCallbackConfigAsJS("onBestAvailableHoldFailed"))
-        }
-
         if (self.seatsioConfig.onHoldSucceeded != nil) {
             bridge.register("onHoldSucceeded") { (data, callback) in
                 self.seatsioConfig.onHoldSucceeded!(decodeSeatsioObjects(firstArg(data)), decodeTicketTypes(secondArg(data)))
